@@ -2,45 +2,47 @@ package
 {
 	import flash.display.Bitmap;
 	import flash.utils.Dictionary;
-	
-	import starling.display.Sprite;
+		
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
 	
-	public class Assets extends Sprite
-	{
-		public function Assets()
+	public class Assets 
+	
 		{
-			[Embed(source=".../Media/graphic/Alkukuvatähä.png")]
-			public static const asd:Class;
+			[Embed(source=".../Media/testiKuvat/Alotus.png")]
+			public static const AlkuRuutu:Class;
 			
-			[Embed(source=".../Media/graphic/joku.png")]
-			public static const asd:Class;
+			[Embed(source=".../Media/testiKuvat/AlotusNappi.png")]
+			public static const Nappi:Class;
 			
 			private static var gameTextures:Dictionary = new Dictionary;
-			private static var gameTextureAtlas = new TextureAtlas;
-		
-			[Embed(source=".../Media/graphic/Alkukuvatähä")]
-			public static const asd:Class;
+			private static var gameTextureAtlas = TextureAtlas;
 			
-			[Embed(source=".../Medi/graphic/Alkukuvatähä")]
-			public static const asd:Class;
+			[Embed(source="../media/graphics/")]//SpriteSheetille
+			public static const AtlasTextureGame:Class;
+			
+			[Embed(source="../media/graphics/", mimeType="application/octet-stream")]//mySpritesheet.xml
+			public static const AtlasXmlGame:Class;
 		
-		
-		}
+			
 		public static function getAtlas():TextureAtlas
 		{
-			//if(gameTextureAtlas == null){
-			//var texture:Texture = getTexture("AtlasTextureGame");
-			//var xml:XML = (new AtlasXML);
-			//gameTexture	
+			if(gameTextureAtlas == null)
+			{
+			var texture:Texture = getTexture("AtlasTextureGame");
+			var xml:XML = XML(new AtlasXmlGame);
+			gameTextureAtlas = new TextureAtlas(texture, xml);
 			}
-		//return gameTextureAtlas;
+		return gameTextureAtlas;
 		}
-	public static function getTextures(name:String);
+	public static function getTexture(name:String):Texture
 	{
-		if(gameTexture[name] == null){
-			
+		if(gameTextures[name] == undefined)
+		{
+		var bitmap:Bitmap = new Assets[name]();
+		gameTextures[name] = Texture.fromBitmap(bitmap);
+		}
+		return gameTextures[name];	
 	}
 		
 }

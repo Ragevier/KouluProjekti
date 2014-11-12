@@ -1,6 +1,8 @@
 package screens
 {
-	import events.NavigationEvent;
+	import com.greensock.TweenLite;
+	
+	import events.NavigationEvent;	
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -9,20 +11,36 @@ package screens
 		
 	public class StartScreen extends Sprite
 	{
-		private var bgImage:Image
+			
+		private var bg:Image;
+		private var title:Image;
 		
+		private var playBtn:Button;
 			
 		public function StartScreen()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		}
-		private function onAddedToStage(e:Event):void
+		private function onAddedToStage(event:Event):void
 		{
-		drawscreen();
+		drawScreen();
 		}
 		
-		private function drawscreen():void
+		private function drawScreen():void
 		{
+			
+			bg = new Image(Assets.getTexture("AlkuRuutu"));
+			this.addChild(bg);
+	
+			//title = new Image(Assets.getTexture("Title"));
+			//title.x = 440;
+			//title.y = 30;
+			//this.addChild(title);
+			
+			playBtn = new Button(Assets.getTexture("Nappi");
+			this.addChild(playBtn);
+			playBtn.x = 450;
+			playBtn.y = 260;
 			this.addEventListener(Event.TRIGGERED, onMainMenuClick)
 		}
 	} private function onMainMenuClick (event:Event):void
@@ -39,4 +57,8 @@ package screens
 		
 		if(this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ADDED_TO_STAGE,)
 	}
+	public function initialize():void
+	{
+		this.visible = true;
+		
 }
