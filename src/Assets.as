@@ -30,7 +30,7 @@ package
 			if(gameTextureAtlas == null)
 			{
 			var texture:Texture = getTexture("AtlasTextureGame");
-			var xml:XML = XML(new AtlasXmlGame);
+			var xml:XML = XML(new AtlasXmlGame());
 			gameTextureAtlas = new TextureAtlas(texture, xml);
 			}
 		return gameTextureAtlas;

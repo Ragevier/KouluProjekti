@@ -5,7 +5,7 @@ package screens
 	
 	public class InGame extends Sprite
 	
-	private 
+	
 	{
 		public function InGame()
 		{
@@ -14,10 +14,24 @@ package screens
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
-		private function onAddedToStage(e:Event):void
+		private function onAddedToStage(event:Event):void
 		{
+			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
+			drawGame();
+		}
 		
+		private function drawGame():void
+		{
 			
 		}
+		public function disposeTemporarily():void
+	{	
+	
+	this.visible = false;
+	}
+	public function initialize();
+	{
+		this.visible = true;
+	}
 	}
 }

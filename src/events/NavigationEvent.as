@@ -6,9 +6,9 @@ package events
 	{
 	public static const CHANGE_SCREEN:String = "ChangeScreen";
 	
-	private var params:Object;
+	public var params:Object;
 	
-	public function NavigationEvent(type:String _params:object =null, bubbles:Boolean=false, data:Object=null)
+	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false)
 		{
 			
 		super(type, bubbles, data);

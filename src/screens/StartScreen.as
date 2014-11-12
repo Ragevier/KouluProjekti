@@ -41,19 +41,20 @@ package screens
 			this.addChild(playBtn);
 			playBtn.x = 450;
 			playBtn.y = 260;
-			this.addEventListener(Event.TRIGGERED, onMainMenuClick)
+			this.addEventListener(Event.TRIGGERED, onMainMenuClick);
 		}
-	} private function onMainMenuClick (event:Event):void
+
+	private function onMainMenuClick (event:Event):void
 	{
 	var buttonClicked:Button = event.target as Button;
-	if ((buttonClicked as Button) == ; //peliin meno nappi ennen ;
+	if ((buttonClicked as Button) == playBtn)
 		{
-		this.DispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"play"}, true)); 
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"play"}, true)); 
 		}
 	}
-	private function DisposeTemporarily():void
+	private function disposeTemporarily():void
 	{
-		this.visible = false
+		this.visible = false;
 		
 		if(this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ADDED_TO_STAGE,)
 	}
