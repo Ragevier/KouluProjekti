@@ -37,7 +37,7 @@ package screens
 			//title.y = 30;
 			//this.addChild(title);
 			
-			playBtn = new Button(Assets.getTexture("Nappi");
+			playBtn = new Button(Assets.getTexture("Nappi"));
 			this.addChild(playBtn);
 			playBtn.x = 450;
 			playBtn.y = 260;
@@ -52,14 +52,15 @@ package screens
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"play"}, true)); 
 		}
 	}
-	private function disposeTemporarily():void
+	public function disposeTemporarily():void
 	{
 		this.visible = false;
 		
-		if(this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ADDED_TO_STAGE,)
+		//if(this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ADDED_TO_STAGE,)
 	}
 	public function initialize():void
 	{
 		this.visible = true;
-		
-}
+		}		
+	}
+}	

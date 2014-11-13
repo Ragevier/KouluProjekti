@@ -29,7 +29,7 @@ package screens
 	
 	this.visible = false;
 	}
-	public function initialize();
+	public function initialize():void
 	{
 		this.visible = true;
 	}

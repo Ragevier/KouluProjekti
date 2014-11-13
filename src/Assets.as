@@ -9,19 +9,19 @@ package
 	public class Assets 
 	
 		{
-			[Embed(source=".../Media/testiKuvat/Alotus.png")]
+			[Embed(source="../media/grafiikka/PunaKansioTyhj.png")]
 			public static const AlkuRuutu:Class;
 			
-			[Embed(source=".../Media/testiKuvat/AlotusNappi.png")]
+			[Embed(source="../media/testiKuvat/AlotusNappi.png")]
 			public static const Nappi:Class;
 			
 			private static var gameTextures:Dictionary = new Dictionary;
-			private static var gameTextureAtlas = TextureAtlas;
+			private static var gameTextureAtlas:TextureAtlas;
 			
-			[Embed(source="../media/graphics/")]//SpriteSheetille
+			[Embed(source="../media/TestiKuvat/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
 			
-			[Embed(source="../media/graphics/", mimeType="application/octet-stream")]//mySpritesheet.xml
+			[Embed(source="../media/TestiKuvat/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
 			public static const AtlasXmlGame:Class;
 		
 			
