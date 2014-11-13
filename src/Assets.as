@@ -29,7 +29,7 @@ package
 			//Äänet
 			
 			[Embed(source="../media/sounds/testsounds/bgWelcome.mp3")]
-			public static const SCmusic:Class;
+			public static const SSmusic:Class;
 			
 			[Embed(source="../media/sounds/testsounds/bgGame.mp3")]
 			public static const BgMusic:Class;	

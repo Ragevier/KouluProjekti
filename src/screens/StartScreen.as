@@ -30,7 +30,7 @@ package screens
 		
 		private function drawScreen():void
 		{
-			MainSCSound = (Assets.getSound("SCmusic"));
+			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
 			
 			bg = new Image(Assets.getTexture("AlkuRuutu"));

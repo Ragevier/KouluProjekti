@@ -1,11 +1,19 @@
 package screens
 {
+	import events.NavigationEvent;
+	
+	import flash.media.Sound;
+	
+	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
 	
 	public class InGame extends Sprite
 	
 	{
+		private var GS:Image;    //GameScreen a.k.a GameBackground
+		private var BgMusic:Sound
+		
 		public function InGame()
 		{
 		
@@ -20,7 +28,12 @@ package screens
 		
 		private function drawGame():void
 		{
+			GS = new Image(Assets.getTexture("InsertGSTähän")); //tai  getAssets
+			this.addChild(GS)
 			
+			BgMusic = (Assets.getSound("BgMusic"));
+			BgMusic.play()	
+		
 		}
 		public function disposeTemporarily():void
 	{	

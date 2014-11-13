@@ -9,8 +9,7 @@ package events
 	public var params:Object;
 	
 	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false)
-		{
-			
+		{	
 		super(type, bubbles, data);
 		this.params = _params;
 		}
