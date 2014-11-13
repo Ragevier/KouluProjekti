@@ -5,12 +5,10 @@ package screens
 	
 	public class InGame extends Sprite
 	
-	
 	{
 		public function InGame()
 		{
 		
-			super();
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
@@ -32,6 +30,6 @@ package screens
 	public function initialize():void
 	{
 		this.visible = true;
-	}
+		}
 	}
 }

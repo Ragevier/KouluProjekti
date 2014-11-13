@@ -1,8 +1,9 @@
 package screens
 {
 	import com.greensock.TweenLite;
+	import flash.media.Sound
 	
-	import events.NavigationEvent;	
+	import events.NavigationEvent;
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -14,6 +15,7 @@ package screens
 			
 		private var bg:Image;
 		private var title:Image;
+		private var MainSCSound:Sound		
 		
 		private var playBtn:Button;
 			
@@ -28,6 +30,8 @@ package screens
 		
 		private function drawScreen():void
 		{
+			MainSCSound = (Assets.getSound("SCmusic"));
+			MainSCSound.play();
 			
 			bg = new Image(Assets.getTexture("AlkuRuutu"));
 			this.addChild(bg);
