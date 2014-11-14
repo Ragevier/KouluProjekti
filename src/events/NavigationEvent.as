@@ -5,6 +5,7 @@ package events
 	public class NavigationEvent extends Event
 	{
 	public static const CHANGE_SCREEN:String = "ChangeScreen";
+	  
 	
 	public var params:Object;
 	

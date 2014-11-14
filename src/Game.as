@@ -3,6 +3,7 @@ package
 	import events.NavigationEvent;
 	
 	import screens.InGame;
+	import screens.Kansio;
 	import screens.StartScreen;
 	
 	import starling.display.Sprite;
@@ -10,9 +11,9 @@ package
 	
 	public class Game extends Sprite
 	{
-		private var screenStartScreen:StartScreen
-		private var screenInGame:InGame
-		
+		private var screenStartScreen:StartScreen;
+		private var screenInGame:InGame;
+		private var screenKansio:Kansio;
 		
 		public function Game()
 		{		
@@ -36,10 +37,12 @@ package
 		{
 		 switch (event.params.id)
 		 { 
-			case "play":
+			case "AloitusNappi":
 			screenStartScreen.disposeTemporarily();
 			screenInGame.initialize();
 			break;
+			
+	
 		 }
 		}
 	}

@@ -4,6 +4,9 @@ package screens
 	
 	import flash.media.Sound;
 	
+	import objects.Player;
+	
+	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -11,6 +14,8 @@ package screens
 	public class InGame extends Sprite
 	
 	{
+		private var MainPlayer:Player
+		private var KansioNappi:Button
 		private var GS:Image;    //GameScreen a.k.a GameBackground
 		private var BgMusic:Sound
 		
@@ -24,16 +29,39 @@ package screens
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
+		
 		}
 		
 		private function drawGame():void
 		{
+			//MainPlayer = new Player(Assets.getAtlas().getTexture("Tähän"); // Sisälle SpriteSheetin Päähahmon Liikkuminen
+		//	MainPlayer.x = 10;
+			//MainPlayer.y = 20;
+			
+			
 			GS = new Image(Assets.getTexture("InsertGSTähän")); //tai  getAssets
 			this.addChild(GS)
 			
 			BgMusic = (Assets.getSound("BgMusic"));
 			BgMusic.play()	
+			
+			
+			
+			
+			KansioNappi = new Button(Assets.getTexture("Kansionappi")); //Napin emboded class
+			KansioNappi.x = 620;
+			KansioNappi.y = 470;
+			this.addEventListener(Event.TRIGGERED, onInGameClick)			
+				
+		}
 		
+		private function onInGameClick(event:Event):void
+		{
+			var ButtonClicked:Button = event.target as Button;
+		if ((ButtonClicked as Button) == KansioNappi)
+		{
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"Joku"}, true ));  // Kansioon navigoinnin  tapahtuma
+		}
 		}
 		public function disposeTemporarily():void
 	{	

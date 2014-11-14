@@ -11,27 +11,33 @@ package
 	
 		{
 			//Grafiikka
-			[Embed(source="../media/grafiikka/PunaKansioTyhj.png")]
+			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
 			public static const AlkuRuutu:Class;
 			
-			[Embed(source="../media/testiKuvat/AlotusNappi.png")]
-			public static const Nappi:Class;
+			[Embed(source="./media/grafiikka/AlotusNappi.png")]
+			public static const AloitusNappi:Class;
+			
+			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
+			public static const Bgkansio:Class;
+			
+			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
+			public static const KansioNappi:Class;
 			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				
-			[Embed(source="../media/TestiKuvat/mySpritesheet.png")]
+			[Embed(source="./media/grafiikka/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
 			
-			[Embed(source="../media/TestiKuvat/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
+			[Embed(source="./media/grafiikka/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
 			public static const AtlasXmlGame:Class;
 		
-			//Äänet
+			//Äänet  Luultavasti pitää tehdä mute nappi ja äänenvoimakkuuden säätö vaihtoehdon
 			
-			[Embed(source="../media/sounds/testsounds/bgWelcome.mp3")]
+			[Embed(source="../media/./sounds/testsounds/bgWelcome.mp3")]
 			public static const SSmusic:Class;
 			
-			[Embed(source="../media/sounds/testsounds/bgGame.mp3")]
+			[Embed(source="../media/./sounds/testsounds/bgGame.mp3")]
 			public static const BgMusic:Class;	
 			
 			private static var gameSounds:Dictionary = new Dictionary; 									

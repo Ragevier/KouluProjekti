@@ -33,15 +33,11 @@ package screens
 			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
 			
-			bg = new Image(Assets.getTexture("AlkuRuutu"));
+			bg = new Image(Assets.getTexture("AlkuRuutu")); // Aloitus ruudun embode class "   " sisälle
 			this.addChild(bg);
-	
-			//title = new Image(Assets.getTexture("Title"));
-			//title.x = 440;
-			//title.y = 30;
-			//this.addChild(title);
+
 			
-			playBtn = new Button(Assets.getTexture("Nappi"));
+			playBtn = new Button(Assets.getTexture("AloitusNappi"));
 			this.addChild(playBtn);
 			playBtn.x = 450;
 			playBtn.y = 260;
@@ -53,14 +49,13 @@ package screens
 	var buttonClicked:Button = event.target as Button;
 	if ((buttonClicked as Button) == playBtn)
 		{
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"play"}, true)); 
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
 		}
 	}
 	public function disposeTemporarily():void
 	{
 		this.visible = false;
 		
-		//if(this.hasEventListener(Event.ENTER_FRAME)) this.removeEventListener(Event.ADDED_TO_STAGE,)
 	}
 	public function initialize():void
 	{
