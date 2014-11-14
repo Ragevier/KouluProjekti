@@ -11,9 +11,9 @@ package screens
 	{
 		
 		public var BgKansio:Image;
-		public var KansioNappi:Button
+		public var TakaisinPeliin:Button
 		public var LajiNappi:Button
-		
+		// Pitää lisää kaikkien Kategorioitten napit
 		
 		public function Kansio()
 		{
@@ -22,10 +22,8 @@ package screens
 		
 		private function onAddedToStage(event:Event):void
 		{
-			
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-			drawKansio();
-			
+			drawKansio();	
 		}
 		
 		private function drawKansio():void
@@ -38,12 +36,18 @@ package screens
 		LajiNappi.x = 20;
 		LajiNappi.y = 20;
 		
+		TakaisinPeliin = new Button(Assets.getAtlas().getTexture("TakaisinPeliin"));      // toiminta malli
+		this.addChild(TakaisinPeliin)
+		TakaisinPeliin.x = 0;	//  Pitää muokata
+		TakaisinPeliin.y = 0;   // Pitää Muokata
+		
+		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		}
 		
-		private function onInGameClick(event:Event):void
+		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
-		if((ButtonClicked as Button) == KansioNappi)
+		if((ButtonClicked as Button) == TakaisinPeliin)
 		{
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"Napin nimi"}, true));      // Muokkaus tiedossa luultavimmin
 		}

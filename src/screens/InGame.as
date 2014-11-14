@@ -34,10 +34,9 @@ package screens
 		
 		private function drawGame():void
 		{
-			//MainPlayer = new Player(Assets.getAtlas().getTexture("Tähän"); // Sisälle SpriteSheetin Päähahmon Liikkuminen
-		//	MainPlayer.x = 10;
+			//MainPlayer = new Player(Assets.getAtlas().getTexture("Player")); // Sisälle SpriteSheetin Päähahmon Liikkuminen
+			//MainPlayer.x = 10;
 			//MainPlayer.y = 20;
-			
 			
 			GS = new Image(Assets.getTexture("InsertGSTähän")); //tai  getAssets
 			this.addChild(GS)
@@ -45,19 +44,15 @@ package screens
 			BgMusic = (Assets.getSound("BgMusic"));
 			BgMusic.play()	
 			
-			
-			
-			
 			KansioNappi = new Button(Assets.getTexture("Kansionappi")); //Napin emboded class
 			KansioNappi.x = 620;
 			KansioNappi.y = 470;
-			this.addEventListener(Event.TRIGGERED, onInGameClick)			
-				
+			this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		}
 		
 		private function onInGameClick(event:Event):void
 		{
-			var ButtonClicked:Button = event.target as Button;
+		var ButtonClicked:Button = event.target as Button;
 		if ((ButtonClicked as Button) == KansioNappi)
 		{
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"Joku"}, true ));  // Kansioon navigoinnin  tapahtuma
