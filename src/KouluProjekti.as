@@ -1,8 +1,12 @@
 package
 {
 	import events.NavigationEvent;
-	import net.hires.debug.Stats;
 	import flash.display.Sprite;
+	
+	import net.hires.debug.Stats;
+	
+	
+	
 	import starling.core.Starling;
 	
 	[SWF(FrameRate = "60", width = "640", height = "480", backgroundColor="0x333333")]

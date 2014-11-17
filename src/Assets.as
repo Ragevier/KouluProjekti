@@ -11,22 +11,25 @@ package
 	
 		{
 			//Grafiikka
-			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
-			public static const AlkuRuutu:Class;
+			[Embed(source="../media/graphic/Kansiotyhj.png")]
+			public static const KansioTyhj:Class;
 			
-			[Embed(source="./media/grafiikka/AlotusNappi.png")]
+			[Embed(source="./media/graphic/AlotusNappi.png")]
 			public static const AloitusNappi:Class;
 			
-			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
+			[Embed(source="./media/graphic/kansiotyhj.png")]
 			public static const Bgkansio:Class;
+			
+			[Embed(source="../media/graphic/pelitaka.png")]
+			public static const PeliTaka:Class;
 			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				
-			[Embed(source="./media/grafiikka/mySpritesheet.png")]
+			[Embed(source="./media/graphic/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
 			
-			[Embed(source="./media/grafiikka/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
+			[Embed(source="./media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
 			public static const AtlasXmlGame:Class;
 		
 			//Äänet  Luultavasti pitää tehdä mute nappi ja äänenvoimakkuuden säätö vaihtoehdon

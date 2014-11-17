@@ -23,6 +23,8 @@ package screens
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			
+			
 			drawKansio();	
 		}
 		

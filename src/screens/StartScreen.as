@@ -15,7 +15,7 @@ package screens
 			
 		private var bg:Image;
 		private var title:Image;
-		private var MainSCSound:Sound		
+		private var MainSCSound:Sound;		
 		
 		private var playBtn:Button;
 			
@@ -33,11 +33,11 @@ package screens
 			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
 			
-			bg = new Image(Assets.getTexture("AlkuRuutu")); // Aloitus ruudun embode class "   " sisälle
+			bg = new Image(Assets.getTexture("KansioTyhj")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);
 
 			
-			playBtn = new Button(Assets.getTexture("AloitusNappi"));
+			playBtn = new Button(Assets.getTexture("AloitusNappi")); 
 			this.addChild(playBtn);
 			playBtn.x = 450;
 			playBtn.y = 260;

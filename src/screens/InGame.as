@@ -38,7 +38,7 @@ package screens
 			//MainPlayer.x = 0;
 			//MainPlayer.y = 0;
 			
-			BgScreen = new Image(Assets.getTexture("InsertGSTähän")); 
+			BgScreen = new Image(Assets.getTexture("PeliTaka")); 
 			this.addChild(BgScreen)
 			
 			BgMusic = (Assets.getSound("BgMusic"));  //
