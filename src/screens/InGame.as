@@ -15,7 +15,7 @@ package screens
 	
 	{
 		private var MainPlayer:Player;
-		private var KansioNappi:Button;
+		private var KansioBtn:Button;
 		private var BgScreen:Image;    //GameScreen a.k.a GameBackground
 		private var BgMusic:Sound;
 		
@@ -34,30 +34,29 @@ package screens
 		
 		private function drawGame():void
 		{		
-			//MainPlayer = new Player(Assets.getAtlas().getTexture("Player")); // Sisälle SpriteSheetin Päähahmon Liikkuminen
-			//MainPlayer.x = 0;
-			//MainPlayer.y = 0;
 			
 			BgScreen = new Image(Assets.getTexture("PeliTaka")); 
 			this.addChild(BgScreen)
 			
-			BgMusic = (Assets.getSound("BgMusic"));  //
+			BgMusic = (Assets.getSound("BgMusic")); 
 			BgMusic.play()	
 			
-			KansioNappi = new Button(Assets.getTexture("KansioNappi")); //Napin emboded class
-			KansioNappi.x = 630;
-			KansioNappi.y = 470;
+			KansioBtn = new Button(Assets.getTexture("KansioNappi")); //Napin emboded class
+			this.addChild(KansioBtn)
+			KansioBtn.x = 598;
+			KansioBtn.y = 420;
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		}
 		
 		private function onInGameClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
-		if ((ButtonClicked as Button) == KansioNappi)
+		if ((ButtonClicked as Button) == KansioBtn)
 		{
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  // Kansioon navigoinnin  tapahtuma
 		}
 		}
+		
 		public function disposeTemporarily():void
 	{	
 	
@@ -66,7 +65,6 @@ package screens
 	public function initialize():void
 	{
 		this.visible = true;
-		}
-
+	}
 	}
 }

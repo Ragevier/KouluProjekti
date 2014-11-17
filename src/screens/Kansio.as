@@ -13,7 +13,7 @@ package screens
 		public var BgKansio:Image;
 		public var TakaisinPeliin:Button
 		public var LajiNappi:Button
-		// Pitää lisää kaikkien Kategorioitten napit
+		
 		
 		public function Kansio()
 		{
@@ -30,18 +30,18 @@ package screens
 		
 		private function drawKansio():void
 		{
-		BgKansio = new Image(Assets.getTexture("Bgkansio")); //Kansion tausta emboded class
+		BgKansio = new Image(Assets.getTexture("KansioTyhj")); //Kansion tausta emboded class
 		this.addChild(BgKansio)
 		
-		LajiNappi = new Button(Assets.getAtlas().getTexture("LajiNappi")); // Laji napin tilalle Napin oikea class nimi 
+		LajiNappi = new Button(Assets.getTexture("AlotusNappi")); // Laji napin tilalle Napin oikea class nimi 
 		this.addChild(LajiNappi)
 		LajiNappi.x = 20;		// pitää asettaa paremmin
 		LajiNappi.y = 20;		// pitää asettaa paremmin
 		
-		TakaisinPeliin = new Button(Assets.getAtlas().getTexture("TakaisinPeliin"));      // toiminta malli
+		TakaisinPeliin = new Button(Assets.getTexture("KansioNappi"));     
 		this.addChild(TakaisinPeliin)
-		TakaisinPeliin.x = 0;	//  Pitää muokata
-		TakaisinPeliin.y = 0;   // Pitää Muokata
+		TakaisinPeliin.x = 640;	//  Pitää muokata
+		TakaisinPeliin.y = 480;   // Pitää Muokata
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		}
@@ -51,9 +51,8 @@ package screens
 		var ButtonClicked:Button = event.target as Button;
 		if((ButtonClicked as Button) == TakaisinPeliin)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"Napin nimi"}, true));      // Muokkaus tiedossa luultavimmin
-		}
-		
-		}
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"asd"}, true));      
+		}	
 	}
-}
+	}
+}	

@@ -23,9 +23,12 @@ package
 			[Embed(source="../media/graphic/pelitaka.png")]
 			public static const PeliTaka:Class;
 			
-			[Embed(source="../media/graphic/kansionappi.png")]
+			[Embed(source="./media/graphic/kansionappi.png")]
 			public static const KansioNappi:Class;
-				
+			
+			[Embed(source="../media/graphic/kansiotyhj.png")]
+			public static const KansioTyhj:Class;
+			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				

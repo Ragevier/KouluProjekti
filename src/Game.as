@@ -15,6 +15,8 @@ package
 		private var screenInGame:InGame;
 		private var screenKansio:Kansio;
 		
+		
+		
 		public function Game()
 		{		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -31,8 +33,8 @@ package
 		this.addChild(screenStartScreen);
 		screenStartScreen.initialize();
 				
-		}	
-	
+		}
+
 		private function onChangeScreen(event:NavigationEvent):void
 		{
 		 switch (event.params.id)
@@ -41,8 +43,7 @@ package
 			screenStartScreen.disposeTemporarily();
 			screenInGame.initialize();
 			break;	
-		  
-		
+		 
 		 }
 		}
 	}
