@@ -23,8 +23,6 @@ package
 			myStarling.antiAliasing = 1;
 			myStarling.start();
 		
-		}
-		
-		
+		}	
 	}
 }

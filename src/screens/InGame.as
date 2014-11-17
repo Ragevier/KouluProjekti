@@ -14,10 +14,10 @@ package screens
 	public class InGame extends Sprite
 	
 	{
-		private var MainPlayer:Player
-		private var KansioNappi:Button
-		private var GS:Image;    //GameScreen a.k.a GameBackground
-		private var BgMusic:Sound
+		private var MainPlayer:Player;
+		private var KansioNappi:Button;
+		private var BgScreen:Image;    //GameScreen a.k.a GameBackground
+		private var BgMusic:Sound;
 		
 		public function InGame()
 		{
@@ -33,15 +33,15 @@ package screens
 		}
 		
 		private function drawGame():void
-		{
+		{		
 			//MainPlayer = new Player(Assets.getAtlas().getTexture("Player")); // Sisälle SpriteSheetin Päähahmon Liikkuminen
-			//MainPlayer.x = 10;
-			//MainPlayer.y = 20;
+			//MainPlayer.x = 0;
+			//MainPlayer.y = 0;
 			
-			GS = new Image(Assets.getTexture("InsertGSTähän")); //tai  getAssets
-			this.addChild(GS)
+			BgScreen = new Image(Assets.getTexture("InsertGSTähän")); 
+			this.addChild(BgScreen)
 			
-			BgMusic = (Assets.getSound("BgMusic"));
+			BgMusic = (Assets.getSound("BgMusic"));  //
 			BgMusic.play()	
 			
 			KansioNappi = new Button(Assets.getTexture("Kansionappi")); //Napin emboded class

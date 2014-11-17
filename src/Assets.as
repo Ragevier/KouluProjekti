@@ -20,9 +20,6 @@ package
 			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
 			public static const Bgkansio:Class;
 			
-			[Embed(source="./media/grafiikka/PunaKansioTyhj.png")]
-			public static const KansioNappi:Class;
-			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				

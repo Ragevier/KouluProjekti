@@ -13,7 +13,7 @@ package objects
 	
 	public class Player extends Sprite
 	{
-		private var MainPlayerArt:MovieClip;
+	
 		private var key:KeyObject;
 		private var speed:Number = 5;
 		private var xv:Number = 0;

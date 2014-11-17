@@ -33,8 +33,8 @@ package screens
 		
 		LajiNappi = new Button(Assets.getAtlas().getTexture("LajiNappi")); // Laji napin tilalle Napin oikea class nimi 
 		this.addChild(LajiNappi)
-		LajiNappi.x = 20;
-		LajiNappi.y = 20;
+		LajiNappi.x = 20;		// pitää asettaa paremmin
+		LajiNappi.y = 20;		// pitää asettaa paremmin
 		
 		TakaisinPeliin = new Button(Assets.getAtlas().getTexture("TakaisinPeliin"));      // toiminta malli
 		this.addChild(TakaisinPeliin)
@@ -51,6 +51,7 @@ package screens
 		{
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"Napin nimi"}, true));      // Muokkaus tiedossa luultavimmin
 		}
+		
 		}
 	}
 }

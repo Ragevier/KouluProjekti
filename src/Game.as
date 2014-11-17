@@ -28,7 +28,7 @@ package
 		this.addChild(screenInGame)
 			
 		screenStartScreen = new StartScreen();
-		this.addChild(screenStartScreen);
+		this.addChild(screenStartScreen)
 		screenStartScreen.initialize();
 			
 		}	
@@ -40,10 +40,8 @@ package
 			case "AloitusNappi":
 			screenStartScreen.disposeTemporarily();
 			screenInGame.initialize();
-			break;
-			
-	
-		 }
+			break;	
+		  }
 		}
 	}
 }
