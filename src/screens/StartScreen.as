@@ -33,10 +33,9 @@ package screens
 			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
 			
-			bg = new Image(Assets.getTexture("KansioTyhj")); // Aloitus ruudun embode class " " sisälle
+			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);
-
-			
+	
 			playBtn = new Button(Assets.getTexture("AloitusNappi")); 
 			this.addChild(playBtn);
 			playBtn.x = 450;

@@ -44,8 +44,8 @@ package screens
 			BgMusic = (Assets.getSound("BgMusic"));  //
 			BgMusic.play()	
 			
-			KansioNappi = new Button(Assets.getTexture("Kansionappi")); //Napin emboded class
-			KansioNappi.x = 620;
+			KansioNappi = new Button(Assets.getTexture("KansioNappi")); //Napin emboded class
+			KansioNappi.x = 630;
 			KansioNappi.y = 470;
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		}
@@ -55,7 +55,7 @@ package screens
 		var ButtonClicked:Button = event.target as Button;
 		if ((ButtonClicked as Button) == KansioNappi)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"Joku"}, true ));  // Kansioon navigoinnin  tapahtuma
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  // Kansioon navigoinnin  tapahtuma
 		}
 		}
 		public function disposeTemporarily():void
@@ -67,5 +67,6 @@ package screens
 	{
 		this.visible = true;
 		}
+
 	}
 }

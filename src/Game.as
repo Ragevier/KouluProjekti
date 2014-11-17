@@ -28,9 +28,9 @@ package
 		this.addChild(screenInGame)
 			
 		screenStartScreen = new StartScreen();
-		this.addChild(screenStartScreen)
+		this.addChild(screenStartScreen);
 		screenStartScreen.initialize();
-			
+				
 		}	
 	
 		private function onChangeScreen(event:NavigationEvent):void
@@ -41,7 +41,9 @@ package
 			screenStartScreen.disposeTemporarily();
 			screenInGame.initialize();
 			break;	
-		  }
+		  
+		
+		 }
 		}
 	}
 }

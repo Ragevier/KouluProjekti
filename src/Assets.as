@@ -11,8 +11,8 @@ package
 	
 		{
 			//Grafiikka
-			[Embed(source="../media/graphic/Kansiotyhj.png")]
-			public static const KansioTyhj:Class;
+			[Embed(source="../media/graphic/aloitus.png")]
+			public static const Aloitus:Class;
 			
 			[Embed(source="./media/graphic/AlotusNappi.png")]
 			public static const AloitusNappi:Class;
@@ -23,6 +23,9 @@ package
 			[Embed(source="../media/graphic/pelitaka.png")]
 			public static const PeliTaka:Class;
 			
+			[Embed(source="../media/graphic/kansionappi.png")]
+			public static const KansioNappi:Class;
+				
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				

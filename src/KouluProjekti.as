@@ -5,7 +5,7 @@ package
 	
 	import net.hires.debug.Stats;
 	
-	
+	import screens.StartScreen;
 	
 	import starling.core.Starling;
 	
