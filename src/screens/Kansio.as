@@ -22,9 +22,7 @@ package screens
 		
 		private function onAddedToStage(event:Event):void
 		{
-			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-			
-			
+			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawKansio();	
 		}
 		
@@ -51,8 +49,16 @@ package screens
 		var ButtonClicked:Button = event.target as Button;
 		if((ButtonClicked as Button) == TakaisinPeliin)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"asd"}, true));      
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:""}, true));     
 		}	
 	}
+		public function hideTemporarily():void
+		{
+			this.visible = false;
+		}
+		public function kinitialize():void
+		{
+			this.visible = true;
+		}
 	}
 }	

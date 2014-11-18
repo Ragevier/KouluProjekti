@@ -29,7 +29,6 @@ package screens
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
-		
 		}
 		
 		private function drawGame():void
@@ -41,7 +40,11 @@ package screens
 			BgMusic = (Assets.getSound("BgMusic")); 
 			BgMusic.play()	
 			
-			KansioBtn = new Button(Assets.getTexture("KansioNappi")); //Napin emboded class
+			MainPlayer = new Player;
+			MainPlayer.x = stage.width/2;
+			MainPlayer.y = 	stage.height/2;
+			
+			KansioBtn = new Button(Assets.getTexture("KansioNappi")); // Kansioon navigoinnin nappi
 			this.addChild(KansioBtn)
 			KansioBtn.x = 598;
 			KansioBtn.y = 420;
@@ -53,18 +56,26 @@ package screens
 		var ButtonClicked:Button = event.target as Button;
 		if ((ButtonClicked as Button) == KansioBtn)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  // Kansioon navigoinnin  tapahtuma
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  // Kansioon navigoinnin nappi
 		}
 		}
 		
 		public function disposeTemporarily():void
 	{	
 	
-	this.visible = false;
+		this.visible = false;
 	}
-	public function initialize():void
+		public function initialize():void
 	{
 		this.visible = true;
 	}
+		public function hideTemporarily():void
+	{
+		this.visible = true;
+	}
+		public function kInitialize():void
+	{
+		this.visible = false;
+		}
 	}
 }

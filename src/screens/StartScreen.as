@@ -59,8 +59,6 @@ package screens
 	public function initialize():void
 	{
 		this.visible = true;
-		}		
-	
+	}		
 	}
-	
 }	

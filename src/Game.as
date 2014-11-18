@@ -2,6 +2,8 @@ package
 {
 	import events.NavigationEvent;
 	
+	import flash.media.Sound;
+	
 	import screens.InGame;
 	import screens.Kansio;
 	import screens.StartScreen;
@@ -14,7 +16,6 @@ package
 		private var screenStartScreen:StartScreen;
 		private var screenInGame:InGame;
 		private var screenKansio:Kansio;
-		
 		
 		
 		public function Game()
@@ -33,6 +34,14 @@ package
 		this.addChild(screenStartScreen);
 		screenStartScreen.initialize();
 				
+		screenKansio = new Kansio();
+		screenKansio.hideTemporarily();
+		this.addChild(screenKansio);
+			
+		screenInGame = new InGame();
+		this.addChild(screenInGame);
+		screenInGame.kInitialize();
+		
 		}
 
 		private function onChangeScreen(event:NavigationEvent):void
@@ -44,6 +53,13 @@ package
 			screenInGame.initialize();
 			break;	
 		 
+		case "KansioNappi":
+		screenInGame.hideTemporarily();
+		screenKansio.kinitialize();
+		break;
+		
+		
+			 
 		 }
 		}
 	}
