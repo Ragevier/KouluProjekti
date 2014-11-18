@@ -32,34 +32,31 @@ package
 			
 		screenStartScreen = new StartScreen();
 		this.addChild(screenStartScreen);
-		screenStartScreen.initialize();
+		screenStartScreen.initialize();	
 				
 		screenKansio = new Kansio();
-		screenKansio.hideTemporarily();
+		screenKansio.disposeTemporarily();
 		this.addChild(screenKansio);
-			
-		screenInGame = new InGame();
-		this.addChild(screenInGame);
-		screenInGame.kInitialize();
-		
 		}
 
 		private function onChangeScreen(event:NavigationEvent):void
 		{
 		 switch (event.params.id)
 		 { 
-			case "AloitusNappi":
-			screenStartScreen.disposeTemporarily();
-			screenInGame.initialize();
-			break;	
+		case "AloitusNappi":
+		screenStartScreen.disposeTemporarily();
+		screenInGame.initialize();
+		break;	
 		 
 		case "KansioNappi":
-		screenInGame.hideTemporarily();
-		screenKansio.kinitialize();
+		screenInGame.disposeTemporarily();
+		screenKansio.initialize();
 		break;
 		
-		
-			 
+		case "ReturnBtn":
+		screenKansio.disposeTemporarily();
+		screenInGame.initialize();
+		break;
 		 }
 		}
 	}

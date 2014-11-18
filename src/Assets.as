@@ -29,6 +29,16 @@ package
 			[Embed(source="../media/graphic/kansiotyhj.png")]
 			public static const KansioTyhj:Class;
 			
+			[Embed(source="../media/graphic/returnBtn.png")]
+			public static const ReturnBtn:Class;
+			
+			[Embed(source="../media/graphic/lajinappi.png")]
+			public static const LajiNappi:Class;
+			
+			[Embed(source="../media/graphic/pallo.png")]
+			public static const Pallo:Class;
+			
+			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				

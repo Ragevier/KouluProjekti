@@ -14,9 +14,9 @@ package screens
 	public class InGame extends Sprite
 	
 	{
-		private var MainPlayer:Player;
+		private var mainPlayer:Player;
 		private var KansioBtn:Button;
-		private var BgScreen:Image;    //GameScreen a.k.a GameBackground
+		private var BgScreen:Image;    //GameBackground
 		private var BgMusic:Sound;
 		
 		public function InGame()
@@ -40,9 +40,9 @@ package screens
 			BgMusic = (Assets.getSound("BgMusic")); 
 			BgMusic.play()	
 			
-			MainPlayer = new Player;
-			MainPlayer.x = stage.width/2;
-			MainPlayer.y = 	stage.height/2;
+			mainPlayer = new Player;
+			mainPlayer.x = stage.width/2;
+			mainPlayer.y = 	stage.height/2;
 			
 			KansioBtn = new Button(Assets.getTexture("KansioNappi")); // Kansioon navigoinnin nappi
 			this.addChild(KansioBtn)
@@ -69,13 +69,6 @@ package screens
 	{
 		this.visible = true;
 	}
-		public function hideTemporarily():void
-	{
-		this.visible = true;
-	}
-		public function kInitialize():void
-	{
-		this.visible = false;
-		}
+		
 	}
 }

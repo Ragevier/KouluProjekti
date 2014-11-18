@@ -5,6 +5,7 @@ package objects
 	
 	import flash.ui.Keyboard;
 	
+	import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -13,11 +14,13 @@ package objects
 	
 	public class Player extends Sprite
 	{
-	
+		private var PlayerArt:Image;
 		private var key:KeyObject;
 		private var speed:Number = 5;
 		private var xv:Number = 0;
 		private var yv:Number = 0;
+	
+
 		
 		public function Player()
 		{
@@ -28,19 +31,28 @@ package objects
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		
+		CreatePlayerArt();
+
+		}		
 		
-		if(key.isDown(Keyboard.LEFT)){
-			xv -= speed;
-		 	}else if(key.isDown(Keyboard.RIGHT)) {
-			xv += speed;
+		private function CreatePlayerArt():void
+		{
+		//PlayerArt = new MovieClip(Assets.getAtlas().getTexture("Päähenkilö_")); //päähenkilö tähä
+		PlayerArt = new Image(Assets.getTexture("Pallo"));
+		
+			
+			if(key.isDown(Keyboard.LEFT)){
+				xv -= speed;
+			}else if(key.isDown(Keyboard.RIGHT)){
+				xv += speed;
 			}else if(key.isDown(Keyboard.UP)){
-			yv -= speed;
+				yv -= speed;
 			}else if(key.isDown(Keyboard.DOWN)){
-		 	yv += speed;
+				yv += speed;		
 			}
 			x += xv;
 			y += yv;	
-		
-		}		
+			this.addChild(PlayerArt);
+		}
 	}
 }
