@@ -56,10 +56,10 @@ package
 			[Embed(source="../media/./sounds/testsounds/bgGame.mp3")]
 			public static const BgMusic:Class;	
 			
-			public static var Muted:Boolean = false;
-	
 			private static var gameSounds:Dictionary = new Dictionary; 									
-				
+			
+			public static var muted:Boolean = false;	
+			
 			public static function getAtlas():TextureAtlas
 		{
 			if(gameTextureAtlas == null)

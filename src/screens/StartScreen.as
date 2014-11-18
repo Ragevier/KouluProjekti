@@ -31,8 +31,7 @@ package screens
 		private function drawScreen():void
 		{
 			MainSCSound = (Assets.getSound("SSmusic"));
-			MainSCSound.play();
-			
+			MainSCSound.play();	
 			
 			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);
