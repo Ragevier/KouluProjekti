@@ -38,7 +38,7 @@ package screens
 			this.addChild(BgScreen)
 			
 			BgMusic = (Assets.getSound("BgMusic")); 
-			BgMusic.play()	
+			BgMusic.play();	
 			
 			mainPlayer = new Player;
 			mainPlayer.x = stage.width/2;

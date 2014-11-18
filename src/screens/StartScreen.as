@@ -33,6 +33,7 @@ package screens
 			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
 			
+			
 			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);
 	

@@ -33,13 +33,13 @@ package screens
 		
 		LajiNappi = new Button(Assets.getTexture("LajiNappi")); //tilalle Napin oikea class nimi 
 		this.addChild(LajiNappi)
-		LajiNappi.x = 13;	//  Pitää muokata
+		LajiNappi.x = 20;	//  Pitää muokata
 		LajiNappi.y = 20;
 		
 		TakaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
 		this.addChild(TakaisinPeliin)
-		TakaisinPeliin.x = stage.width/2;		// pitää asettaa paremmin
-		TakaisinPeliin.y = stage.height/2;		// pitää asettaa paremmin
+		TakaisinPeliin.x = 598;		// pitää asettaa paremmin
+		TakaisinPeliin.y = 423;		// pitää asettaa paremmin
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		}	
