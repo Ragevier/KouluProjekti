@@ -34,17 +34,15 @@ package
 			
 			[Embed(source="../media/graphic/lajinappi.png")]
 			public static const LajiNappi:Class;
-			
-			[Embed(source="../media/graphic/pallo.png")]
-			public static const Pallo:Class;
-			
-			
+				
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 				
+			//[Embed(source="./media/graphic/mySpritesheet.png")]
+			
 			[Embed(source="./media/graphic/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
-			
+				
 			[Embed(source="./media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
 			public static const AtlasXmlGame:Class;
 		

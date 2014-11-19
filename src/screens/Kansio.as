@@ -39,7 +39,7 @@ package screens
 		TakaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
 		this.addChild(TakaisinPeliin)
 		TakaisinPeliin.x = 598;		// pitää asettaa paremmin
-		TakaisinPeliin.y = 424;		// pitää asettaa paremmin
+		TakaisinPeliin.y = 20;		// pitää asettaa paremmin
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		}	

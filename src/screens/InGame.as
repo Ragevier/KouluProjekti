@@ -40,15 +40,16 @@ package screens
 			BgMusic = (Assets.getSound("BgMusic")); 
 			BgMusic.play();	
 			
-			mainPlayer = new Player;
-			mainPlayer.x = stage.width/2;
-			mainPlayer.y = 	stage.height/2;
-			
 			KansioBtn = new Button(Assets.getTexture("KansioNappi")); // Kansioon navigoinnin nappi
 			this.addChild(KansioBtn)
 			KansioBtn.x = 598;
 			KansioBtn.y = 420;
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
+		
+		mainPlayer = new Player;
+		mainPlayer.x = 320;
+		mainPlayer.y = 240;
+		
 		}
 		
 		private function onInGameClick(event:Event):void

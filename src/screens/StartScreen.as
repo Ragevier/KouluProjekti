@@ -4,7 +4,7 @@ package screens
 	import flash.media.Sound
 	
 	import events.NavigationEvent;
-	
+	import flash.media.SoundMixer
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -30,8 +30,10 @@ package screens
 		
 		private function drawScreen():void
 		{
+			
 			MainSCSound = (Assets.getSound("SSmusic"));
-			MainSCSound.play();	
+			MainSCSound.play();
+			
 			
 			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);

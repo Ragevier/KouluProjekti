@@ -14,7 +14,7 @@ package objects
 	
 	public class Player extends Sprite
 	{
-		private var PlayerArt:Image;
+		private var playerArt:Image;
 		private var key:KeyObject;
 		private var speed:Number = 5;
 		private var xv:Number = 0;
@@ -24,26 +24,24 @@ package objects
 		
 		public function Player()
 		{
-		this.addEventListener(starling.events.Event.ADDED_TO_STAGE,  onAddedToStage);
+		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-		
 		CreatePlayerArt();
 
 		}		
 		
 		private function CreatePlayerArt():void
 		{
-		//PlayerArt = new MovieClip(Assets.getAtlas().getTexture("Päähenkilö_")); //päähenkilö tähä
-		PlayerArt = new Image(Assets.getTexture("Pallo"));
-		
+		//playerArt = new MovieClip(Assets.getAtlas().getTexture("")); //päähenkilö tähä sprite
 			
 			if(key.isDown(Keyboard.LEFT)){
 				xv -= speed;
-			}else if(key.isDown(Keyboard.RIGHT)){
+			}
+			else if(key.isDown(Keyboard.RIGHT)){
 				xv += speed;
 			}else if(key.isDown(Keyboard.UP)){
 				yv -= speed;
@@ -52,7 +50,8 @@ package objects
 			}
 			x += xv;
 			y += yv;	
-			this.addChild(PlayerArt);
+			rotation = xv
+			
 		}
 	}
 }
