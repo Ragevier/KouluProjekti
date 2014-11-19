@@ -33,8 +33,7 @@ package screens
 			
 			MainSCSound = (Assets.getSound("SSmusic"));
 			MainSCSound.play();
-			
-			
+					
 			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
 			this.addChild(bg);
 	
@@ -51,6 +50,7 @@ package screens
 	if ((buttonClicked as Button) == playBtn)
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
+		
 		}
 	}
 	public function disposeTemporarily():void
@@ -61,6 +61,6 @@ package screens
 	public function initialize():void
 	{
 		this.visible = true;
-	}		
+		}		
 	}
 }	

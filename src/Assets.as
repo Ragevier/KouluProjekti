@@ -3,6 +3,7 @@ package
 	import flash.display.Bitmap;
 	import flash.media.Sound;
 	import flash.utils.Dictionary;
+	import flash.media.SoundMixer;
 	
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
@@ -40,10 +41,10 @@ package
 				
 			//[Embed(source="./media/graphic/mySpritesheet.png")]
 			
-			[Embed(source="./media/graphic/mySpritesheet.png")]
+			[Embed(source="../media/graphic/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
 				
-			[Embed(source="./media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
+			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
 			public static const AtlasXmlGame:Class;
 		
 			//Äänet  Luultavasti pitää tehdä mute nappi ja äänenvoimakkuuden säätö vaihtoehdon
@@ -56,9 +57,10 @@ package
 			
 			private static var gameSounds:Dictionary = new Dictionary; 									
 			
+			public static var BgWelcome:Sound;
 			public static var muted:Boolean = false;	
 			
-			public static function getAtlas():TextureAtlas
+			public static function getAtlas():TextureAtlas 
 		{
 			if(gameTextureAtlas == null)
 			{

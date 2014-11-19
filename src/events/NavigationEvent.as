@@ -12,6 +12,7 @@ package events
 		{	
 		super(type, bubbles, data);
 		this.params = _params;
-		}
+		
+	}
 	}
 }

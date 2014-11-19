@@ -3,6 +3,7 @@ package screens
 	import events.NavigationEvent;
 	
 	import flash.media.Sound;
+	import flash.media.SoundMixer
 	
 	import objects.Player;
 	
@@ -34,21 +35,21 @@ package screens
 		private function drawGame():void
 		{		
 			
-			BgScreen = new Image(Assets.getTexture("PeliTaka")); 
+			BgScreen = new Image(Assets.getTexture("PeliTaka"));  					//BgMusic = (Assets.getSound("BgMusic")); 
+																					//	BgMusic.play();	
 			this.addChild(BgScreen)
 			
-			BgMusic = (Assets.getSound("BgMusic")); 
-			BgMusic.play();	
+			
+			mainPlayer = new Player;
+			mainPlayer.x = 320;
+			mainPlayer.y = 240;
+			
 			
 			KansioBtn = new Button(Assets.getTexture("KansioNappi")); // Kansioon navigoinnin nappi
 			this.addChild(KansioBtn)
 			KansioBtn.x = 598;
 			KansioBtn.y = 420;
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
-		
-		mainPlayer = new Player;
-		mainPlayer.x = 320;
-		mainPlayer.y = 240;
 		
 		}
 		
