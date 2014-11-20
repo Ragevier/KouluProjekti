@@ -1,24 +1,30 @@
 package screens
 {
 	import com.greensock.TweenLite;
-	import flash.media.Sound
 	
 	import events.NavigationEvent;
-	import flash.media.SoundMixer
+	
+	import flash.media.Sound;
+	import flash.media.SoundMixer;
+	
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
-		
+	
+	
+	
 	public class StartScreen extends Sprite
 	{
 			
 		private var bg:Image;
 		private var title:Image;
-		private var MainSCSound:Sound;		
+		private var mainSCSound:Sound;		
 		
 		private var playBtn:Button;
-			
+		private var muteBtn:Button;
+		private var randomBtn:Image;
+		private var randBtn:Image;
 		public function StartScreen()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -31,32 +37,44 @@ package screens
 		private function drawScreen():void
 		{
 			
-			MainSCSound = (Assets.getSound("SSmusic"));
-			MainSCSound.play();
-					
-			bg = new Image(Assets.getTexture("Aloitus")); // Aloitus ruudun embode class " " sisälle
+			if(!Sounds.muted)Sounds.alkuRuutu.play();														
+			
+			bg = new Image(Assets.getTexture("Aloitus")); 
 			this.addChild(bg);
 	
 			playBtn = new Button(Assets.getTexture("AloitusNappi")); 
 			this.addChild(playBtn);
 			playBtn.x = 450;
 			playBtn.y = 260;
+		
+			muteBtn = new Button(Assets.getTexture("muteNappi"));
+			this.addChild(muteBtn);
+			muteBtn.x = 20;
+			muteBtn.y = 440;
+			
 			this.addEventListener(Event.TRIGGERED, onMainMenuClick);
+			this.addEventListener(Event.TRIGGERED, onSoundMuted);
 		}
-
+		
+		private function onSoundMuted(event:Event):void
+		{
+			var buttonClicked:Button = event.target as Button;
+			if ((buttonClicked as Button) == muteBtn)
+			{
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));	
+			}
+		}	
 	private function onMainMenuClick (event:Event):void
 	{
 	var buttonClicked:Button = event.target as Button;
 	if ((buttonClicked as Button) == playBtn)
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
-		
 		}
 	}
 	public function disposeTemporarily():void
 	{
 		this.visible = false;
-		
 	}
 	public function initialize():void
 	{

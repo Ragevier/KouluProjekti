@@ -45,19 +45,22 @@ package
 		 switch (event.params.id)
 		 { 
 		case "AloitusNappi":
-		screenStartScreen.disposeTemporarily();
-		screenInGame.initialize();
+		screenStartScreen.disposeTemporarily();	
+		screenInGame.initialize();	
+		
 		break;	
 		 
 		case "KansioNappi":
 		screenInGame.disposeTemporarily();
 		screenKansio.initialize();
+		
 		break;
 		
 		case "ReturnBtn":
 		screenKansio.disposeTemporarily();
 		screenInGame.initialize();
 		break;
+	
 		 }
 		}
 	}

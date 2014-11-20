@@ -2,16 +2,17 @@ package
 {
 	import flash.display.Bitmap;
 	import flash.media.Sound;
-	import flash.utils.Dictionary;
 	import flash.media.SoundMixer;
+	import flash.utils.Dictionary;
 	
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
 	
+	
 	public class Assets 
 	
-		{
-			//Grafiikka
+		{	//Grafiikka
+			
 			[Embed(source="../media/graphic/aloitus.png")]
 			public static const Aloitus:Class;
 			
@@ -35,31 +36,21 @@ package
 			
 			[Embed(source="../media/graphic/lajinappi.png")]
 			public static const LajiNappi:Class;
-				
+			
+			[Embed(source="../media/graphic/pallo.png")]
+			public static const muteNappi:Class
+			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
-				
-			//[Embed(source="./media/graphic/mySpritesheet.png")]
-			
+					
 			[Embed(source="../media/graphic/mySpritesheet.png")]
 			public static const AtlasTextureGame:Class;
 				
-			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]//mySpritesheet.xml// , mimeType="application/octet-stream"
+			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]
 			public static const AtlasXmlGame:Class;
 		
-			//Äänet  Luultavasti pitää tehdä mute nappi ja äänenvoimakkuuden säätö vaihtoehdon
-			
-			[Embed(source="../media/./sounds/testsounds/bgWelcome.mp3")]
-			public static const SSmusic:Class;
-			
-			[Embed(source="../media/./sounds/testsounds/bgGame.mp3")]
-			public static const BgMusic:Class;	
-			
 			private static var gameSounds:Dictionary = new Dictionary; 									
-			
-			public static var BgWelcome:Sound;
-			public static var muted:Boolean = false;	
-			
+				
 			public static function getAtlas():TextureAtlas 
 		{
 			if(gameTextureAtlas == null)
@@ -78,16 +69,6 @@ package
 		gameTextures[name] = Texture.fromBitmap(bitmap);
 		}
 		return gameTextures[name];	
-		}
-		
-		public static function getSound(name:String):Sound	
-		{
-		if(gameSounds[name] == undefined)
-		{
-  		var sound:Sound = new Assets[name]();
-		gameSounds[name] = sound;
-		}
-		return gameSounds[name];
 		}
 	}
 }

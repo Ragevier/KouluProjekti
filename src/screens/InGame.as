@@ -3,7 +3,7 @@ package screens
 	import events.NavigationEvent;
 	
 	import flash.media.Sound;
-	import flash.media.SoundMixer
+	import flash.media.SoundMixer;
 	
 	import objects.Player;
 	
@@ -16,9 +16,12 @@ package screens
 	
 	{
 		private var mainPlayer:Player;
-		private var KansioBtn:Button;
-		private var BgScreen:Image;    //GameBackground
-		private var BgMusic:Sound;
+		private var kansioBtn:Button;
+		private var bgScreen:Image;    //GameBackground
+		private var bgMusic:Sound;
+		private var muteBtn:Button;
+		
+		private var mute:Sound
 		
 		public function InGame()
 		{
@@ -35,36 +38,46 @@ package screens
 		private function drawGame():void
 		{		
 			
-			BgScreen = new Image(Assets.getTexture("PeliTaka"));  					//BgMusic = (Assets.getSound("BgMusic")); 
-																					//	BgMusic.play();	
-			this.addChild(BgScreen)
+			bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
+			this.addChild(bgScreen);
 			
-			
+			if (!Sounds.muted)Sounds.peliMusiikki.play();													
+					
 			mainPlayer = new Player;
 			mainPlayer.x = 320;
 			mainPlayer.y = 240;
+					
+			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
+			this.addChild(kansioBtn);
+			kansioBtn.x = 598;
+			kansioBtn.y = 420;
 			
-			
-			KansioBtn = new Button(Assets.getTexture("KansioNappi")); // Kansioon navigoinnin nappi
-			this.addChild(KansioBtn)
-			KansioBtn.x = 598;
-			KansioBtn.y = 420;
+			muteBtn = new Button(Assets.getTexture("muteNappi"));
+			this.addChild(muteBtn);
+			muteBtn.x = 20;
+			muteBtn.y = 450;
+					
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
-		
+			this.addEventListener(Event.TRIGGERED, onSoundMuted)	
 		}
-		
+		private function onSoundMuted(event:Event):void
+		{
+			var ButtonClicked:Button = event.target as Button;
+			if((ButtonClicked as Button) == muteBtn)
+			{
+				this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));
+			}
+		}
 		private function onInGameClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
-		if ((ButtonClicked as Button) == KansioBtn)
+		if ((ButtonClicked as Button) == kansioBtn)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  // Kansioon navigoinnin nappi
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  	
 		}
-		}
-		
+		}	
 		public function disposeTemporarily():void
 	{	
-	
 		this.visible = false;
 	}
 		public function initialize():void

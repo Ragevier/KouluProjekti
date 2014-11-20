@@ -14,7 +14,8 @@ package screens
 		public var BgKansio:Image;
 		public var LajiNappi:Button;
 		public var TakaisinPeliin:Button;
-			
+		public var muteBtn:Button;
+		
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -28,21 +29,33 @@ package screens
 		
 		private function drawKansio():void
 		{
-		BgKansio = new Image(Assets.getTexture("KansioTyhj")); //Kansion tausta emboded class   Assets.getAtlas().getTexture spritejen kanssa
+		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); //tilalle Napin oikea class nimi 
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
 		this.addChild(LajiNappi)
-		LajiNappi.x = 20;	//  Pitää muokata
+		LajiNappi.x = 20;	
 		LajiNappi.y = 20;
 		
 		TakaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
-		this.addChild(TakaisinPeliin)
-		TakaisinPeliin.x = 598;		// pitää asettaa paremmin
-		TakaisinPeliin.y = 20;		// pitää asettaa paremmin
+		this.addChild(TakaisinPeliin);
+		TakaisinPeliin.x = 598;		
+		TakaisinPeliin.y = 20;		
+		
+		muteBtn = new Button(Assets.getTexture("muteNappi"));
+		this.addChild(muteBtn);
+		muteBtn.x = 20;
+		muteBtn.y = 450;
+		
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
+		this.addEventListener(Event.TRIGGERED, onSoundMute)
+		
 		}	
+		private function onSoundMute():void
+		{
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE,{id:"muteNappi"}, true));
+		}
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
@@ -61,6 +74,5 @@ package screens
 	{
 		this.visible = true;
 	}
-	}
-	
+	}	
 }	

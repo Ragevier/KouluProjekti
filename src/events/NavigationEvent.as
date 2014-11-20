@@ -5,14 +5,16 @@ package events
 	public class NavigationEvent extends Event
 	{
 	public static const CHANGE_SCREEN:String = "ChangeScreen";
-	  
+	public static const SOUND_MUTE:String = "SoundMute";
 	public var params:Object;
+		
 	
-	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false)
-		{	
+	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false, Muted:Boolean=true)
+	
+	{	
 		super(type, bubbles, data);
 		this.params = _params;
 		
-	}
+		}
 	}
 }

@@ -31,7 +31,6 @@ package objects
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		
 		}			
-	
 		
 	public function handleKeyDown(event:KeyboardEvent):void
 	
@@ -53,7 +52,7 @@ package objects
 		// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // Spriten liikkuminen alaspäin tähän	
 			kavely = true;
 			yv += speed
-		}
+		}else//{ mainPlayer = new MovieClip/Assets.getAtlas().getTexure(" ") Paikallaan seisominen
 		x += xv;
 		y += yv;
 	}
@@ -77,13 +76,10 @@ package objects
 			 y += 0;
 		 }
 		}
-	}// Muista ylimääräinen Koodin pätkä 
+	}
 }  
 
-//if(key.isDown(Keyboard.LEFT)){
-	//xv -= speed;
-//x += xv;
-//y += yv;	
+
 
 
 
