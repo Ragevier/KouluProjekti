@@ -15,7 +15,7 @@ package screens
 	public class InGame extends Sprite
 	
 	{
-		private var mainPlayer:Player;
+		private var pelaaja:Player;
 		private var kansioBtn:Button;
 		private var bgScreen:Image;    //GameBackground
 		private var bgMusic:Sound;
@@ -42,11 +42,11 @@ package screens
 			this.addChild(bgScreen);
 			
 			if (!Sounds.muted)Sounds.peliMusiikki.play();													
-					
-			mainPlayer = new Player;
-			mainPlayer.x = 320;
-			mainPlayer.y = 240;
-					
+						
+			pelaaja = new Player;
+			pelaaja.x = 300;
+			pelaaja.y = 320;
+			
 			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 			this.addChild(kansioBtn);
 			kansioBtn.x = 598;

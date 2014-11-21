@@ -49,6 +49,9 @@ package
 			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]
 			public static const AtlasXmlGame:Class;
 		
+			[Embed(source="../media/graphic/pallo.png")]
+			public static const mainCharacter:Class;
+			
 			private static var gameSounds:Dictionary = new Dictionary; 									
 				
 			public static function getAtlas():TextureAtlas 

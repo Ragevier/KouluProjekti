@@ -62,6 +62,7 @@ package screens
 			if ((buttonClicked as Button) == muteBtn)
 			{
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));	
+			
 			}
 		}	
 	private function onMainMenuClick (event:Event):void

@@ -16,7 +16,7 @@ package
 		private var screenStartScreen:StartScreen;
 		private var screenInGame:InGame;
 		private var screenKansio:Kansio;
-		
+		private var muteSounds:Sounds;
 		
 		public function Game()
 		{		
@@ -37,6 +37,7 @@ package
 		screenKansio = new Kansio();
 		screenKansio.disposeTemporarily();
 		this.addChild(screenKansio);
+		
 		
 		}
 
@@ -60,7 +61,7 @@ package
 		screenKansio.disposeTemporarily();
 		screenInGame.initialize();
 		break;
-	
+	   
 		 }
 		}
 	}

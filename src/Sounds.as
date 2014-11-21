@@ -1,9 +1,10 @@
 package
 {
-	import starling.display.Sprite;
-	import flash.media.Sound
-	import flash.media.SoundMixer
+	import flash.media.Sound;
+	import flash.media.SoundMixer;
 	import flash.utils.Dictionary;
+	
+	import starling.display.Sprite;
 	
 	public class Sounds 
 	{
@@ -19,8 +20,8 @@ package
 			
 			public static var alkuRuutu:Sound = new Sounds.SSmusic() as Sound;
 			public static var peliMusiikki:Sound = new Sounds.bgMusic() as Sound;
-			
+		
 			public static var muted:Boolean = false;
 			
-		}
+	}	
 }

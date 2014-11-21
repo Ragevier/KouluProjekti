@@ -9,7 +9,7 @@ package events
 	public var params:Object;
 		
 	
-	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false, Muted:Boolean=true)
+	public function NavigationEvent(type:String, _params:Object =null, bubbles:Boolean=false)
 	
 	{	
 		super(type, bubbles, data);

@@ -47,14 +47,14 @@ package screens
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 		
-		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		this.addEventListener(Event.TRIGGERED, onSoundMute)
 		
 		}	
-		private function onSoundMute():void
+		private function onSoundMute(event:Event):void
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE,{id:"muteNappi"}, true));
+		
 		}
 		private function kansioMenuClick(event:Event):void
 		{

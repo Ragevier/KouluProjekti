@@ -13,8 +13,9 @@ package objects
 	
 	public class Player extends Sprite
 	{
-		private var mainPlayer:MovieClip;
+		private var mainPlayer:Image;
 		private var speed:Number = 5;
+		private var minSpeed:Number = 0;
 		private var xv:Number = 0;
 		private var yv:Number = 0;
 		private var kavely:Boolean = false;
@@ -29,51 +30,53 @@ package objects
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-		
+		playerArt();
 		}			
+		
+		private function playerArt():void
+		{
+			mainPlayer = new Image(Assets.getAtlas().getTexture("mainCharacter"));
+		}
 		
 	public function handleKeyDown(event:KeyboardEvent):void
 	
 	{
-		if(event.keyCode == Keyboard.LEFT){
-		// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); //Spriten liikkumiset vasemmalle tähän	
-			
+		if(event.keyCode == Keyboard.LEFT){	
+			mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter ")); // Vasemmalle
 			kavely = true;
 			xv -= speed;
 		}else if(event.keyCode == Keyboard.RIGHT){
-		// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // Spriten liikkuminen oikealle tähän	
+			mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter")); //oikealle
 			kavely = true;
 			xv += speed;
 		}else if(event.keyCode == Keyboard.UP){
-		// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // spriten liikkuminen ylöspäin tähän	
+			mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter")); //ylöspäin
 			kavely = true;
 			yv -= speed;
 		}else if(event.keyCode == Keyboard.DOWN){
-		// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // Spriten liikkuminen alaspäin tähän	
+			mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter")); // Alaspäin
 			kavely = true;
-			yv += speed
-		}else//{ mainPlayer = new MovieClip/Assets.getAtlas().getTexure(" ") Paikallaan seisominen
-		x += xv;
-		y += yv;
+			yv += speed;
+		}
 	}
 		private function handleKeyUp(event:KeyboardEvent):void
 		{
 		 if(event.keyCode == Keyboard.LEFT){
-			// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // Idle animatio tähän
+		mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter"));	
 			 kavely = false;
-			 x -= 0;
-		 }else if(event.keyCode == Keyboard.RIGHT){
-			// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // idle animato 
+			 x -= minSpeed;
+		 }else if(event.keyCode == Keyboard.RIGHT){	
+		mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter"));
 			 kavely = false;
-			 x += 0;
-		 }else if(event.keyCode == Keyboard.UP){
-			// mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // idle animatio
+			 x += minSpeed;
+		 }else if(event.keyCode == Keyboard.UP){		
+		mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter"));
 			 kavely = false;
-			 y -= 0;  
+			 y -= minSpeed;  
 		 }else if(event.keyCode == Keyboard.DOWN){
-			 // mainPlayer = new MovieClip(Assets.getAtlas().getTexture(" ")); // idle animatio tähän
+			mainPlayer = Image(Assets.getAtlas().getTexture("mainCharacter")); 
 			 kavely = false;
-			 y += 0;
+			 y += minSpeed;
 		 }
 		}
 	}
