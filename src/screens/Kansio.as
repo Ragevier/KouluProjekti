@@ -13,53 +13,84 @@ package screens
 		
 		public var BgKansio:Image;
 		public var LajiNappi:Button;
-		public var TakaisinPeliin:Button;
+		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
-		
+		public var takaisinLajiValikko:Button;
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		}
-		
+		}	
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawKansio();	
 		}
-		
 		private function drawKansio():void
 		{
 		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); // laji napit vaihdettava lajien oikeisiin meno napeihin
+		this.addChild(LajiNappi)
+		LajiNappi.x = 25;	
+		LajiNappi.y = 40;
+		
 		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
 		this.addChild(LajiNappi)
-		LajiNappi.x = 20;	
-		LajiNappi.y = 20;
+		LajiNappi.x = 160;	
+		LajiNappi.y = 40;
 		
-		TakaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
-		this.addChild(TakaisinPeliin);
-		TakaisinPeliin.x = 598;		
-		TakaisinPeliin.y = 20;		
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(LajiNappi)
+		LajiNappi.x = 25;	
+		LajiNappi.y = 140;
 		
-		muteBtn = new Button(Assets.getTexture("muteNappi"));
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(LajiNappi)
+		LajiNappi.x = 160;	
+		LajiNappi.y = 140;
+		
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(LajiNappi)
+		LajiNappi.x = 25;	
+		LajiNappi.y = 240;
+		
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(LajiNappi)
+		LajiNappi.x = 160;	
+		LajiNappi.y = 240;
+		
+		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 	// laji napit vaihdettava lajien oikeisiin meno napeihin
+		this.addChild(LajiNappi)
+		LajiNappi.x = 25;	
+		LajiNappi.y = 340;
+		
+		takaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
+		this.addChild(takaisinPeliin);
+		takaisinPeliin.x = 598;		
+		takaisinPeliin.y = 20;		
+		
+		muteBtn = new Button(Assets.getTexture("lajiValikko"));
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 		
+		takaisinLajiValikko = new Button(Assets.getTexture("muteNappi"));
+		this.addChild(takaisinLajiValikko);
+		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
-		this.addEventListener(Event.TRIGGERED, onSoundMute)
+		this.addEventListener(Event.TRIGGERED, takaisinLajeihin)
 		
 		}	
-		private function onSoundMute(event:Event):void
+		private function takaisinLajeihin(event:Event):void
+	
 		{
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE,{id:"muteNappi"}, true));
-		
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE,{id:"muteNappi"}, true));	
 		}
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
-		if((ButtonClicked as Button) == TakaisinPeliin)
+		if((ButtonClicked as Button) == takaisinPeliin)
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"ReturnBtn"}, true));     
 		}	

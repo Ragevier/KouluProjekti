@@ -38,7 +38,6 @@ package
 		screenKansio.disposeTemporarily();
 		this.addChild(screenKansio);
 		
-		
 		}
 
 		private function onChangeScreen(event:NavigationEvent):void

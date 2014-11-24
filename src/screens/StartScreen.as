@@ -35,8 +35,7 @@ package screens
 		}
 		
 		private function drawScreen():void
-		{
-			
+		{	
 			//if(!Sounds.muted)Sounds.alkuRuutu.play();														
 			
 			bg = new Image(Assets.getTexture("Aloitus")); 
@@ -61,8 +60,7 @@ package screens
 			var buttonClicked:Button = event.target as Button;
 			if ((buttonClicked as Button) == muteBtn)
 			{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));	
-			
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));		
 			}
 		}	
 	private function onMainMenuClick (event:Event):void

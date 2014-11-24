@@ -41,7 +41,7 @@ package screens
 			bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
 			this.addChild(bgScreen);
 			
-			// if (!Sounds.muted)Sounds.peliMusiikki.play();													
+			//if (!Sounds.muted)Sounds.peliMusiikki.play();													
 			
 			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 			this.addChild(kansioBtn);
@@ -54,8 +54,8 @@ package screens
 			muteBtn.y = 450;
 			
 			player = new Player();
-			player.x = 20;
-			player.y = 130;
+			player.x = 320;
+			player.y = 240;
 			this.addChild(player);
 			
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
@@ -66,8 +66,8 @@ package screens
 			var ButtonClicked:Button = event.target as Button;
 			if((ButtonClicked as Button) == muteBtn)
 			{
-				this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));
-			}
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));	
+			}	
 		}
 		private function onInGameClick(event:Event):void
 		{

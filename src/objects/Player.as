@@ -15,7 +15,6 @@ package objects
 	public class Player extends Sprite
 	{
 		private var mainCharacter:Image;
-		private var speed:Number = 10;
 		private var kavely:Boolean = false;
 		
 		public function Player()
@@ -33,21 +32,20 @@ package objects
 		{
 		mainCharacter = new Image(Assets.getTexture("paahenkilo"));	
 		this.addChild(mainCharacter);	
-		
 		}
 		public function handleKeyDown(event:KeyboardEvent):void
 		{
-		if(event.keyCode == Keyboard.LEFT){			
+		if(event.keyCode == Keyboard.LEFT){					
 			kavely = true;
 			x -= 10;
 		}else if(event.keyCode == Keyboard.RIGHT){		
-			kavely = true;
+		kavely = true;
 			x += 10;
 		}else if(event.keyCode == Keyboard.UP){
-			kavely = true;
+		kavely = true;
 			y -= 10;
 		}else if(event.keyCode == Keyboard.DOWN){
-			kavely = true;
+		kavely = true;
 			y += 10;	
 		}	 
 		}
