@@ -40,6 +40,9 @@ package
 			[Embed(source="../media/graphic/pallo.png")]
 			public static const muteNappi:Class
 			
+			[Embed(source="../media/graphic/kanttinen.png")]
+			public static const paahenkilo:Class;
+			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 					
@@ -48,9 +51,6 @@ package
 				
 			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]
 			public static const AtlasXmlGame:Class;
-		
-			[Embed(source="../media/graphic/pallo.png")]
-			public static const mainCharacter:Class;
 			
 			private static var gameSounds:Dictionary = new Dictionary; 									
 				

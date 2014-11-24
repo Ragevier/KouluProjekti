@@ -47,14 +47,12 @@ package
 		 { 
 		case "AloitusNappi":
 		screenStartScreen.disposeTemporarily();	
-		screenInGame.initialize();	
-		
+		screenInGame.initialize();			
 		break;	
-		 
+		
 		case "KansioNappi":
 		screenInGame.disposeTemporarily();
 		screenKansio.initialize();
-		
 		break;
 		
 		case "ReturnBtn":

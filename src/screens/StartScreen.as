@@ -37,7 +37,7 @@ package screens
 		private function drawScreen():void
 		{
 			
-			if(!Sounds.muted)Sounds.alkuRuutu.play();														
+			//if(!Sounds.muted)Sounds.alkuRuutu.play();														
 			
 			bg = new Image(Assets.getTexture("Aloitus")); 
 			this.addChild(bg);

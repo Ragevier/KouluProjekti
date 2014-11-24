@@ -15,7 +15,7 @@ package screens
 	public class InGame extends Sprite
 	
 	{
-		private var pelaaja:Player;
+		private var player:Player;
 		private var kansioBtn:Button;
 		private var bgScreen:Image;    //GameBackground
 		private var bgMusic:Sound;
@@ -41,11 +41,7 @@ package screens
 			bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
 			this.addChild(bgScreen);
 			
-			if (!Sounds.muted)Sounds.peliMusiikki.play();													
-						
-			pelaaja = new Player;
-			pelaaja.x = 300;
-			pelaaja.y = 320;
+			// if (!Sounds.muted)Sounds.peliMusiikki.play();													
 			
 			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 			this.addChild(kansioBtn);
@@ -56,7 +52,12 @@ package screens
 			this.addChild(muteBtn);
 			muteBtn.x = 20;
 			muteBtn.y = 450;
-					
+			
+			player = new Player();
+			player.x = 20;
+			player.y = 130;
+			this.addChild(player);
+			
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
 			this.addEventListener(Event.TRIGGERED, onSoundMuted)	
 		}
