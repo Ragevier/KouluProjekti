@@ -5,7 +5,7 @@ package events
 	public class NavigationEvent extends Event
 	{
 	public static const CHANGE_SCREEN:String = "ChangeScreen";
-	public static const SOUND_MUTE:String = "SoundMute";
+
 	public var params:Object;
 		
 	

@@ -2,10 +2,13 @@ package screens
 {
 	import events.NavigationEvent;
 	
+	import flash.media.Sound;
+	import flash.media.SoundMixer;
+	
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
-	import starling.errors.AbstractClassError;
+	
 	import starling.events.Event;
 	
 	public class Kansio extends Sprite
@@ -16,6 +19,7 @@ package screens
 		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
 		public var takaisinLajiValikko:Button;
+		
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -75,32 +79,38 @@ package screens
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 		
-		takaisinLajiValikko = new Button(Assets.getTexture("muteNappi"));
-		this.addChild(takaisinLajiValikko);
+		muteBtn = new Button(Assets.getTexture("muteNappi"));
+		this.addChild(muteBtn);
+		muteBtn.x = 20;
+		muteBtn.y = 450;
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		this.addEventListener(Event.TRIGGERED, takaisinLajeihin)
-		
 		}	
 		private function takaisinLajeihin(event:Event):void
-	
 		{
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE,{id:"muteNappi"}, true));	
+		var ButtonClicked:Button = event.target as Button;
+		if((ButtonClicked as Button) == muteBtn)	
+		{	
+		
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"muteNappi"}, true)); 
+		SoundMixer.stopAll()	
 		}
+		}	
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
 		if((ButtonClicked as Button) == takaisinPeliin)
 		{
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"ReturnBtn"}, true));     
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"ReturnBtn"}, true));     
+		SoundMixer.stopAll();
+		if (!Sounds.muted)Sounds.peliMusiikki.play();	
 		}	
-	
-		}
+		}	
 		public function disposeTemporarily():void
 		{
 			this.visible = false;
-		}
-		
+		}	
 	public function initialize():void
 	{
 		this.visible = true;

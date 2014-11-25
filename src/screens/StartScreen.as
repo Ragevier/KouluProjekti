@@ -36,7 +36,7 @@ package screens
 		
 		private function drawScreen():void
 		{	
-			//if(!Sounds.muted)Sounds.alkuRuutu.play();														
+			if(!Sounds.muted)Sounds.alkuRuutu.play();														
 			
 			bg = new Image(Assets.getTexture("Aloitus")); 
 			this.addChild(bg);
@@ -58,10 +58,8 @@ package screens
 		private function onSoundMuted(event:Event):void
 		{
 			var buttonClicked:Button = event.target as Button;
-			if ((buttonClicked as Button) == muteBtn)
-			{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));		
-			}
+			if ((buttonClicked as Button) == muteBtn)	
+			SoundMixer.stopAll()
 		}	
 	private function onMainMenuClick (event:Event):void
 	{
@@ -69,7 +67,9 @@ package screens
 	if ((buttonClicked as Button) == playBtn)
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
-		}
+		SoundMixer.stopAll()
+		if (!Sounds.muted)Sounds.peliMusiikki.play();	
+	}
 	}
 	public function disposeTemporarily():void
 	{

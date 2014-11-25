@@ -1,7 +1,6 @@
 package
 {
-	import events.NavigationEvent;
-	
+	import events.NavigationEvent;	
 	import flash.media.Sound;
 	
 	import screens.InGame;
@@ -25,7 +24,7 @@ package
 		public function onAddedToStage(event:Event):void
 		{
 		this.addEventListener(events.NavigationEvent.CHANGE_SCREEN, onChangeScreen);
-		
+			
 		screenInGame = new InGame();	
 		screenInGame.disposeTemporarily();
 		this.addChild(screenInGame)
@@ -39,11 +38,10 @@ package
 		this.addChild(screenKansio);
 		
 		}
-
 		private function onChangeScreen(event:NavigationEvent):void
 		{
-		 switch (event.params.id)
-		 { 
+		 switch (event.params.id)		
+		{ 
 		case "AloitusNappi":
 		screenStartScreen.disposeTemporarily();	
 		screenInGame.initialize();			
@@ -58,7 +56,7 @@ package
 		screenKansio.disposeTemporarily();
 		screenInGame.initialize();
 		break;
-	   
+	   		
 		 }
 		}
 	}

@@ -43,6 +43,9 @@ package
 			[Embed(source="../media/graphic/kanttinen.png")]
 			public static const paahenkilo:Class;
 			
+			[Embed(source="./media/graphic/kansionappi.png")]
+			public static const paahenkiloAlas:Class;
+			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
 					

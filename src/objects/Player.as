@@ -15,6 +15,7 @@ package objects
 	public class Player extends Sprite
 	{
 		private var mainCharacter:Image;
+		private var speed:Number = 10;
 		private var kavely:Boolean = false;
 		
 		public function Player()
@@ -27,6 +28,7 @@ package objects
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		playerArt();
+		
 		}			
 		private function playerArt():void
 		{
@@ -36,17 +38,24 @@ package objects
 		public function handleKeyDown(event:KeyboardEvent):void
 		{
 		if(event.keyCode == Keyboard.LEFT){					
-			kavely = true;
-			x -= 10;
+		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		this.addChild(mainCharacter);
+		x -= 10;
 		}else if(event.keyCode == Keyboard.RIGHT){		
+		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		this.addChild(mainCharacter);
 		kavely = true;
-			x += 10;
+		x += 10;
 		}else if(event.keyCode == Keyboard.UP){
-		kavely = true;
-			y -= 10;
+		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		this.addChild(mainCharacter);
+		kavely = true;	
+		y -= 10;
 		}else if(event.keyCode == Keyboard.DOWN){
+		mainCharacter = new Image(Assets.getTexture("paahenkiloAlas"));
+		this.addChild(mainCharacter);
 		kavely = true;
-			y += 10;	
+		y += 10;	
 		}	 
 		}
 		private function handleKeyUp(event:KeyboardEvent):void

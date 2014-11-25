@@ -4,7 +4,7 @@ package screens
 	
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
-	
+
 	import objects.Player;
 	
 	import starling.display.Button;
@@ -41,8 +41,8 @@ package screens
 			bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
 			this.addChild(bgScreen);
 			
-			//if (!Sounds.muted)Sounds.peliMusiikki.play();													
-			
+			if (!Sounds.muted)Sounds.peliMusiikki.play();													
+		
 			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 			this.addChild(kansioBtn);
 			kansioBtn.x = 598;
@@ -60,23 +60,24 @@ package screens
 			
 			this.addEventListener(Event.TRIGGERED, onInGameClick)							
 			this.addEventListener(Event.TRIGGERED, onSoundMuted)	
-		}
-		private function onSoundMuted(event:Event):void
-		{
+			}
+			private function onSoundMuted(event:Event):void
+			{
 			var ButtonClicked:Button = event.target as Button;
 			if((ButtonClicked as Button) == muteBtn)
-			{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.SOUND_MUTE, {id:"muteNappi"}, true));	
-			}	
+			{	
+			SoundMixer.stopAll()
+			}
 		}
 		private function onInGameClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
 		if ((ButtonClicked as Button) == kansioBtn)
 		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  	
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"KansioNappi"}, true));  	
+		SoundMixer.stopAll()	
 		}
-		}	
+		}
 		public function disposeTemporarily():void
 	{	
 		this.visible = false;
