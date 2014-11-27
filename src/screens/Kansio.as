@@ -8,13 +8,13 @@ package screens
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
-	
 	import starling.events.Event;
 	
 	public class Kansio extends Sprite
 	{
 		
 		public var BgKansio:Image;
+		public var muteBtnTwo:Button;
 		public var LajiNappi:Button;
 		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
@@ -73,44 +73,46 @@ package screens
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 598;		
 		takaisinPeliin.y = 20;		
-		
-		muteBtn = new Button(Assets.getTexture("lajiValikko"));
-		this.addChild(muteBtn);
-		muteBtn.x = 20;
-		muteBtn.y = 450;
-		
+				
 		muteBtn = new Button(Assets.getTexture("muteNappi"));
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
-		this.addEventListener(Event.TRIGGERED, takaisinLajeihin)
+		this.addEventListener(Event.TRIGGERED, soundOff)
 		}	
-		private function takaisinLajeihin(event:Event):void
+		private function soundOff(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
 		if((ButtonClicked as Button) == muteBtn)	
 		{	
-		
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"muteNappi"}, true)); 
+		muteBtn.visible = false;
+		muteBtnTwo = new Button(Assets.getTexture("MuteBtnTwo"));
+		muteBtnTwo.x = 20;
+		muteBtnTwo.y = 450;	
 		SoundMixer.stopAll()	
+		this.addEventListener(Event.TRIGGERED, sounOn)
 		}
 		}	
+		private function sounOn():void
+		{
+		muteBtnTwo.visible = false;
+		muteBtn.visible = true;
+		}
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
 		if((ButtonClicked as Button) == takaisinPeliin)
-		{
+		{		
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"ReturnBtn"}, true));     
-		SoundMixer.stopAll();
-		if (!Sounds.muted)Sounds.peliMusiikki.play();	
+		SoundMixer.stopAll()			
 		}	
 		}	
-		public function disposeTemporarily():void
-		{
-			this.visible = false;
-		}	
+	public function disposeTemporarily():void
+	{
+	this.visible = false;
+	}	
 	public function initialize():void
 	{
 		this.visible = true;

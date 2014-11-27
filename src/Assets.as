@@ -42,27 +42,59 @@ package
 			
 			[Embed(source="../media/graphic/kanttinen.png")]
 			public static const paahenkilo:Class;
-			
-			[Embed(source="./media/graphic/kansionappi.png")]
-			public static const paahenkiloAlas:Class;
+		
+			[Embed(source="./media/graphic/muteBtnTwo.png")]
+			public static const MuteBtnTwo:Class;
 			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
-					
-			[Embed(source="../media/graphic/mySpritesheet.png")]
+			private static var sienetTextureAtlas:TextureAtlas;
+			private static var kasvitTextureAtlas:TextureAtlas;
+			
+			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
 				
-			[Embed(source="../media/graphic/mySpritesheet.xml", mimeType="application/octet-stream")]
-			public static const AtlasXmlGame:Class;
+			[Embed(source="../media/graphic/puut.xml", mimeType="application/octet-stream")]
+			public static const AtlasXmlGame:Class;								
 			
-			private static var gameSounds:Dictionary = new Dictionary; 									
-				
+			[Embed(source="../media/graphic/sienet.png")]
+			public static const Sienet:Class;
+		
+			[Embed(source="../media/graphic/sienet.xml", mimeType="application/octet-stream")]
+			public static const SienetXml:Class;		
+			
+			[Embed(source="../media/graphic/kasvit.png")]
+			public static const Kasvit:Class;
+			
+			[Embed(source="../media/graphic/sienet.xml", mimeType="application/octet-stream")]
+			public static const KasvitXml:Class;
+			
+			public static function getKasvit():TextureAtlas
+			{
+			 if (kasvitTextureAtlas == null)
+			 {
+				var texture:Texture = getTexture("Kasvit");
+				var xml:XML = XML(new KasvitXml());
+			 kasvitTextureAtlas = new TextureAtlas(texture, xml);
+			 }
+			 return kasvitTextureAtlas
+			}
+			public static function getSienet():TextureAtlas	
+		{		
+		if (sienetTextureAtlas == null)
+	{
+		var texture:Texture = getTexture("Sienet");	
+		var xml:XML = XML(new SienetXml());
+		sienetTextureAtlas = new TextureAtlas(texture, xml);
+		}
+		return sienetTextureAtlas;
+		}
 			public static function getAtlas():TextureAtlas 
 		{
-			if(gameTextureAtlas == null)
+			if(gameTextureAtlas == null) //null
 			{
-			var texture:Texture = getTexture("AtlasTextureGame");
-			var xml:XML = XML(new AtlasXmlGame());
+			var texture:Texture = getTexture("AtlasTextureGame");   						
+			var xml:XML = XML(new AtlasXmlGame());								
 			gameTextureAtlas = new TextureAtlas(texture, xml);
 			}
 		return gameTextureAtlas;
