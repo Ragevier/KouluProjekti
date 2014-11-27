@@ -39,14 +39,13 @@ package screens
 		bg = new Image(Assets.getTexture("Aloitus")); 
 		this.addChild(bg);
 	
-	//	playBtn = new Button(Assets.getTexture("AloitusNappi")); 
-		playBtn = new Button(Assets.getAtlas().getTexture("Haapa")); 
+		//playBtn = new Button(Assets.getTexture("AloitusNappi")); 
+		playBtn = new Button(Assets.getSienet().getTexture("herkkutatti")); 
 		this.addChild(playBtn);
 		playBtn.x = 450;
 		playBtn.y = 260;
 		
-	//	muteBtn = new Button(Assets.getTexture("muteNappi"));
-		muteBtn = new Button(Assets.getSienet().getTexture("herkkutatti"));
+		muteBtn = new Button(Assets.getTexture("muteNappi"));
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 440;

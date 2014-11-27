@@ -50,6 +50,7 @@ package
 			private static var gameTextureAtlas:TextureAtlas;
 			private static var sienetTextureAtlas:TextureAtlas;
 			private static var kasvitTextureAtlas:TextureAtlas;
+			private static var paahenkiloTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -69,15 +70,31 @@ package
 			[Embed(source="../media/graphic/sienet.xml", mimeType="application/octet-stream")]
 			public static const KasvitXml:Class;
 			
+			[Embed(source="../media/graphic/paahenkilo.png")]
+			public static const Paahenkilo:Class;
+			
+			[Embed(source="../media/graphic/paahenkilo.xml", mimeType="application/octet-stream")]
+			public static const paahenkiloXml:Class;
+		
+			public static function getPaahenkilo():TextureAtlas
+			{
+			if (paahenkiloTextureAtlas == null)
+			{
+			var texture:Texture = getTexture("Paahenkilo");
+			var xml:XML = XML(new paahenkiloXml);
+			paahenkiloTextureAtlas = new TextureAtlas(texture, xml);
+			}
+			return paahenkiloTextureAtlas;
+			}
 			public static function getKasvit():TextureAtlas
 			{
 			 if (kasvitTextureAtlas == null)
 			 {
-				var texture:Texture = getTexture("Kasvit");
-				var xml:XML = XML(new KasvitXml());
+			var texture:Texture = getTexture("Kasvit");
+			var xml:XML = XML(new KasvitXml());
 			 kasvitTextureAtlas = new TextureAtlas(texture, xml);
 			 }
-			 return kasvitTextureAtlas
+			 return kasvitTextureAtlas;
 			}
 			public static function getSienet():TextureAtlas	
 		{		
@@ -91,7 +108,7 @@ package
 		}
 			public static function getAtlas():TextureAtlas 
 		{
-			if(gameTextureAtlas == null) //null
+			if(gameTextureAtlas == null)
 			{
 			var texture:Texture = getTexture("AtlasTextureGame");   						
 			var xml:XML = XML(new AtlasXmlGame());								

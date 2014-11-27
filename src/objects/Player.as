@@ -29,8 +29,7 @@ package objects
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-		playerArt();
-		
+		playerArt();	
 		}			
 		private function playerArt():void
 		{

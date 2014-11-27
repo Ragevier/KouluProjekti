@@ -21,7 +21,7 @@ package
 			public static var alkuRuutu:Sound = new Sounds.SSmusic() as Sound;
 			public static var peliMusiikki:Sound = new Sounds.bgMusic() as Sound;
 			
-			public static var muted:Boolean = false;													
+			public static var muted:Boolean = true;													
 		
 	}
 }
