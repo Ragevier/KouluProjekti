@@ -15,10 +15,7 @@ package
 			
 			[Embed(source="../media/graphic/aloitus.png")]
 			public static const Aloitus:Class;
-			
-			[Embed(source="./media/graphic/AlotusNappi.png")]
-			public static const AloitusNappi:Class;
-			
+				
 			[Embed(source="./media/graphic/kansiotyhj.png")]
 			public static const Bgkansio:Class;
 			
@@ -51,6 +48,7 @@ package
 			private static var sienetTextureAtlas:TextureAtlas;
 			private static var kasvitTextureAtlas:TextureAtlas;
 			private static var paahenkiloTextureAtlas:TextureAtlas;
+			private static var takaisinNappiTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -75,7 +73,24 @@ package
 			
 			[Embed(source="../media/graphic/paahenkilo.xml", mimeType="application/octet-stream")]
 			public static const paahenkiloXml:Class;
-		
+			
+			[Embed(source="../media/graphic/Takaisin_nappi.png")]
+			public static const Takaisinnappi:Class;
+			
+			[Embed(source="../media/graphic/Takaisin_nappi.xml", mimeType="application/octet-stream")]
+			public static const TakaisinNappiXml:Class;
+			
+			
+			public static function getTakaisinNappi():TextureAtlas
+			{
+				if (takaisinNappiTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("Takaisinnappi");
+					var xml:XML = XML(new TakaisinNappiXml);
+					paahenkiloTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return paahenkiloTextureAtlas;
+			}
 			public static function getPaahenkilo():TextureAtlas
 			{
 			if (paahenkiloTextureAtlas == null)

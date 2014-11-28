@@ -5,7 +5,6 @@ package objects
 	
 	import starling.core.Starling;
 	import starling.display.Image;
-	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
@@ -14,8 +13,11 @@ package objects
 	
 	public class Player extends Sprite
 	{
+		
+		private var mainCharacterIdle:Image;
 		private var mainCharacter:Image;
 		private var speed:Number = 10;
+		
 		private var kavely:Boolean = false;
 		
 		public function Player()
@@ -38,26 +40,26 @@ package objects
 		}
 		public function handleKeyDown(event:KeyboardEvent):void
 		{
-		if(event.keyCode == Keyboard.LEFT){					
-		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
+		if(event.keyCode == Keyboard.LEFT){						
+		mainCharacter = Image(Assets.getPaahenkilo().getTexture("taka1"));	
 		this.addChild(mainCharacter);
+		kavely = true;
 		x -= 10;
 		}else if(event.keyCode == Keyboard.RIGHT){		
-		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
+		mainCharacter = Image(Assets.getPaahenkilo().getTexture("ov1"));
 		this.addChild(mainCharacter);
 		kavely = true;
 		x += 10;
 		}else if(event.keyCode == Keyboard.UP){
-		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
+		mainCharacter = Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacter);
 		kavely = true;	
 		y -= 10;
 		}else if(event.keyCode == Keyboard.DOWN){
-		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
+		mainCharacter = Image(Assets.getPaahenkilo().getTexture("taka1"));
 		this.addChild(mainCharacter);
 		kavely = true;
 		y += 10;	
-		
 		
 		}	 
 		}
