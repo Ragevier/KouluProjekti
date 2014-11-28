@@ -33,30 +33,32 @@ package objects
 		}			
 		private function playerArt():void
 		{
-		mainCharacter = new Image(Assets.getTexture("paahenkilo"));	
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
 		this.addChild(mainCharacter);	
 		}
 		public function handleKeyDown(event:KeyboardEvent):void
 		{
 		if(event.keyCode == Keyboard.LEFT){					
-		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
 		this.addChild(mainCharacter);
-		x -= 5;
+		x -= 10;
 		}else if(event.keyCode == Keyboard.RIGHT){		
-		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
 		this.addChild(mainCharacter);
 		kavely = true;
-		x += 5;
+		x += 10;
 		}else if(event.keyCode == Keyboard.UP){
-		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
 		this.addChild(mainCharacter);
 		kavely = true;	
-		y -= 5;
+		y -= 10;
 		}else if(event.keyCode == Keyboard.DOWN){
-		mainCharacter = new Image(Assets.getTexture("paahenkilo"));
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("paahenkilo"));
 		this.addChild(mainCharacter);
 		kavely = true;
-		y += 5;	
+		y += 10;	
+		
+		
 		}	 
 		}
 		private function handleKeyUp(event:KeyboardEvent):void

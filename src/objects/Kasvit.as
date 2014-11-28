@@ -22,11 +22,11 @@ package objects
 		
 		private function kasvitArt():void
 		{
-		//kasviYks = new Image(Assets.getKasvit().getTexture("ahomansikka"));
-		//this.addChild(kasviYks)
+		kasviYks = new Image(Assets.getKasvit().getTexture("ahomansikka"));
+		this.addChild(kasviYks)
 		
-		//kasviKaksi = new Image(Assets.getKasvit().getTexture("kanerva"));
-		//this.addChild(kasviKaksi)
+		kasviKaksi = new Image(Assets.getKasvit().getTexture("kanerva"));
+		this.addChild(kasviKaksi)
 		}
 	}
 }

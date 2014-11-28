@@ -67,7 +67,7 @@ package
 			[Embed(source="../media/graphic/kasvit.png")]
 			public static const Kasvit:Class;
 			
-			[Embed(source="../media/graphic/sienet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/kasvit.xml", mimeType="application/octet-stream")]
 			public static const KasvitXml:Class;
 			
 			[Embed(source="../media/graphic/paahenkilo.png")]

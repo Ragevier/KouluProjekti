@@ -19,6 +19,8 @@ package screens
 		private var title:Image;
 		private var mainSCSound:Sound;		
 		
+		private var kuva:Image;
+		
 		private var playBtn:Button;
 		private var muteBtn:Button;
 		private var muteBtnTwo:Button
@@ -39,7 +41,6 @@ package screens
 		bg = new Image(Assets.getTexture("Aloitus")); 
 		this.addChild(bg);
 	
-		//playBtn = new Button(Assets.getTexture("AloitusNappi")); 
 		playBtn = new Button(Assets.getSienet().getTexture("herkkutatti")); 
 		this.addChild(playBtn);
 		playBtn.x = 450;
@@ -49,7 +50,12 @@ package screens
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 440;
-			
+		
+		kuva = new Image(Assets.getKasvit().getTexture("Ahomansikka"));
+		this.addChild(kuva)
+		kuva.x = 320;
+		kuva.y = 240;
+		
 		this.addEventListener(Event.TRIGGERED, onMainMenuClick);
 		this.addEventListener(Event.TRIGGERED, soundOff);
 	}
