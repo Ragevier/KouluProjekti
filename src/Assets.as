@@ -85,9 +85,9 @@ package
 			{
 				if (takaisinNappiTextureAtlas == null)
 				{
-					var texture:Texture = getTexture("Takaisinnappi");
-					var xml:XML = XML(new TakaisinNappiXml);
-					paahenkiloTextureAtlas = new TextureAtlas(texture, xml);
+				var texture:Texture = getTexture("Takaisinnappi");
+				var xml:XML = XML(new TakaisinNappiXml);
+				paahenkiloTextureAtlas = new TextureAtlas(texture, xml);
 				}
 				return paahenkiloTextureAtlas;
 			}

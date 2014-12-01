@@ -41,8 +41,8 @@ package screens
 		private function drawGame():void
 		{		
 			
-			//bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
-			//this.addChild(bgScreen);
+		//bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
+		//this.addChild(bgScreen);
 				
 		kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 		this.addChild(kansioBtn);
@@ -55,8 +55,8 @@ package screens
 		muteBtn.y = 450;
 			
 		player = new Player();
-		player.x = 320;
-		player.y = 240;
+		player.x = stage.stageWidth/2;
+		player.y = stage.stageHeight/2;
 		this.addChild(player);
 		
 		this.addEventListener(Event.TRIGGERED, onInGameClick)							
