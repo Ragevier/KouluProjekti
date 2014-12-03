@@ -5,7 +5,9 @@ package screens
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	
+	import objects.Kasvit;
 	import objects.Player;
+	import objects.Sienet;
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -20,6 +22,12 @@ package screens
 		private var bgScreen:Image;    //GameBackground
 		private var bgMusic:Sound;
 		private var muteBtn:Button;
+		private var puuYks:Image;
+		private var puuKaks:Image;
+		private var haapa:Image;
+		private var koivu:Image;
+		private var sienet:Sienet;
+		private var kasvit:Kasvit;
 		
 		private var mute:Boolean = false;
 		
@@ -41,8 +49,8 @@ package screens
 		private function drawGame():void
 		{		
 			
-		//bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
-		//this.addChild(bgScreen);
+		bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
+		this.addChild(bgScreen);
 				
 		kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 		this.addChild(kansioBtn);
@@ -53,11 +61,39 @@ package screens
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 450;
+		
+		puuYks = new Image(Assets.getPuu().getTexture("Mänty"));
+		this.addChild(puuYks);
+		puuYks.x = 200;
+		puuYks.y = 430;
 			
+		puuKaks = new Image(Assets.getPuu().getTexture("Mänty"));
+		this.addChild(puuKaks);
+		puuKaks.x = 35;
+		puuKaks.y = 120;
+		
+		
+		haapa = new Image(Assets.getPuu().getTexture("Haapa"));
+		this.addChild(haapa);
+		haapa.x = 530;
+		haapa.y = 278;
+				
+		muteBtn = new Button(Assets.getTexture("muteNappi"));
+		this.addChild(muteBtn);
+		muteBtn.x = 20;
+		muteBtn.y = 450;
+		
 		player = new Player();
 		player.x = stage.stageWidth/2;
 		player.y = stage.stageHeight/2;
 		this.addChild(player);
+		
+		kasvit = new Kasvit();	
+		this.addChild(kasvit);
+		
+		sienet = new Sienet();
+		this.addChild(sienet);
+		
 		
 		this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		this.addEventListener(Event.TRIGGERED, soundOff)	

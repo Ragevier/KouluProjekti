@@ -19,7 +19,7 @@ package
 			[Embed(source="./media/graphic/kansiotyhj.png")]
 			public static const Bgkansio:Class;
 			
-			[Embed(source="../media/graphic/pelitaka.png")]
+			[Embed(source="../media/graphic/peli_tausta.png")]
 			public static const PeliTaka:Class;
 			
 			[Embed(source="./media/graphic/kansionappi.png")]
@@ -38,7 +38,7 @@ package
 			public static const muteNappi:Class
 			
 			[Embed(source="../media/graphic/kanttinen.png")]
-			public static const paahenkilo:Class;
+			public static const Kuutio:Class;
 		
 			[Embed(source="./media/graphic/muteBtnTwo.png")]
 			public static const MuteBtnTwo:Class;
@@ -49,6 +49,8 @@ package
 			private static var kasvitTextureAtlas:TextureAtlas;
 			private static var paahenkiloTextureAtlas:TextureAtlas;
 			private static var takaisinNappiTextureAtlas:TextureAtlas;
+			private static var puuTextureAtlas:TextureAtlas;
+			private static var aloitusTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -73,13 +75,46 @@ package
 			
 			[Embed(source="../media/graphic/paahenkilo.xml", mimeType="application/octet-stream")]
 			public static const paahenkiloXml:Class;
-			
+			 
 			[Embed(source="../media/graphic/Takaisin_nappi.png")]
 			public static const Takaisinnappi:Class;
 			
 			[Embed(source="../media/graphic/Takaisin_nappi.xml", mimeType="application/octet-stream")]
 			public static const TakaisinNappiXml:Class;
 			
+			[Embed(source="../media/graphic/puut.png")]
+			public static const Puut:Class;
+			
+			[Embed(source="../media/graphic/puut.xml", mimeType="application/octet-stream")]
+			public static const puutXml:Class;
+			
+			[Embed(source="../media/graphic/Aloita_Peli.png")]
+			public static const aloita_Peli:Class;
+			
+			[Embed(source="../media/graphic/Aloita_Peli.xml", mimeType="application/octet-stream")]
+			public static const aloita_PeliXml:Class;
+			
+			public static function getAloitus():TextureAtlas
+			{
+				if (aloitusTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("aloita_Peli");
+					var xml:XML = XML(new aloita_PeliXml);
+					aloitusTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return aloitusTextureAtlas;
+			}
+			
+			public static function getPuu():TextureAtlas
+			{
+				if (puuTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("Puut");
+					var xml:XML = XML(new puutXml);
+					puuTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return puuTextureAtlas;
+			}
 			
 			public static function getTakaisinNappi():TextureAtlas
 			{

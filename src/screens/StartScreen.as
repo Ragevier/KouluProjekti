@@ -41,20 +41,16 @@ package screens
 		bg = new Image(Assets.getTexture("Aloitus")); 
 		this.addChild(bg);
 	
-		playBtn = new Button(Assets.getSienet().getTexture("herkkutatti")); 
+		playBtn = new Button(Assets.getAloitus().getTexture("Aloita_peli0000")); 
 		this.addChild(playBtn);
-		playBtn.x = 450;
-		playBtn.y = 260;
+		playBtn.x = 320
+		playBtn.y = 240;
 		
 		muteBtn = new Button(Assets.getTexture("muteNappi"));
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 440;
-		
-		kuva = new Image(Assets.getKasvit().getTexture("Ahomansikka"));
-		this.addChild(kuva)
-		kuva.x = 320;
-		kuva.y = 240;
+
 		
 		this.addEventListener(Event.TRIGGERED, onMainMenuClick);
 		this.addEventListener(Event.TRIGGERED, soundOff);
