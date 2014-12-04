@@ -1,16 +1,17 @@
 package objects
 {
-	
 	import flash.ui.Keyboard;
+	
+	import objects.Player;
 	
 	import screens.Kansio;
 	
 	import starling.core.Starling;
 	import starling.display.Image;
+	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
-	import starling.events.TouchEvent;
 	
 	
 	public class Player extends Sprite
@@ -18,9 +19,8 @@ package objects
 	
 		private var mainCharacterIdle:Image;
 		private var mainCharacter:Image;
-		private var speed:Number = 10;
-	
 		private var kavely:Boolean = false;
+		private var mainCharacterInGame:Image;
 		
 		public function Player()
 		{
@@ -32,15 +32,21 @@ package objects
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		
-		playerArt();		
-		
+		playerArt();
+		//playerArtOikea();
+		//playerArtVasen();
+		//playerArtTaka();
+		//playerArtEtu();
+		//if(Keyboard.LEFT){
+		//playerArtVasen();
+	//	}
 		}
 		private function playerArt():void
-		{
-		mainCharacterIdle = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
-		this.addChild(mainCharacterIdle)	
+		{	
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
+		this.addChild(mainCharacter)
 		}
-		private function playerArtOikea():void
+		public function playerArtOikea():void
 		{
 		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacter)
@@ -60,22 +66,19 @@ package objects
 		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
 		this.addChild(mainCharacter);
 		}
-		public function handleKeyDown(event:KeyboardEvent):void
+		private function handleKeyDown(event:KeyboardEvent):void
 		{	
 		if(event.keyCode == Keyboard.LEFT){						
-	
+		mainCharacter.visible = false;
 		kavely = true;		
 		x -= 15;
 		}else if(event.keyCode == Keyboard.RIGHT){			
-	
 		kavely = true;
 		x += 15;
 		}else if(event.keyCode == Keyboard.UP){	
-	
 		kavely = true;	
 		y -= 15;
 		}else if(event.keyCode == Keyboard.DOWN){	
-	
 		kavely = true;
 		y += 15;
 		}
@@ -94,4 +97,4 @@ package objects
 		 }
 		}
 	} 
-}  
+} 

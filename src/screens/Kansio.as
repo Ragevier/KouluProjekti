@@ -69,7 +69,7 @@ package screens
 		LajiNappi.x = 25;	
 		LajiNappi.y = 340;
 		
-		//takaisinPeliin = new Button(Assets.getTexture("ReturnBtn"));     
+	    
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 230;		

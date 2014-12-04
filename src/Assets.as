@@ -15,9 +15,6 @@ package
 			
 			[Embed(source="../media/graphic/aloitus.png")]
 			public static const Aloitus:Class;
-				
-			[Embed(source="./media/graphic/kansiotyhj.png")]
-			public static const Bgkansio:Class;
 			
 			[Embed(source="../media/graphic/peli_tausta.png")]
 			public static const PeliTaka:Class;
@@ -105,7 +102,7 @@ package
 				return aloitusTextureAtlas;
 			}
 			
-			public static function getPuu():TextureAtlas
+			public static function getPuut():TextureAtlas
 			{
 				if (puuTextureAtlas == null)
 				{

@@ -1,12 +1,13 @@
 package
 {
 	import events.NavigationEvent;
+	
 	import flash.display.Sprite;
 	
 	import net.hires.debug.Stats;
 	
+	import screens.InGame;
 	import screens.StartScreen;
-	import screens.InGame
 	
 	import starling.core.Starling;
 	
