@@ -65,7 +65,7 @@ package screens
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 		
-		player = new Player();
+		player = new Player();	
 		player.x = stage.stageWidth/2;
 		player.y = stage.stageHeight/2;
 		this.addChild(player);

@@ -9,7 +9,7 @@ package objects
 		private var herkkutatti:Image;
 		private var kantarelli:Image;
 		private var karvarousku:Image;
-		
+		private var punaKarpasSieni:Image
 		public function Sienet()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);	
@@ -38,6 +38,10 @@ package objects
 		karvarousku.x = 520; 	
 		karvarousku.y = 410;	
 		
+		punaKarpasSieni = new Image(Assets.getSienet().getTexture("punakärpässieni"));
+		this.addChild(punaKarpasSieni)	
+		punaKarpasSieni.x = 437; 	
+		punaKarpasSieni.y = 20;
 		}
 	}
 }
