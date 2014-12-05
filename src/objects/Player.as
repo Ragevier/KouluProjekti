@@ -69,7 +69,7 @@ package objects
 		private function handleKeyDown(event:KeyboardEvent):void
 		{	
 		if(event.keyCode == Keyboard.LEFT){						
-		mainCharacter.visible = false;
+
 		kavely = true;		
 		x -= 15;
 		}else if(event.keyCode == Keyboard.RIGHT){			
