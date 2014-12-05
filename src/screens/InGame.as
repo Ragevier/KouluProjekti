@@ -83,6 +83,7 @@ package screens
 		this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		this.addEventListener(Event.TRIGGERED, soundOff)	
 		}
+		
 		private function soundOff(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;

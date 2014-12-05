@@ -17,7 +17,7 @@ package objects
 	public class Player extends Sprite
 	{
 	
-		private var mainCharacterIdle:Image;
+		
 		private var mainCharacter:Image;
 		private var kavely:Boolean = false;
 		private var mainCharacterInGame:Image;
@@ -31,25 +31,25 @@ package objects
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		
-		playerArt();
-		//playerArtOikea();
-		//playerArtVasen();
-		//playerArtTaka();
-		//playerArtEtu();
-		//if(Keyboard.LEFT){
-		//playerArtVasen();
-	//	}
+		if(Keyboard.LEFT == Keyboard.LEFT){
+			playerArt();
+		}
+		this.addChild(mainCharacter)
 		}
 		private function playerArt():void
 		{	
 		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
+			 
 		this.addChild(mainCharacter)
+	
 		}
 		public function playerArtOikea():void
 		{
 		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacter)
+		
 		}
 		private function playerArtVasen():void
 		{	
@@ -69,9 +69,8 @@ package objects
 		private function handleKeyDown(event:KeyboardEvent):void
 		{	
 		if(event.keyCode == Keyboard.LEFT){						
-
 		kavely = true;		
-		x -= 15;
+		x -= 15;	
 		}else if(event.keyCode == Keyboard.RIGHT){			
 		kavely = true;
 		x += 15;
