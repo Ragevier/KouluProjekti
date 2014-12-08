@@ -4,6 +4,7 @@ package screens
 	
 	import events.NavigationEvent;
 	
+	import flash.events.MouseEvent;
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	
@@ -11,14 +12,13 @@ package screens
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
-
 	public class StartScreen extends Sprite
 	{
 			
 		private var bg:Image;
 		private var title:Image;
-		private var mainSCSound:Sound;		
-		
+		private var mainSCSound:Sounds		
+
 		private var kuva:Image;
 		
 		private var playBtn:Button;
@@ -26,6 +26,8 @@ package screens
 		private var muteBtnTwo:Button
 		private var randomBtn:Image;
 		private var randBtn:Image;
+
+		
 		public function StartScreen()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -51,11 +53,9 @@ package screens
 		muteBtn.x = 20;
 		muteBtn.y = 440;
 
-		
 		this.addEventListener(Event.TRIGGERED, onMainMenuClick);
 		this.addEventListener(Event.TRIGGERED, soundOff);
-	}
-		
+	}	
 		private function soundOff(event:Event):void
 		{
 		var buttonClicked:Button = event.target as Button;
@@ -75,7 +75,7 @@ package screens
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == muteBtnTwo){
 			muteBtnTwo.visible = false;
-			muteBtn.visible = true			
+			muteBtn.visible = true;				
 		}
 		}
 		private function onMainMenuClick (event:Event):void
@@ -86,9 +86,17 @@ package screens
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
 		SoundMixer.stopAll()
 		if (!Sounds.muted)Sounds.peliMusiikki.play();	
+		this.addEventListener(MouseEvent.MOUSE_OUT, AloitusToinen);	
 	}
 	}
-	public function disposeTemporarily():void
+		private function AloitusToinen(event:MouseEvent):void
+		{
+		playBtn = Button(Assets.getAloitus().getTexture("Aloita_peli000")); 
+		this.addChild(playBtn);
+		playBtn.x = 320
+		playBtn.y = 240;
+		}
+		public function disposeTemporarily():void
 	{
 		this.visible = false;
 	}

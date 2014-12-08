@@ -1,6 +1,5 @@
 package objects
 {
-	import com.senocular.utils.KeyObject;
 	
 	import flash.ui.Keyboard;
 	
@@ -13,6 +12,9 @@ package objects
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
+	import starling.events.Touch;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	
 	public class Player extends Sprite
 	{
@@ -25,7 +27,9 @@ package objects
 		private var mainCharacterDown:Image;
 		private var kavely:Boolean = false;
 		private var mainCharacterInGame:Image;
-		private var key:KeyObject;
+		
+		private var maxSpeed:Number = 5;
+
 
 		private var mwh:Image
 		
@@ -34,6 +38,7 @@ package objects
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
 		this.addEventListener(KeyboardEvent.KEY_UP, handleKeyUp);
+		
 		}		
 		private function onAddedToStage(event:Event):void
 		{
@@ -61,7 +66,7 @@ package objects
 		}
 		private function playerArtVasen():void
 		{	
-		mainCharacterLeft = new Image(Assets.getPaahenkilo().getTexture("voi"));
+		mainCharacterLeft = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacterLeft)
 		mainCharacterLeft.visible = false;
 		}
@@ -80,29 +85,36 @@ package objects
 		private function handleKeyDown(event:KeyboardEvent):void
 		{	
 		if(event.keyCode == Keyboard.LEFT){						
+		mainCharacterDown.visible = false;
+		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
 		mainCharacterRight.visible = true;
 		kavely = true;
-		x -= 15;	
+		x -= 5;	
 		}else if(event.keyCode == Keyboard.RIGHT){			
+		mainCharacterDown.visible = false;
+		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
 		mainCharacterLeft.visible = true;
 		kavely = true;
-		x += 15;
+		x += 5;
 		}
 		else if(event.keyCode == Keyboard.UP){	
-		
+		mainCharacterLeft.visible = false;
+		mainCharacterDown.visible = false;
 		mainCharacter.visible = false
 		mainCharacterUp.visible = true;
 		kavely = true;	
-		y -= 15;
+		y -= 5;
 		}else if(event.keyCode == Keyboard.DOWN){	
+		mainCharacterLeft.visible = false;
 		mainCharacter.visible = false
 		mainCharacterDown.visible = true;
 		kavely = true;
-		y += 15;
+		y += 5;
 		}
 		this.addChild(mainCharacter);
+			
 		}
 	private function handleKeyUp(event:KeyboardEvent):void	
 	{

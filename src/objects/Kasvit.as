@@ -3,6 +3,8 @@ package objects
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	
 	public class Kasvit extends Sprite
 	{
@@ -20,6 +22,16 @@ package objects
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
+		this.addEventListener(TouchEvent.TOUCH, Klickkaus);
+		}
+		
+		private function Klickkaus(te:TouchEvent):void
+		{
+			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva kasvien Klikkaus
+			ahomansikka.visible = false;			
+		}else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
+			kanerva.visible = false;
+		}
 		}
 		
 		private function onAddedToStage():void

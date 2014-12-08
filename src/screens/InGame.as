@@ -14,6 +14,8 @@ package screens
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	
 	public class InGame extends Sprite
 	
@@ -36,8 +38,8 @@ package screens
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		}
 		
+		}
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
@@ -60,10 +62,6 @@ package screens
 		muteBtn.x = 20;
 		muteBtn.y = 450;
 					
-		muteBtn = new Button(Assets.getTexture("muteNappi"));
-		this.addChild(muteBtn);
-		muteBtn.x = 20;
-		muteBtn.y = 450;
 		
 		player = new Player();	
 		player.x = stage.stageWidth/2;
@@ -78,8 +76,7 @@ package screens
 		
 		puut = new Puut();
 		this.addChild(puut);
-		
-		
+			
 		this.addEventListener(Event.TRIGGERED, onInGameClick)							
 		this.addEventListener(Event.TRIGGERED, soundOff)	
 		}
@@ -119,6 +116,13 @@ package screens
 	{
 		this.visible = true;
 	}
+	 public function Pickup():void
+	 {
+	//Nosto juttu tähän	 
+	 }
+	public function solidTexture(value:Number):void
+	{
 		
+	}
 	}
 }

@@ -5,6 +5,8 @@ package screens
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	
+	import objects.Sienet;
+	
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -12,14 +14,14 @@ package screens
 	
 	public class Kansio extends Sprite
 	{
-		
+		public var kuva:Image;
 		public var BgKansio:Image;
 		public var muteBtnTwo:Button;
 		public var LajiNappi:Button;
 		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
 		public var takaisinLajiValikko:Button;
-		
+
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -68,8 +70,7 @@ package screens
 		this.addChild(LajiNappi)
 		LajiNappi.x = 25;	
 		LajiNappi.y = 340;
-		
-	    
+		    
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 230;		
@@ -79,7 +80,7 @@ package screens
 		this.addChild(muteBtn);
 		muteBtn.x = 20;
 		muteBtn.y = 450;
-		
+				
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
 		this.addEventListener(Event.TRIGGERED, soundOff)
 		}	
@@ -118,5 +119,6 @@ package screens
 	{
 		this.visible = true;
 	}
+	
 	}	
 }	
