@@ -2,11 +2,7 @@ package objects
 {
 	
 	import flash.ui.Keyboard;
-	
-	import objects.Player;
-	
-	import screens.Kansio;
-	
+
 	import starling.core.Starling;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -29,9 +25,10 @@ package objects
 		private var mainCharacterInGame:Image;
 		
 		private var maxSpeed:Number = 5;
+		private var xv:Number = 0;
+		private var yv:Number = 0;
 
-
-		private var mwh:Image
+		
 		
 		public function Player()
 		{
@@ -44,7 +41,6 @@ package objects
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		
-		 
 		playerArt();
 		playerArtOikea();
 		playerArtVasen();
@@ -100,6 +96,7 @@ package objects
 		x += 5;
 		}
 		else if(event.keyCode == Keyboard.UP){	
+		mainCharacterRight.visible = false;
 		mainCharacterLeft.visible = false;
 		mainCharacterDown.visible = false;
 		mainCharacter.visible = false

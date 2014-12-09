@@ -11,65 +11,71 @@ package screens
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	
 	public class Kansio extends Sprite
 	{
 		public var kuva:Image;
 		public var BgKansio:Image;
 		public var muteBtnTwo:Button;
-		public var LajiNappi:Button;
+		public var lajiNappi:Button;
 		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
 		public var takaisinLajiValikko:Button;
 
+		public var kuvaSieni:Sienet;
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		}	
+	
+		}
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawKansio();	
 		}
+		
 		private function drawKansio():void
 		{
+			
 		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); // laji napit vaihdettava lajien oikeisiin meno napeihin
-		this.addChild(LajiNappi)
-		LajiNappi.x = 25;	
-		LajiNappi.y = 40;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); // laji napit vaihdettava lajien oikeisiin meno napeihin
+		this.addChild(lajiNappi)
+		lajiNappi.x = 25;	
+		lajiNappi.y = 40;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(LajiNappi)
-		LajiNappi.x = 160;	
-		LajiNappi.y = 40;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(lajiNappi)
+		lajiNappi.x = 160;	
+		lajiNappi.y = 40;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(LajiNappi)
-		LajiNappi.x = 25;	
-		LajiNappi.y = 140;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(lajiNappi)
+		lajiNappi.x = 25;	
+		lajiNappi.y = 140;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(LajiNappi)
-		LajiNappi.x = 160;	
-		LajiNappi.y = 140;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(lajiNappi)
+		lajiNappi.x = 160;	
+		lajiNappi.y = 140;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(LajiNappi)
-		LajiNappi.x = 25;	
-		LajiNappi.y = 240;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(lajiNappi)
+		lajiNappi.x = 25;	
+		lajiNappi.y = 240;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(LajiNappi)
-		LajiNappi.x = 160;	
-		LajiNappi.y = 240;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
+		this.addChild(lajiNappi)
+		lajiNappi.x = 160;	
+		lajiNappi.y = 240;
 		
-		LajiNappi = new Button(Assets.getTexture("LajiNappi")); 	// laji napit vaihdettava lajien oikeisiin meno napeihin
-		this.addChild(LajiNappi)
-		LajiNappi.x = 25;	
-		LajiNappi.y = 340;
+		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 	// laji napit vaihdettava lajien oikeisiin meno napeihin
+		this.addChild(lajiNappi)
+		lajiNappi.x = 25;	
+		lajiNappi.y = 340;
 		    
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
 		this.addChild(takaisinPeliin);
@@ -95,7 +101,8 @@ package screens
 		muteBtnTwo.y = 450;	
 		SoundMixer.stopAll()	
 		this.addEventListener(Event.TRIGGERED, sounOn)
-		}
+		lajiNappi.visible = false;
+}
 		}	
 		private function sounOn():void
 		{

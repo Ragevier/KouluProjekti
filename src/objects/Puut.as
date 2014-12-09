@@ -5,10 +5,9 @@ package objects
 	import starling.events.Event;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
-
 	public class Puut extends Sprite
 	{
-		
+	
 		private var manty:Image;
 		private var mantyKaks:Image;
 		private var haapa:Image;
@@ -19,13 +18,25 @@ package objects
 		public function Puut()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		this.addEventListener(TouchEvent.TOUCH, klickkaus);
+		this.addEventListener(TouchEvent.TOUCH, onTouch);
 		}
 		
-		private function klickkaus(te:TouchEvent):void
+		private function onTouch(te:TouchEvent):void
 		{
-		if(te.getTouch(this, TouchPhase.BEGAN)){
+		if(te.getTouch(koivu, TouchPhase.BEGAN)){
 			koivu.visible = false;
+		}else if(te.getTouch(pihlajaKaks, TouchPhase.BEGAN)){
+			pihlajaKaks.visible = false;
+		}else if(te.getTouch(manty, TouchPhase.BEGAN)){
+			manty.visible = false;
+		}else if(te.getTouch(mantyKaks, TouchPhase.BEGAN)){
+			mantyKaks.visible = false;
+		}else if(te.getTouch(haapa, TouchPhase.BEGAN)){
+			haapa.visible = false;
+		}else if(te.getTouch(pihlaja, TouchPhase.BEGAN)){
+			pihlaja.visible = false;
+		}else if(te.getTouch(vaahtera, TouchPhase.BEGAN)){
+			vaahtera.visible = false;
 		}
 		}
 		
@@ -38,6 +49,7 @@ package objects
 		private function puuArt():void
 		{
 		koivu = new Image(Assets.getPuut().getTexture("Koivu"));
+		
 		this.addChild(koivu)
 		koivu.x = 207;
 		koivu.y = 46;
@@ -54,8 +66,8 @@ package objects
 		
 		mantyKaks = new Image(Assets.getPuut().getTexture("Mänty"));
 		this.addChild(mantyKaks);
-		mantyKaks.x = 278;
-		mantyKaks.y = 530;	
+		manty.x = 278;
+		manty.y = 530;	
 		
 		haapa = new Image(Assets.getPuut().getTexture("Haapa"));
 		this.addChild(haapa);

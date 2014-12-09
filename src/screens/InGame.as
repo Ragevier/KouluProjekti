@@ -4,6 +4,7 @@ package screens
 	
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
+	import flash.ui.Keyboard;
 	
 	import objects.Kasvit;
 	import objects.Player;
@@ -14,6 +15,7 @@ package screens
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.KeyboardEvent;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
 	
@@ -22,7 +24,7 @@ package screens
 	{
 		private var player:Player;
 		private var kansioBtn:Button;
-		private var bgScreen:Image;    //GameBackground
+		private var bgScreen:Image;    
 		private var bgMusic:Sound;
 		private var muteBtn:Button;
 
@@ -31,6 +33,7 @@ package screens
 		private var puut:Puut;
 		private var mute:Boolean = false;
 		
+		private var valikkoRuutu:Valikko;
 		
 		private var muteBtnTwo:Button;
 		
@@ -38,7 +41,14 @@ package screens
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
+		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
+		}
 		
+		private function valikko(event:KeyboardEvent):void
+		{
+		if(event.keyCode == Keyboard.ESCAPE){
+// valikko
+		}
 		}
 		private function onAddedToStage(event:Event):void
 		{
@@ -120,9 +130,5 @@ package screens
 	 {
 	//Nosto juttu tähän	 
 	 }
-	public function solidTexture(value:Number):void
-	{
-		
-	}
 	}
 }

@@ -18,12 +18,16 @@ package objects
 		this.addEventListener(TouchEvent.TOUCH, onTouch);   // tarvittava toimiva hiiri klikkaus
 		}
 		
-		private function onTouch(te:TouchEvent):void
+		public function onTouch(te:TouchEvent):void
 		{
-		if(te.getTouch(herkkutatti, TouchPhase.ENDED)){    //Toimiva hiiri Klikkaus
+		if(te.getTouch(herkkutatti, TouchPhase.BEGAN)){    //Toimiva hiiri Klikkaus
 		herkkutatti.visible = false;
-		}else if(te.getTouch(karvarousku, TouchPhase.ENDED)){        // Muista Jokaiselle oma muuten kaikki menee samasta 
+		}else if(te.getTouch(karvarousku, TouchPhase.BEGAN)){        // Muista Jokaiselle oma muuten kaikki menee samasta 
 		karvarousku.visible = false;
+		}else if(te.getTouch(kantarelli, TouchPhase.BEGAN)){
+		kantarelli.visible = false;	
+		}else if(te.getTouch(punaKarpasSieni, TouchPhase.BEGAN)){
+		punaKarpasSieni.visible = false;	
 		}
 		
 		}

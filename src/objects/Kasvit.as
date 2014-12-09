@@ -22,18 +22,31 @@ package objects
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		this.addEventListener(TouchEvent.TOUCH, Klickkaus);
+		this.addEventListener(TouchEvent.TOUCH, onTouch);
 		}
 		
-		private function Klickkaus(te:TouchEvent):void
+		private function onTouch(te:TouchEvent):void
 		{
-			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva kasvien Klikkaus
-			ahomansikka.visible = false;			
+			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva ahomansikka klikkaus
+			ahomansikka.visible = false;	
 		}else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
 			kanerva.visible = false;
+		}else if(te.getTouch(karpalo, TouchPhase.BEGAN)){
+			karpalo.visible = false;						// piilottaa kuvakkeet testin vuoksi
+		}else if(te.getTouch(kielo, TouchPhase.BEGAN)){
+		kielo.visible = false;
+		}else if(te.getTouch(kieloYks, TouchPhase.BEGAN)){
+			kieloYks.visible = false;
+		}else if(te.getTouch(kaenkaali, TouchPhase.BEGAN)){
+			kaenkaali.visible = false;
+		}else if(te.getTouch(lakka, TouchPhase.BEGAN)){
+			lakka.visible = false;
+		}else if(te.getTouch(mustikka, TouchPhase.BEGAN)){
+			mustikka.visible = false;
+		}else if(te.getTouch(leskenlehti, TouchPhase.BEGAN)){
+			leskenlehti.visible = false;
 		}
 		}
-		
 		private function onAddedToStage():void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
