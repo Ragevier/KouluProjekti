@@ -93,7 +93,7 @@ package screens
 		{
 		playBtn = Button(Assets.getAloitus().getTexture("Aloita_peli000")); 
 		this.addChild(playBtn);
-		playBtn.x = 320
+		playBtn.x = 320;
 		playBtn.y = 240;
 		}
 		public function disposeTemporarily():void

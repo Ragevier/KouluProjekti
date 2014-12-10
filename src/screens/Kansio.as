@@ -99,12 +99,10 @@ package screens
 		takaisinPeliin.x = 230;		
 		takaisinPeliin.y = 20;		
 	
-		
 		valikkoRuutu = new Valikko;
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)
 			
-		
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
 		}	
 			
