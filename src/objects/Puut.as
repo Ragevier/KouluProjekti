@@ -23,7 +23,7 @@ package objects
 		
 		private function onTouch(te:TouchEvent):void
 		{
-		if(te.getTouch(koivu, TouchPhase.BEGAN)){
+		if(te.getTouch(koivu, TouchPhase.BEGAN)){ // Puitten hiirellä klikkaus
 			koivu.visible = false;
 		}else if(te.getTouch(pihlajaKaks, TouchPhase.BEGAN)){
 			pihlajaKaks.visible = false;

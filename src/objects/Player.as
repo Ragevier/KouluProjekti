@@ -2,7 +2,7 @@ package objects
 {
 	
 	import flash.ui.Keyboard;
-
+	
 	import starling.core.Starling;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -23,6 +23,7 @@ package objects
 		private var mainCharacterDown:Image;
 		private var kavely:Boolean = false;
 		private var mainCharacterInGame:Image;
+		private var hitIn:Boolean;
 		
 		private var maxSpeed:Number = 5;
 		private var xv:Number = 0;
@@ -35,8 +36,13 @@ package objects
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
 		this.addEventListener(KeyboardEvent.KEY_UP, handleKeyUp);
-		
+		this.addEventListener(Event.ENTER_FRAME, onHit)
 		}		
+		
+		private function onHit(event:Event):void
+		{
+		
+		}
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
@@ -47,38 +53,38 @@ package objects
 		playerArtTaka();
 		playerArtEtu();
 		}
-		private function playerArt():void
+		public function playerArt():void
 		{	
 		mainCharacter = new Image(Assets.getPaahenkilo().getTexture("etu1"));		 
 		this.addChild(mainCharacter)
 		mainCharacter.visible = true;
 		}
-		private function playerArtOikea():void
+		public function playerArtOikea():void
 		{
 		
 		mainCharacterRight = new Image(Assets.getPaahenkilo().getTexture("ov1"));
 		this.addChild(mainCharacterRight)
 		mainCharacterRight.visible = false;
 		}
-		private function playerArtVasen():void
+		public function playerArtVasen():void
 		{	
 		mainCharacterLeft = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacterLeft)
 		mainCharacterLeft.visible = false;
 		}
-		private function playerArtTaka():void
+		public function playerArtTaka():void
 		{
 		mainCharacterUp = new Image(Assets.getPaahenkilo().getTexture("taka1"));
 		this.addChild(mainCharacterUp)
 		mainCharacterUp.visible = false;
 		}
-		private function playerArtEtu():void
+		public function playerArtEtu():void
 		{
 		mainCharacterDown = new Image(Assets.getPaahenkilo().getTexture("etu1"));	
 		this.addChild(mainCharacterDown);
 		mainCharacterDown.visible = false;
 		}
-		private function handleKeyDown(event:KeyboardEvent):void
+		public function handleKeyDown(event:KeyboardEvent):void
 		{	
 		if(event.keyCode == Keyboard.LEFT){						
 		mainCharacterDown.visible = false;

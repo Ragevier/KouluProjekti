@@ -43,17 +43,12 @@ package screens
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
 		}
-		
-		private function valikko(event:KeyboardEvent):void
-		{
-		if(event.keyCode == Keyboard.ESCAPE){
-// valikko
-		}
-		}
+	
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
+			
 		}
 		
 		private function drawGame():void
@@ -66,13 +61,7 @@ package screens
 		this.addChild(kansioBtn);
 		kansioBtn.x = 598;
 		kansioBtn.y = 420;
-			
-		muteBtn = new Button(Assets.getTexture("muteNappi"));
-		this.addChild(muteBtn);
-		muteBtn.x = 20;
-		muteBtn.y = 450;
-					
-		
+								
 		player = new Player();	
 		player.x = stage.stageWidth/2;
 		player.y = stage.stageHeight/2;
@@ -86,29 +75,14 @@ package screens
 		
 		puut = new Puut();
 		this.addChild(puut);
-			
-		this.addEventListener(Event.TRIGGERED, onInGameClick)							
-		this.addEventListener(Event.TRIGGERED, soundOff)	
-		}
 		
-		private function soundOff(event:Event):void
-		{
-		var ButtonClicked:Button = event.target as Button;
-		if((ButtonClicked as Button) == muteBtn)
-		{	
-		muteBtn.visible = false;
-		SoundMixer.stopAll();
-		muteBtnTwo = new Button(Assets.getTexture("muteBtnTwo"));
-		muteBtnTwo.x  = 20;
-		muteBtnTwo.y = 450;
-		this.addEventListener(Event.TRIGGERED, soundOn)
-		}			
-		}		
-		private function soundOn():void
-		{	
-			muteBtnTwo.visible = false;
-			muteBtn.visible = true;	
+		valikkoRuutu = new Valikko();
+		valikkoRuutu.visible = false;
+		this.addChild(valikkoRuutu)	 
+				
+		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
+	
 			private function onInGameClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
@@ -126,9 +100,15 @@ package screens
 	{
 		this.visible = true;
 	}
-	 public function Pickup():void
-	 {
-	//Nosto juttu tähän	 
-	 }
-	}
+		
+		private function valikko(event:KeyboardEvent):void
+		{
+		if(event.keyCode == Keyboard.ESCAPE){
+		if(valikkoRuutu.visible == false){          
+			valikkoRuutu.visible = true
+			}else{valikkoRuutu.visible = false}
+			
+			}	
+		}	
+	}	
 }

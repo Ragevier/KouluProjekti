@@ -5,7 +5,9 @@ package objects
 	import starling.events.Event;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
-
+	
+	import objects.Player;
+	
 	public class Sienet extends Sprite
 	{
 		private var herkkutatti:Image;
@@ -22,16 +24,18 @@ package objects
 		{
 		if(te.getTouch(herkkutatti, TouchPhase.BEGAN)){    //Toimiva hiiri Klikkaus
 		herkkutatti.visible = false;
+		
 		}else if(te.getTouch(karvarousku, TouchPhase.BEGAN)){        // Muista Jokaiselle oma muuten kaikki menee samasta 
 		karvarousku.visible = false;
+		
 		}else if(te.getTouch(kantarelli, TouchPhase.BEGAN)){
 		kantarelli.visible = false;	
+		
 		}else if(te.getTouch(punaKarpasSieni, TouchPhase.BEGAN)){
 		punaKarpasSieni.visible = false;	
 		}
 		
 		}
-		
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);

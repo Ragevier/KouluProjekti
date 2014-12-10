@@ -17,6 +17,7 @@ package
 		private var screenKansio:Kansio;
 		private var soundMute:Sounds;
 		
+		
 		public function Game()
 		{		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -38,6 +39,7 @@ package
 		this.addChild(screenKansio);
 	
 		
+		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
 		{
@@ -58,7 +60,11 @@ package
 		screenInGame.initialize();
 		break;
 	   	
-		
+		case "Takaisin_nappi0003":
+		screenInGame.disposeTemporarily()	
+		screenKansio.disposeTemporarily()
+		screenStartScreen.initialize()
+		break;
 		 }
 		}
 	}

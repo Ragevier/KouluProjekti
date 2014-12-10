@@ -4,6 +4,7 @@ package screens
 	
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
+	import flash.ui.Keyboard;
 	
 	import objects.Sienet;
 	
@@ -11,6 +12,7 @@ package screens
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.KeyboardEvent;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
 	
@@ -25,17 +27,32 @@ package screens
 		public var takaisinLajiValikko:Button;
 
 		public var kuvaSieni:Sienet;
+		public var valikkoRuutu:Valikko;
+		
+		
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-	
+		this.addEventListener(starling.events.KeyboardEvent.KEY_DOWN, keyboard)
+		}
+		
+		private function keyboard(event:KeyboardEvent):void
+		{
+		if(event.keyCode == Keyboard.ESCAPE){
+			
+			if(event.keyCode == Keyboard.ESCAPE){
+				if(valikkoRuutu.visible == false){
+					valikkoRuutu.visible = true
+				}else{valikkoRuutu.visible = false}
+		}		
+		}
 		}
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawKansio();	
 		}
-		
+
 		private function drawKansio():void
 		{
 			
@@ -81,34 +98,16 @@ package screens
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 230;		
 		takaisinPeliin.y = 20;		
-				
-		muteBtn = new Button(Assets.getTexture("muteNappi"));
-		this.addChild(muteBtn);
-		muteBtn.x = 20;
-		muteBtn.y = 450;
-				
-		this.addEventListener(Event.TRIGGERED, kansioMenuClick)
-		this.addEventListener(Event.TRIGGERED, soundOff)
+	
+		
+		valikkoRuutu = new Valikko;
+		valikkoRuutu.visible = false;
+		this.addChild(valikkoRuutu)
+			
+		
+		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
 		}	
-		private function soundOff(event:Event):void
-		{
-		var ButtonClicked:Button = event.target as Button;
-		if((ButtonClicked as Button) == muteBtn)	
-		{	
-		muteBtn.visible = false;
-		muteBtnTwo = new Button(Assets.getTexture("MuteBtnTwo"));
-		muteBtnTwo.x = 20;
-		muteBtnTwo.y = 450;	
-		SoundMixer.stopAll()	
-		this.addEventListener(Event.TRIGGERED, sounOn)
-		lajiNappi.visible = false;
-}
-		}	
-		private function sounOn():void
-		{
-		muteBtnTwo.visible = false;
-		muteBtn.visible = true;
-		}
+			
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
