@@ -22,7 +22,6 @@ package screens
 		private var kuva:Image;
 		
 		private var playBtn:Button;
-		private var muteBtn:Button;
 		private var muteBtnTwo:Button
 		private var randomBtn:Image;
 		private var randBtn:Image;
@@ -43,40 +42,11 @@ package screens
 		bg = new Image(Assets.getTexture("Aloitus")); 
 		this.addChild(bg);
 	
-		playBtn = new Button(Assets.getAloitus().getTexture("Aloita_peli0000")); 
+		playBtn = new Button(Assets.getTexture("aloitusNappi")); 
 		this.addChild(playBtn);
-		playBtn.x = 320
-		playBtn.y = 240;
-		
-		muteBtn = new Button(Assets.getTexture("muteNappi"));
-		this.addChild(muteBtn);
-		muteBtn.x = 20;
-		muteBtn.y = 440;
 
 		this.addEventListener(Event.TRIGGERED, onMainMenuClick);
-		this.addEventListener(Event.TRIGGERED, soundOff);
-	}	
-		private function soundOff(event:Event):void
-		{
-		var buttonClicked:Button = event.target as Button;
-		if ((buttonClicked as Button) == muteBtn){	
-		muteBtn.visible = false;
-		SoundMixer.stopAll()	
-			
-		muteBtnTwo = new Button(Assets.getTexture("MuteBtnTwo"));
-		this.addChild(muteBtnTwo)
-		muteBtnTwo.x = 20;
-		muteBtnTwo.y = 440;	
-		this.addEventListener(Event.TRIGGERED, SoundOn);
-			}
-		}			
-		private function SoundOn(event:Event):void
-		{
-		var buttonClicked:Button = event.target as Button;
-		if((buttonClicked as Button) == muteBtnTwo){
-			muteBtnTwo.visible = false;
-			muteBtn.visible = true;				
-		}
+	
 		}
 		private function onMainMenuClick (event:Event):void
 	{
@@ -86,16 +56,8 @@ package screens
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
 		SoundMixer.stopAll()
 		if (!Sounds.muted)Sounds.peliMusiikki.play();	
-		this.addEventListener(MouseEvent.MOUSE_OUT, AloitusToinen);	
 	}
 	}
-		private function AloitusToinen(event:MouseEvent):void
-		{
-		playBtn = Button(Assets.getAloitus().getTexture("Aloita_peli000")); 
-		this.addChild(playBtn);
-		playBtn.x = 320;
-		playBtn.y = 240;
-		}
 		public function disposeTemporarily():void
 	{
 		this.visible = false;

@@ -26,34 +26,40 @@ package screens
 		private var kansioBtn:Button;
 		private var bgScreen:Image;    
 		private var bgMusic:Sound;
-		private var muteBtn:Button;
 
 		private var sienet:Sienet;
 		private var kasvit:Kasvit;
 		private var puut:Puut;
-		private var mute:Boolean = false;
+
+		private var hitting:Boolean
+		private var onHit:Boolean
 		
 		private var valikkoRuutu:Valikko;
 		
-		private var muteBtnTwo:Button;
 		
 		public function InGame()
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
+		this.addEventListener(Event.ENTER_FRAME, detecHit);
 		}
-	
+		
+		private function detecHit():void
+		{
+		if(player){
+			hitting = true;
+		}else{ hitting = false;}
+			
+		}
+		
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
-			
 		}
-		
 		private function drawGame():void
-		{		
-			
+		{			
 		bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
 		this.addChild(bgScreen);
 				

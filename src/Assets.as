@@ -13,8 +13,11 @@ package
 	
 		{	//Grafiikka
 			
-			[Embed(source="../media/graphic/aloitus.png")]
+			[Embed(source="../media/graphic/alkuruutu.png")]
 			public static const Aloitus:Class;
+			
+			[Embed(source="../media/graphic/aloita_peliAlku.png")]
+			public static const aloitusNappi:Class;
 			
 			[Embed(source="../media/graphic/peli_tausta.png")]
 			public static const PeliTaka:Class;
@@ -33,9 +36,6 @@ package
 			
 			[Embed(source="../media/graphic/pallo.png")]
 			public static const muteNappi:Class
-			
-			[Embed(source="../media/graphic/kanttinen.png")]
-			public static const Kuutio:Class;
 		
 			[Embed(source="./media/graphic/muteBtnTwo.png")]
 			public static const MuteBtnTwo:Class;

@@ -46,7 +46,7 @@ package objects
 		puuArt(); 
 		}
 		
-		private function puuArt():void
+		public function puuArt():void
 		{
 		koivu = new Image(Assets.getPuut().getTexture("Koivu"));
 		

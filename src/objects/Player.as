@@ -1,7 +1,8 @@
 package objects
 {
-	
 	import flash.ui.Keyboard;
+	
+	import objects.Puut;
 	
 	import starling.core.Starling;
 	import starling.display.Image;
@@ -11,6 +12,7 @@ package objects
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
+	
 	
 	public class Player extends Sprite
 	{
@@ -23,9 +25,12 @@ package objects
 		private var mainCharacterDown:Image;
 		private var kavely:Boolean = false;
 		private var mainCharacterInGame:Image;
-		private var hitIn:Boolean;
 		
-		private var maxSpeed:Number = 5;
+		private var hitIn:Boolean;
+		private var hitting:Boolean;
+		private var kPuut:Puut
+		
+		private var maxSpeed:Number = 6; // Liikkumis nopeus
 		private var xv:Number = 0;
 		private var yv:Number = 0;
 
@@ -36,13 +41,16 @@ package objects
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
 		this.addEventListener(KeyboardEvent.KEY_UP, handleKeyUp);
-		this.addEventListener(Event.ENTER_FRAME, onHit)
-		}		
+		this.addEventListener(Event.ENTER_FRAME, detectHit)
+		}			
 		
-		private function onHit(event:Event):void
+		private function detectHit():void
 		{
-		
+		(playerArt){
+			hitting = true;
 		}
+		}
+		
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
@@ -90,52 +98,65 @@ package objects
 		mainCharacterDown.visible = false;
 		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
+		mainCharacterLeft.visible = false;
 		mainCharacterRight.visible = true;
 		kavely = true;
-		x -= 5;	
+		x -= maxSpeed;	
 		}else if(event.keyCode == Keyboard.RIGHT){			
+		mainCharacterRight.visible = false;
 		mainCharacterDown.visible = false;
 		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
 		mainCharacterLeft.visible = true;
 		kavely = true;
-		x += 5;
+		x += maxSpeed;
 		}
 		else if(event.keyCode == Keyboard.UP){	
 		mainCharacterRight.visible = false;
 		mainCharacterLeft.visible = false;
 		mainCharacterDown.visible = false;
-		mainCharacter.visible = false
+		mainCharacter.visible = false;
 		mainCharacterUp.visible = true;
 		kavely = true;	
-		y -= 5;
+		y -= maxSpeed;
 		}else if(event.keyCode == Keyboard.DOWN){	
+		mainCharacterUp.visible = false;
+		mainCharacterRight.visible = false;
 		mainCharacterLeft.visible = false;
-		mainCharacter.visible = false
+		mainCharacter.visible = false;
 		mainCharacterDown.visible = true;
 		kavely = true;
-		y += 5;
+		y += maxSpeed;
 		}
-		this.addChild(mainCharacter);
-			
+		this.addChild(mainCharacter);	
 		}
 	private function handleKeyUp(event:KeyboardEvent):void	
 	{
 		if(event.keyCode == Keyboard.LEFT){
-			mainCharacter.visible = true;
-			mainCharacterRight.visible = false;
+			mainCharacter.visible = false;
+			mainCharacterUp.visible = false;
+			mainCharacterUp.visible = false;
+			mainCharacterRight.visible = true;
 			kavely = false;	
 		 }else if(event.keyCode == Keyboard.RIGHT){	
-			 mainCharacter.visible = true;
-			 mainCharacterLeft.visible = false;
+			 mainCharacter.visible = false;
+			 mainCharacterUp.visible = false;
+			 mainCharacterDown.visible = false; 
+			 mainCharacterLeft.visible = true;
 			 kavely = false;	 
 		 }else if(event.keyCode == Keyboard.UP){		
-			 mainCharacter.visible = true;
-			 mainCharacterUp.visible = false;
+			 mainCharacter.visible = false;
+			 mainCharacterLeft.visible = false;
+			 mainCharacterRight.visible = false;
+			mainCharacterDown.visible = false;
+			 mainCharacterUp.visible = true;
 			 kavely = false;
 		 }else if(event.keyCode == Keyboard.DOWN){
-			 mainCharacter.visible = true;
-			 mainCharacterDown.visible = false;
+			 mainCharacterLeft.visible = false;
+			 mainCharacterRight.visible = false;
+			 mainCharacter.visible = false;
+			 mainCharacterUp.visible = false;
+			 mainCharacterDown.visible = true;
 			 kavely = false;
 		 }
 		}

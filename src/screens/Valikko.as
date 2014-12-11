@@ -14,6 +14,7 @@ package screens
 	public class Valikko extends Sprite
 	{
 		private var muteBtnb:Button
+		private var muteBtnT:Button
 		private var alkuRuutuBtn:Button
 		
 		public function Valikko()
@@ -49,14 +50,31 @@ package screens
 		var buttonClicked:Button = event.target as Button; 
 		if((buttonClicked as Button) == alkuRuutuBtn){
 		
-			this.dispatchEvent(new NavigationEvent (NavigationEvent.CHANGE_SCREEN, {id:"Takaisin_nappi0002"}, true));
+		this.dispatchEvent(new NavigationEvent (NavigationEvent.CHANGE_SCREEN, {id:"Takaisin_nappi0003"}, true));
 		}
 		}
 		private function soundOff(event:Event):void
 		{
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == muteBtnb){
-			SoundMixer.stopAll()			
+		SoundMixer.stopAll()			
+		
+		muteBtnb.visible = false;
+		muteBtnT = new Button(Assets.getTexture("MuteBtnTwo"));
+		this.addChild(muteBtnT)
+		muteBtnT.x = 20;
+		muteBtnT.y = 20;
+		this.addEventListener(Event.TRIGGERED, soundOn)
+		}
+		}		
+		private function soundOn(event:Event):void
+		{
+		var buttonClicked:Button = event.target as Button;
+		if((buttonClicked as Button) == muteBtnT)
+		{
+		muteBtnb.visible = true;
+		muteBtnT.visible = false;
+		
 		}
 		}
 		public function disposeTemporarily():void{

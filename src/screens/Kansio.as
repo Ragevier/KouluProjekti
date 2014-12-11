@@ -6,7 +6,7 @@ package screens
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
 	
-	import objects.Sienet;
+	import objects.Puut;
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -26,7 +26,7 @@ package screens
 		public var muteBtn:Button;
 		public var takaisinLajiValikko:Button;
 
-		public var kuvaSieni:Sienet;
+		public var kuvaPuut:Puut;
 		public var valikkoRuutu:Valikko;
 		
 		
