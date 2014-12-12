@@ -47,12 +47,9 @@ package screens
 		
 		private function detecHit():void
 		{
-		if(player){
-			hitting = true;
-		}else{ hitting = false;}
-			
-		}
+	
 		
+		}
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
@@ -88,8 +85,7 @@ package screens
 				
 		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
-	
-			private function onInGameClick(event:Event):void
+		private function onInGameClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;
 		if ((ButtonClicked as Button) == kansioBtn)

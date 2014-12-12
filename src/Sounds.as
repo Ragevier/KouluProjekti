@@ -1,5 +1,6 @@
 package
 {
+	
 	import flash.media.Sound;
 	import flash.media.SoundChannel;
 	import flash.media.SoundMixer;
@@ -22,8 +23,8 @@ package
 			public static var alkuRuutu:Sound = new Sounds.SSmusic() as Sound;
 			public static var peliMusiikki:Sound = new Sounds.bgMusic() as Sound;
 			
-			public static var muted:Boolean = true;													
-			public static var volume:Number = 1;
-			public static var offVolume:Number = 0;
-	}
+			public static var muted:Boolean = false;													
+			
+		
+	}	
 }

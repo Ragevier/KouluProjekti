@@ -15,6 +15,7 @@ package objects
 		private var vaahtera:Image;
 		private var pihlajaKaks:Image;
 		private var koivu:Image;
+		
 		public function Puut()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);

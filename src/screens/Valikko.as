@@ -2,6 +2,7 @@ package screens
 {
 	import events.NavigationEvent;
 	
+	import flash.media.SoundChannel;
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
 	
@@ -13,9 +14,10 @@ package screens
 
 	public class Valikko extends Sprite
 	{
-		private var muteBtnb:Button
-		private var muteBtnT:Button
-		private var alkuRuutuBtn:Button
+		private var muteBtnb:Button;
+		private var muteBtnT:Button;
+		private var alkuRuutuBtn:Button;
+		private var jatkaPelia:Button;
 		
 		public function Valikko()
 		{
@@ -41,8 +43,21 @@ package screens
 			alkuRuutuBtn.x = 35;
 			alkuRuutuBtn.y = 35;
 		
+			jatkaPelia = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0002"));
+			this.addChild(jatkaPelia)
+			jatkaPelia.x = 300	
+			jatkaPelia.y = 220
+		
 		this.addEventListener(Event.TRIGGERED, soundOff)	
 		this.addEventListener(Event.TRIGGERED, aloitusRuutu)
+		this.addEventListener(Event.TRIGGERED, takaisinPeliin)
+		}
+		
+		private function takaisinPeliin(event:Event):void
+		{
+		var buttonClicked:Button = event.target as Button 
+		if((buttonClicked as Button) == jatkaPelia){
+		}
 		}
 		
 		private function aloitusRuutu(event:Event):void 	// alku ruutuun takaisin meno
@@ -57,8 +72,8 @@ package screens
 		{
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == muteBtnb){
-		SoundMixer.stopAll()			
-		
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"muteNappi"}, true))			
+		SoundMixer.soundTransform.volume = 0;
 		muteBtnb.visible = false;
 		muteBtnT = new Button(Assets.getTexture("MuteBtnTwo"));
 		this.addChild(muteBtnT)
@@ -72,6 +87,8 @@ package screens
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == muteBtnT)
 		{
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN,{id:"muteBtnTwo"}, true))
+		SoundMixer.stopAll();
 		muteBtnb.visible = true;
 		muteBtnT.visible = false;
 		

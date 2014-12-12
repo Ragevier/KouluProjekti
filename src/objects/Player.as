@@ -1,5 +1,6 @@
 package objects
 {
+	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;
 	
 	import objects.Puut;
@@ -34,8 +35,6 @@ package objects
 		private var xv:Number = 0;
 		private var yv:Number = 0;
 
-		
-		
 		public function Player()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -44,13 +43,13 @@ package objects
 		this.addEventListener(Event.ENTER_FRAME, detectHit)
 		}			
 		
-		private function detectHit():void
-		{
-		(playerArt){
-			hitting = true;
+		private function detectHit(event):void
+		{	
+		var mainCharacterRect:Rectangle = mainCharacter
+		if(event.keyCode == Keyboard.LEFT){
+			
 		}
 		}
-		
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);

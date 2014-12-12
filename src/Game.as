@@ -2,6 +2,7 @@ package
 {
 	import events.NavigationEvent;	
 	import flash.media.Sound;
+	import flash.media.SoundMixer 
 	
 	import screens.InGame;
 	import screens.Kansio;
@@ -37,8 +38,6 @@ package
 		screenKansio = new Kansio();
 		screenKansio.disposeTemporarily();
 		this.addChild(screenKansio);
-	
-		
 		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
@@ -65,6 +64,7 @@ package
 		screenKansio.disposeTemporarily()
 		screenStartScreen.initialize()
 		break;
+		
 		 }
 		}
 	}

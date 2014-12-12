@@ -55,6 +55,7 @@ package screens
 		{
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"AloitusNappi"}, true)); 
 		SoundMixer.stopAll()
+			
 		if (!Sounds.muted)Sounds.peliMusiikki.play();	
 	}
 	}
