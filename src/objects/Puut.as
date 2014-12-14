@@ -54,7 +54,6 @@ package objects
 		public function puuArt():void
 		{
 		koivu = new Image(Assets.getPuut().getTexture("Koivu"));
-		
 		this.addChild(koivu)
 		koivu.x = 207;
 		koivu.y = 46;
@@ -98,6 +97,11 @@ package objects
 		public function set alreadyHit(value:Boolean):void
 		{
 			_alreadyHit = value;
+			if (value)
+			{
+				manty.visible = true;
+		
+			}
 			
 		}
 	}

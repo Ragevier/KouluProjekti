@@ -1,7 +1,7 @@
 package screens
 {
 	import events.NavigationEvent;
-	
+	import flash.geom.Rectangle
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
@@ -18,7 +18,7 @@ package screens
 	import starling.events.KeyboardEvent;
 	import starling.events.TouchEvent;
 	import starling.events.Touch;
-	import starling.events.TouchPhase;
+	import starling.utils.deg2rad;
 	
 	public class InGame extends Sprite
 	
@@ -83,7 +83,9 @@ package screens
 		valikkoRuutu = new Valikko();
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)	 
-				
+		
+		hitdetec();	
+			
 		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
 		private function onInGameClick(event:Event):void
