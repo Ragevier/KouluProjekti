@@ -43,13 +43,11 @@ package objects
 		this.addEventListener(Event.ENTER_FRAME, detectHit)
 		}			
 		
-		private function detectHit(event):void
+		private function detectHit():void
 		{	
-		var mainCharacterRect:Rectangle = mainCharacter
-		if(event.keyCode == Keyboard.LEFT){
-			
+	
 		}
-		}
+		
 		private function onAddedToStage(event:Event):void
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
@@ -69,13 +67,13 @@ package objects
 		public function playerArtOikea():void
 		{
 		
-		mainCharacterRight = new Image(Assets.getPaahenkilo().getTexture("ov1"));
+		mainCharacterRight = new Image(Assets.getPaahenkilo().getTexture("vo1"));
 		this.addChild(mainCharacterRight)
 		mainCharacterRight.visible = false;
 		}
 		public function playerArtVasen():void
 		{	
-		mainCharacterLeft = new Image(Assets.getPaahenkilo().getTexture("vo1"));
+		mainCharacterLeft = new Image(Assets.getPaahenkilo().getTexture("ov1"));
 		this.addChild(mainCharacterLeft)
 		mainCharacterLeft.visible = false;
 		}
@@ -93,22 +91,22 @@ package objects
 		}
 		public function handleKeyDown(event:KeyboardEvent):void
 		{	
-		if(event.keyCode == Keyboard.LEFT){						
+		if(event.keyCode == Keyboard.RIGHT){						
 		mainCharacterDown.visible = false;
 		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
 		mainCharacterLeft.visible = false;
 		mainCharacterRight.visible = true;
 		kavely = true;
-		x -= maxSpeed;	
-		}else if(event.keyCode == Keyboard.RIGHT){			
+		x += maxSpeed;	
+		}else if(event.keyCode == Keyboard.LEFT){			
 		mainCharacterRight.visible = false;
 		mainCharacterDown.visible = false;
 		mainCharacterUp.visible = false;
 		mainCharacter.visible = false
 		mainCharacterLeft.visible = true;
 		kavely = true;
-		x += maxSpeed;
+		x -= maxSpeed;
 		}
 		else if(event.keyCode == Keyboard.UP){	
 		mainCharacterRight.visible = false;
@@ -131,13 +129,15 @@ package objects
 		}
 	private function handleKeyUp(event:KeyboardEvent):void	
 	{
-		if(event.keyCode == Keyboard.LEFT){
+		if(event.keyCode == Keyboard.RIGHT){
+			mainCharacterLeft.visible = false;
 			mainCharacter.visible = false;
 			mainCharacterUp.visible = false;
 			mainCharacterUp.visible = false;
 			mainCharacterRight.visible = true;
 			kavely = false;	
-		 }else if(event.keyCode == Keyboard.RIGHT){	
+		 }else if(event.keyCode == Keyboard.LEFT){	
+			 mainCharacterRight.visible = false;
 			 mainCharacter.visible = false;
 			 mainCharacterUp.visible = false;
 			 mainCharacterDown.visible = false; 

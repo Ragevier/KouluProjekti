@@ -15,11 +15,15 @@ package objects
 		private var vaahtera:Image;
 		private var pihlajaKaks:Image;
 		private var koivu:Image;
+		private var _alreadyHit:Boolean;
+		
+		
 		
 		public function Puut()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(TouchEvent.TOUCH, onTouch);
+		_alreadyHit = false;
 		}
 		
 		private function onTouch(te:TouchEvent):void
@@ -85,6 +89,16 @@ package objects
 		vaahtera.x = 237;
 		vaahtera.y = 45;	
 		
+		
+		}
+		public function get alreadyHit():Boolean
+		{
+			return _alreadyHit;
+		}		
+		public function set alreadyHit(value:Boolean):void
+		{
+			_alreadyHit = value;
+			
 		}
 	}
 }

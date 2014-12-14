@@ -17,6 +17,7 @@ package screens
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
 	import starling.events.TouchEvent;
+	import starling.events.Touch;
 	import starling.events.TouchPhase;
 	
 	public class InGame extends Sprite
@@ -29,7 +30,7 @@ package screens
 
 		private var sienet:Sienet;
 		private var kasvit:Kasvit;
-		private var puut:Puut;
+		private var puut:Vector.<Puut>;
 
 		private var hitting:Boolean
 		private var onHit:Boolean
@@ -76,8 +77,8 @@ package screens
 		sienet = new Sienet();
 		this.addChild(sienet);
 		
-		puut = new Puut();
-		this.addChild(puut);
+		//puut = new Puut();
+		//this.addChild(puut);
 		
 		valikkoRuutu = new Valikko();
 		valikkoRuutu.visible = false;
@@ -101,16 +102,31 @@ package screens
 		public function initialize():void
 	{
 		this.visible = true;
-	}
+		
+		puut = new Vector.<Puut>();
+		}
 		
 		private function valikko(event:KeyboardEvent):void
 		{
 		if(event.keyCode == Keyboard.ESCAPE){
 		if(valikkoRuutu.visible == false){          
 			valikkoRuutu.visible = true
-			}else{valikkoRuutu.visible = false}
-			
+			}else{valikkoRuutu.visible = false}	
 			}	
 		}	
+	private function hitdetec():void
+	{
+		var hitTrack:Puut
+		for (var i:uint = 0;i<puut.length;i++){
+			hitTrack = puut[i];
+			
+			if(puut.alreadyHit == false && puut.bounds.intersects(player.bounds)){
+				puut.alreadyHit = true;	
+				player.x = 0;
+				player.y = 0;
+		
+			}
+		}
 	}	
+}
 }
