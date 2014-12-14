@@ -43,12 +43,10 @@ package objects
 		this.addEventListener(Event.ENTER_FRAME, detectHit)
 		}			
 		
-		private function detectHit(event):void
+		private function detectHit():void
 		{	
-		var mainCharacterRect:Rectangle = mainCharacter
-		if(event.keyCode == Keyboard.LEFT){
+		
 			
-		}
 		}
 		private function onAddedToStage(event:Event):void
 		{
@@ -133,12 +131,14 @@ package objects
 	{
 		if(event.keyCode == Keyboard.LEFT){
 			mainCharacter.visible = false;
-			mainCharacterUp.visible = false;
+			mainCharacterLeft.visible = false;
+			mainCharacterDown.visible = false;
 			mainCharacterUp.visible = false;
 			mainCharacterRight.visible = true;
 			kavely = false;	
 		 }else if(event.keyCode == Keyboard.RIGHT){	
 			 mainCharacter.visible = false;
+			 mainCharacterRight.visible = false;
 			 mainCharacterUp.visible = false;
 			 mainCharacterDown.visible = false; 
 			 mainCharacterLeft.visible = true;

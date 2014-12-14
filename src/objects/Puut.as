@@ -15,6 +15,8 @@ package objects
 		private var vaahtera:Image;
 		private var pihlajaKaks:Image;
 		private var koivu:Image;
+		private var _alreadyHit:Boolean
+		
 		
 		public function Puut()
 		{
@@ -86,5 +88,9 @@ package objects
 		vaahtera.y = 45;	
 		
 		}
+	public function get alreadyHit():Boolean
+	{
+		return _alreadyHit;
+	}
 	}
 }

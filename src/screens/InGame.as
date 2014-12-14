@@ -101,7 +101,8 @@ package screens
 		public function initialize():void
 	{
 		this.visible = true;
-	}
+		puut = new Vector.<Puut>();
+		}
 		
 		private function valikko(event:KeyboardEvent):void
 		{
@@ -112,5 +113,15 @@ package screens
 			
 			}	
 		}	
+	private function detectHit():void
+	{
+		var DetectTree:Puut;
+		
+		if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(player.bounds)){
+		DetectTree.alreadyHit = true;
+		player.x = 0;
+		player.y = 0;
+		}
 	}	
+}
 }
