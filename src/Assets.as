@@ -48,6 +48,7 @@ package
 			private static var takaisinNappiTextureAtlas:TextureAtlas;
 			private static var puuTextureAtlas:TextureAtlas;
 			private static var aloitusTextureAtlas:TextureAtlas;
+			private static var pienElainTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -91,6 +92,22 @@ package
 			[Embed(source="../media/graphic/Aloita_Peli.xml", mimeType="application/octet-stream")]
 			public static const aloita_PeliXml:Class;
 			
+			[Embed(source="../media/graphic/pienet eläin kuvat.png")]
+			public static const pienElain:Class;
+			
+			[Embed(source="../media/graphic/pienet eläin kuvat.xml", mimeType="application/octet-stream")]
+			public static const pienElainXml:Class;
+			
+			public static function getPienElain():TextureAtlas
+			{
+				if (pienElainTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("pienElain");
+					var xml:XML = XML(new pienElainXml);
+					pienElainTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return pienElainTextureAtlas;
+			}
 			public static function getAloitus():TextureAtlas
 			{
 				if (aloitusTextureAtlas == null)

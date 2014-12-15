@@ -31,6 +31,7 @@ package objects
 		private var hitting:Boolean;
 		private var kPuut:Puut
 		
+		private var noSpeed:Number = 0;
 		private var maxSpeed:Number = 6; // Liikkumis nopeus
 		private var xv:Number = 0;
 		private var yv:Number = 0;
@@ -40,13 +41,19 @@ package objects
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
 		this.addEventListener(KeyboardEvent.KEY_UP, handleKeyUp);
-		this.addEventListener(Event.ENTER_FRAME, detectHit)
+		
 		}			
-		
 		private function detectHit():void
-		{	
-		
+		{
+			var DetectTree:Puut;
 			
+			if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(mainCharacterLeft.bounds)){
+				DetectTree.alreadyHit = true;
+				x += noSpeed;
+				x -= noSpeed;
+				y += noSpeed;
+				y -= noSpeed;
+			}
 		}
 		private function onAddedToStage(event:Event):void
 		{

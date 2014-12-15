@@ -29,8 +29,8 @@ package screens
 
 		private var sienet:Sienet;
 		private var kasvit:Kasvit;
-		private var puut:Puut;
-
+		private var puut:Vector.<Puut>;
+		private var puutKuvat:Puut;
 		private var hitting:Boolean
 		private var onHit:Boolean
 		
@@ -42,14 +42,9 @@ package screens
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
-		this.addEventListener(Event.ENTER_FRAME, detecHit);
+		//this.addEventListener(Event.ENTER_FRAME, detecHit);
 		}
 		
-		private function detecHit():void
-		{
-	
-		
-		}
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
@@ -64,11 +59,6 @@ package screens
 		this.addChild(kansioBtn);
 		kansioBtn.x = 598;
 		kansioBtn.y = 420;
-								
-		player = new Player();	
-		player.x = stage.stageWidth/2;
-		player.y = stage.stageHeight/2;
-		this.addChild(player);
 			
 		kasvit = new Kasvit();	
 		this.addChild(kasvit);
@@ -76,13 +66,18 @@ package screens
 		sienet = new Sienet();
 		this.addChild(sienet);
 		
-		puut = new Puut();
-		this.addChild(puut);
+		puutKuvat = new Puut();
+		this.addChild(puutKuvat);
+		
+		player = new Player();	
+		player.x = stage.stageWidth/2;
+		player.y = stage.stageHeight/2;
+		this.addChild(player);
 		
 		valikkoRuutu = new Valikko();
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)	 
-				
+		
 		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
 		private function onInGameClick(event:Event):void
@@ -101,6 +96,8 @@ package screens
 		public function initialize():void
 	{
 		this.visible = true;
+		var playerSpeed:Number = 6;
+		
 		puut = new Vector.<Puut>();
 		}
 		
@@ -110,9 +107,9 @@ package screens
 		if(valikkoRuutu.visible == false){          
 			valikkoRuutu.visible = true
 			}else{valikkoRuutu.visible = false}
-			
-			}	
-		}	
+	
+		}
+	}	
 	private function detectHit():void
 	{
 		var DetectTree:Puut;
@@ -120,8 +117,9 @@ package screens
 		if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(player.bounds)){
 		DetectTree.alreadyHit = true;
 		player.x = 0;
-		player.y = 0;
+					
 		}
+		
 	}	
 }
 }

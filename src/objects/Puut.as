@@ -15,13 +15,18 @@ package objects
 		private var vaahtera:Image;
 		private var pihlajaKaks:Image;
 		private var koivu:Image;
+		
 		private var _alreadyHit:Boolean
-		
-		
+		private var _type:int;
+		private var _speed:int;
+		private var _distance:int;
+		private var _position:String;
+	
 		public function Puut()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(TouchEvent.TOUCH, onTouch);
+		_alreadyHit = false;
 		}
 		
 		private function onTouch(te:TouchEvent):void
@@ -47,12 +52,12 @@ package objects
 		{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		puuArt(); 
+		
 		}
 		
 		public function puuArt():void
 		{
-		koivu = new Image(Assets.getPuut().getTexture("Koivu"));
-		
+		koivu = new Image(Assets.getPuut().getTexture("Koivu"));	
 		this.addChild(koivu)
 		koivu.x = 207;
 		koivu.y = 46;
@@ -81,7 +86,7 @@ package objects
 		this.addChild(pihlaja);
 		pihlaja.x = 526;
 		pihlaja.y = 142;
-				
+					
 		vaahtera = new Image(Assets.getPuut().getTexture("Vaahtera"));
 		this.addChild(vaahtera);
 		vaahtera.x = 237;
@@ -92,5 +97,9 @@ package objects
 	{
 		return _alreadyHit;
 	}
+	public function set alreadyHit(value:Boolean):void
+	{
+		_alreadyHit = value;
 	}
-}
+	}
+}	
