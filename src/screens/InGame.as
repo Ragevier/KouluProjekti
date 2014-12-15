@@ -95,9 +95,7 @@ package screens
 	}
 		public function initialize():void
 	{
-		this.visible = true;
-		var playerSpeed:Number = 6;
-		
+		this.visible = true;	
 		puut = new Vector.<Puut>();
 		}
 		
@@ -117,7 +115,7 @@ package screens
 		if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(player.bounds)){
 		DetectTree.alreadyHit = true;
 		player.x = 0;
-					
+		player.y = 0;					
 		}
 		
 	}	
