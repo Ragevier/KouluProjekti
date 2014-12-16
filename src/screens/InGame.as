@@ -2,6 +2,8 @@ package screens
 {
 	import events.NavigationEvent;
 	
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
@@ -34,6 +36,10 @@ package screens
 		private var hitting:Boolean
 		private var onHit:Boolean
 		
+		private var kavely:Boolean = false;
+		private var maxSpeed:Number = 6;
+		private var noSpeed:Number = 0;
+		
 		private var valikkoRuutu:Valikko;
 		
 		
@@ -41,14 +47,16 @@ package screens
 		{
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
-		//this.addEventListener(Event.ENTER_FRAME, detecHit);
+		this.addEventListener(KeyboardEvent.KEY_DOWN, handleDown)
+		this.addEventListener(KeyboardEvent.KEY_UP, handleUp)
+		
 		}
 		
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
+			
 		}
 		private function drawGame():void
 		{			
@@ -60,6 +68,11 @@ package screens
 		kansioBtn.x = 598;
 		kansioBtn.y = 420;
 			
+		player = new Player();	
+		player.x = stage.stageWidth/2;
+		player.y = stage.stageHeight/2;
+		this.addChild(player);
+		
 		kasvit = new Kasvit();	
 		this.addChild(kasvit);
 		
@@ -69,14 +82,11 @@ package screens
 		puutKuvat = new Puut();
 		this.addChild(puutKuvat);
 		
-		player = new Player();	
-		player.x = stage.stageWidth/2;
-		player.y = stage.stageHeight/2;
-		this.addChild(player);
-		
 		valikkoRuutu = new Valikko();
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)	 
+		
+		hitDetect();
 		
 		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
@@ -99,25 +109,75 @@ package screens
 		puut = new Vector.<Puut>();
 		}
 		
-		private function valikko(event:KeyboardEvent):void
+		private function handleDown(event:KeyboardEvent):void
 		{
-		if(event.keyCode == Keyboard.ESCAPE){
+		
+			if(event.keyCode == Keyboard.LEFT){
+				player.x -= maxSpeed;		
+				kavely = true	
+			}else if(event.keyCode == Keyboard.RIGHT){
+				player.x += maxSpeed;		
+				kavely = true	
+			}else if(event.keyCode == Keyboard.UP){
+				player.y -= maxSpeed;		
+				kavely = true	
+			}else if(event.keyCode == Keyboard.DOWN){
+				player.y += maxSpeed;				
+				kavely = true
+			}	
+			if(event.keyCode == Keyboard.ESCAPE){
 		if(valikkoRuutu.visible == false){          
 			valikkoRuutu.visible = true
-			}else{valikkoRuutu.visible = false}
-	
+			}else{valikkoRuutu.visible = false}	
+		}	
 		}
-	}	
+		private function handleUp(event:KeyboardEvent):void
+		{
+			if(event.keyCode == Keyboard.LEFT){		
+			kavely = false
+			}else if(event.keyCode == Keyboard.RIGHT){
+			kavely = false
+			}else if(event.keyCode == Keyboard.UP){
+			kavely = false
+			}else if(event.keyCode == Keyboard.DOWN){
+			kavely = false	
+			}
+		}
+		
 	private function detectHit():void
 	{
 		var DetectTree:Puut;
 		
 		if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(player.bounds)){
-		DetectTree.alreadyHit = true;
-		player.x = 0;
-		player.y = 0;					
-		}
+		DetectTree.alreadyHit = true;					
+		player.x = noSpeed;
+		player.y = noSpeed;	
+		}	
+	}
+	private function hitDetect():void
+	{
+		var p1:Point = new Point(player.x, player.y);
+		var p2:Point = new Point(puutKuvat.x, puutKuvat.y);
+		var p3:Point = new Point(sienet.x, sienet.y);
+		var p4:Point = new Point(kasvit.x, kasvit.y);	
 		
-	}	
-}
-}
+		var distance:Number = Point.distance(p1, p2);
+		var distance2:Number = Point.distance(p1, p3) 
+		var distance3:Number = Point.distance(p1, p4) 
+		
+		var radius:Number = player.width;
+		var radius2:Number = puutKuvat.width;
+		var radius3:Number = sienet.width;
+		var radius4:Number = kasvit.width;
+		
+		if(distance < radius + radius2){
+		kansioBtn.visible = false
+		}else if(distance2 < radius + radius3){
+	
+		}else if(distance3 < radius + radius4){
+	
+		
+		}
+		}
+	}
+}	

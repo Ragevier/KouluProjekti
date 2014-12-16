@@ -30,9 +30,8 @@ package objects
 		private var hitIn:Boolean;
 		private var hitting:Boolean;
 		private var kPuut:Puut
-		
+		private var maxSpeed:Number = 6;
 		private var noSpeed:Number = 0;
-		private var maxSpeed:Number = 6; // Liikkumis nopeus
 		private var xv:Number = 0;
 		private var yv:Number = 0;
 
@@ -41,19 +40,6 @@ package objects
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
 		this.addEventListener(KeyboardEvent.KEY_UP, handleKeyUp);
-		
-		}			
-		private function detectHit():void
-		{
-			var DetectTree:Puut;
-			
-			if(DetectTree.alreadyHit == false && DetectTree.bounds.intersects(mainCharacterLeft.bounds)){
-				DetectTree.alreadyHit = true;
-				x += noSpeed;
-				x -= noSpeed;
-				y += noSpeed;
-				y -= noSpeed;
-			}
 		}
 		private function onAddedToStage(event:Event):void
 		{
@@ -105,7 +91,7 @@ package objects
 		mainCharacterLeft.visible = false;
 		mainCharacterRight.visible = true;
 		kavely = true;
-		x -= maxSpeed;	
+	//	x -= maxSpeed;	
 		}else if(event.keyCode == Keyboard.RIGHT){			
 		mainCharacterRight.visible = false;
 		mainCharacterDown.visible = false;
@@ -113,7 +99,7 @@ package objects
 		mainCharacter.visible = false
 		mainCharacterLeft.visible = true;
 		kavely = true;
-		x += maxSpeed;
+	//	x += maxSpeed;
 		}
 		else if(event.keyCode == Keyboard.UP){	
 		mainCharacterRight.visible = false;
@@ -122,7 +108,7 @@ package objects
 		mainCharacter.visible = false;
 		mainCharacterUp.visible = true;
 		kavely = true;	
-		y -= maxSpeed;
+	//	y -= maxSpeed;
 		}else if(event.keyCode == Keyboard.DOWN){	
 		mainCharacterUp.visible = false;
 		mainCharacterRight.visible = false;
@@ -130,7 +116,7 @@ package objects
 		mainCharacter.visible = false;
 		mainCharacterDown.visible = true;
 		kavely = true;
-		y += maxSpeed;
+	//	y += maxSpeed;
 		}
 		this.addChild(mainCharacter);	
 		}
@@ -165,6 +151,6 @@ package objects
 			 mainCharacterDown.visible = true;
 			 kavely = false;
 		 }
-		}
-	} 
+		}	
+	}
 } 

@@ -87,10 +87,10 @@ package objects
 		pihlaja.x = 526;
 		pihlaja.y = 142;
 					
-		vaahtera = new Image(Assets.getPuut().getTexture("Vaahtera"));
-		this.addChild(vaahtera);
-		vaahtera.x = 237;
-		vaahtera.y = 45;	
+		//vaahtera = new Image(Assets.getPuut().getTexture("Vaahtera"));
+		//this.addChild(vaahtera);
+		//vaahtera.x = 237;
+		//vaahtera.y = 45;	
 		
 		}
 	public function get alreadyHit():Boolean
