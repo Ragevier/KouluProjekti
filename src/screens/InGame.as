@@ -48,15 +48,13 @@ package screens
 		
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, handleDown)
-		this.addEventListener(KeyboardEvent.KEY_UP, handleUp)
-		
+		this.addEventListener(KeyboardEvent.KEY_UP, handleUp)	
 		}
-		
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
 			drawGame();
-			
+			hitDetect();
 		}
 		private function drawGame():void
 		{			
@@ -86,8 +84,7 @@ package screens
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)	 
 		
-		hitDetect();
-		
+
 		this.addEventListener(Event.TRIGGERED, onInGameClick)								
 		}
 		private function onInGameClick(event:Event):void
@@ -154,7 +151,7 @@ package screens
 		player.y = noSpeed;	
 		}	
 	}
-	private function hitDetect():void
+	private function hitDetect(event:KeyboardEvent):void
 	{
 		var p1:Point = new Point(player.x, player.y);
 		var p2:Point = new Point(puutKuvat.x, puutKuvat.y);
@@ -162,21 +159,23 @@ package screens
 		var p4:Point = new Point(kasvit.x, kasvit.y);	
 		
 		var distance:Number = Point.distance(p1, p2);
-		var distance2:Number = Point.distance(p1, p3) 
-		var distance3:Number = Point.distance(p1, p4) 
+		var distance2:Number = Point.distance(p1, p3);
+		var distance3:Number = Point.distance(p1, p4);
 		
-		var radius:Number = player.width;
-		var radius2:Number = puutKuvat.width;
-		var radius3:Number = sienet.width;
-		var radius4:Number = kasvit.width;
+		var radius:Number = player.width/2;
+		var radius2:Number = puutKuvat.width/2;
+		var radius3:Number = sienet.width/2;
+		var radius4:Number = kasvit.width/2;
 		
 		if(distance < radius + radius2){
-		kansioBtn.visible = false
+			player.x += noSpeed;
+			player.y += noSpeed;
 		}else if(distance2 < radius + radius3){
-	
+			player.x += noSpeed;
+			player.y += noSpeed;
 		}else if(distance3 < radius + radius4){
-	
-		
+			player.x += noSpeed;
+			player.y += noSpeed;
 		}
 		}
 	}
