@@ -1,5 +1,6 @@
 package objects
 {
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;
 	
@@ -35,6 +36,8 @@ package objects
 		private var xv:Number = 0;
 		private var yv:Number = 0;
 
+		private var puu:Image
+		
 		public function Player()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
@@ -50,6 +53,7 @@ package objects
 		playerArtVasen();
 		playerArtTaka();
 		playerArtEtu();
+	
 		}
 		public function playerArt():void
 		{	

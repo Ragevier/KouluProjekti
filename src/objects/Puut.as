@@ -32,19 +32,19 @@ package objects
 		private function onTouch(te:TouchEvent):void
 		{
 		if(te.getTouch(koivu, TouchPhase.BEGAN)){ // Puitten hiirellä klikkaus
-			koivu.visible = false;
+			//koivu.visible = false;
 		}else if(te.getTouch(pihlajaKaks, TouchPhase.BEGAN)){
-			pihlajaKaks.visible = false;
+			//pihlajaKaks.visible = false;
 		}else if(te.getTouch(manty, TouchPhase.BEGAN)){
-			manty.visible = false;
+			//manty.visible = false;
 		}else if(te.getTouch(mantyKaks, TouchPhase.BEGAN)){
-			mantyKaks.visible = false;
+			//mantyKaks.visible = false;
 		}else if(te.getTouch(haapa, TouchPhase.BEGAN)){
-			haapa.visible = false;
+			//haapa.visible = false;
 		}else if(te.getTouch(pihlaja, TouchPhase.BEGAN)){
-			pihlaja.visible = false;
+			//pihlaja.visible = false;
 		}else if(te.getTouch(vaahtera, TouchPhase.BEGAN)){
-			vaahtera.visible = false;
+			//vaahtera.visible = false;
 		}
 		}
 		
