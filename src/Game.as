@@ -1,11 +1,13 @@
 package
 {
-	import events.NavigationEvent;	
+	import events.NavigationEvent;
+	
 	import flash.media.Sound;
-	import flash.media.SoundMixer 
+	import flash.media.SoundMixer;
 	
 	import screens.InGame;
 	import screens.Kansio;
+	import screens.KansioKasvit;
 	import screens.StartScreen;
 	
 	import starling.display.Sprite;
@@ -17,7 +19,7 @@ package
 		private var screenInGame:InGame;
 		private var screenKansio:Kansio;
 		private var soundMute:Sounds;
-		
+		private var screenKansioKasvit:KansioKasvit;
 		
 		public function Game()
 		{		
@@ -39,6 +41,11 @@ package
 		screenKansio.disposeTemporarily();
 		this.addChild(screenKansio);
 		
+		screenKansioKasvit = new KansioKasvit();
+		screenKansio.disposeTemporarily();
+		this.addChild(screenKansioKasvit)
+		
+		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
 		{
@@ -59,11 +66,20 @@ package
 		screenInGame.initialize();
 		break;
 	   	
+		case "LajiNappi":
+		screenKansio.disposeTemporarily()
+		//screenKansioKasvit.initialize()
+		break;
+		
 		case "Takaisin_nappi0003":
 		screenInGame.disposeTemporarily()	
 		screenKansio.disposeTemporarily()
+		//screenKansioKasvit.disposeTemporarily()
 		screenStartScreen.initialize()
 		break;
+		
+		
+			
 		
 		 }
 		}

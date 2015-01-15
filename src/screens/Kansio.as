@@ -104,8 +104,18 @@ package screens
 		this.addChild(valikkoRuutu)
 			
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
+		this.addEventListener(Event.TRIGGERED, kasviKuviin)
 		}	
+		
+		private function kasviKuviin(event:Event):void
+		{
+		var buttonClicked:Button = event.target as Button;
+		if((buttonClicked as Button) == lajiNappi){
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"LajiNappi"}, true));
 			
+		}
+		}
+		
 		private function kansioMenuClick(event:Event):void
 		{
 		var ButtonClicked:Button = event.target as Button;

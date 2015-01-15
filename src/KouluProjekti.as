@@ -7,6 +7,7 @@ package
 	import net.hires.debug.Stats;
 	
 	import screens.InGame;
+	import screens.KansioKasvit;
 	import screens.StartScreen;
 	
 	import starling.core.Starling;
