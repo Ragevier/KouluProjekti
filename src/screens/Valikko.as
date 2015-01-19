@@ -43,10 +43,7 @@ package screens
 			alkuRuutuBtn.x = 35;
 			alkuRuutuBtn.y = 35;
 		
-			jatkaPelia = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0002"));
-			this.addChild(jatkaPelia)
-			jatkaPelia.x = 300	
-			jatkaPelia.y = 220
+
 		
 		this.addEventListener(Event.TRIGGERED, soundOff)	
 		this.addEventListener(Event.TRIGGERED, aloitusRuutu)

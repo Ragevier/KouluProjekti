@@ -8,6 +8,8 @@ package
 	import screens.InGame;
 	import screens.Kansio;
 	import screens.KansioKasvit;
+	import screens.KansioPuut;
+	import screens.KansioSienet;
 	import screens.StartScreen;
 	
 	import starling.display.Sprite;
@@ -20,6 +22,8 @@ package
 		private var screenKansio:Kansio;
 		private var soundMute:Sounds;
 		private var screenKansioKasvit:KansioKasvit;
+		private var screenKansioSienet:KansioSienet
+		private var screenKansioPuut:KansioPuut
 		
 		public function Game()
 		{		
@@ -42,9 +46,16 @@ package
 		this.addChild(screenKansio);
 		
 		screenKansioKasvit = new KansioKasvit();
-		screenKansio.disposeTemporarily();
+		screenKansioKasvit.disposeTemporarily();
 		this.addChild(screenKansioKasvit)
 		
+		// screenKansioSienet = new KansioSienet();	
+		// screenKansioSienet.disposetemporarily();
+		// this.addChild(screenKansioSienet)
+		
+		// screenKansioPuut = new KansioPuut();	
+		// screenKansioPuut.disposetemporarily();
+		// this.addChild(screenKansioPuut)
 		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
@@ -65,22 +76,20 @@ package
 		screenKansio.disposeTemporarily();
 		screenInGame.initialize();
 		break;
-	   	
+	   		
 		case "LajiNappi":
-		screenKansio.disposeTemporarily()
-		//screenKansioKasvit.initialize()
+		screenKansio.disposeTemporarily();
+		screenKansioKasvit.initialize();
 		break;
 		
 		case "Takaisin_nappi0003":
-		screenInGame.disposeTemporarily()	
-		screenKansio.disposeTemporarily()
-		//screenKansioKasvit.disposeTemporarily()
-		screenStartScreen.initialize()
+		screenInGame.disposeTemporarily();	
+		screenKansio.disposeTemporarily();
+		screenKansioKasvit.disposeTemporarily();
+		screenStartScreen.initialize();
 		break;
 		
-		
-			
-		
+					
 		 }
 		}
 	}

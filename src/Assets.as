@@ -49,6 +49,7 @@ package
 			private static var puuTextureAtlas:TextureAtlas;
 			private static var aloitusTextureAtlas:TextureAtlas;
 			private static var pienElainTextureAtlas:TextureAtlas;
+			private static var opettajaTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -97,6 +98,23 @@ package
 			
 			[Embed(source="../media/graphic/pienet eläin kuvat.xml", mimeType="application/octet-stream")]
 			public static const pienElainXml:Class;
+			
+			[Embed(source="../media/graphic/Opettaja.png")]
+			public static const opettaja:Class;
+			
+			[Embed(source="../media/graphic/Opettaja.xml", mimeType="application/octet-stream")]
+			public static const opettajaXml:Class;
+			
+			public static function getOpettaja():TextureAtlas
+			{
+				if (opettajaTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("opettaja");
+					var xml:XML = XML(new opettajaXml);
+					opettajaTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return opettajaTextureAtlas;
+			}
 			
 			public static function getPienElain():TextureAtlas
 			{

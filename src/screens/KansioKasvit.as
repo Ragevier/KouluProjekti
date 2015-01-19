@@ -13,35 +13,42 @@ package screens
 		public class KansioKasvit extends Sprite
 	{
 		public var kansioTausta:Image;
-		public var ahomansikka:Image;
-		public var kanerva:Image;
-		public var karpalo:Image;
-		public var kielo:Image;
-		public var kaenkaali:Image;
-		public var lakka:Image
-		public var leskenlehti:Image;
-		public var mustikka:Image;
-		public var oravanmarja:Image;
-		public var piharatamo:Image;
-		public var punaapila:Image;
-		public var puolukka:Image;
-		public var paivankakkara:Image;
-		public var sinivuokko:Image;
-		public var vadelma:Image;
-		public var valkoapila:Image;
-		public var valkovuokko:Image;
-		public var voiKukka:Image;
-	
+		
+		public var ahomansikka:Button; // Kasvit
+		public var kanerva:Button;
+		public var karpalo:Button;
+		public var kielo:Button;
+		public var kaenkaali:Button;
+		public var lakka:Button;
+		public var leskenlehti:Button;
+		public var mustikka:Button;
+		public var oravanmarja:Button;
+		public var piharatamo:Button;
+		public var punaapila:Button;
+		public var puolukka:Button;
+		public var paivankakkara:Button;
+		public var sinivuokko:Button;
+		public var vadelma:Button;
+		public var valkoapila:Button;
+		public var valkovuokko:Button;
+		public var voiKukka:Button;    // Kasvit 
+		
+		public var takaisinPeliin:Button; 
+		public var lisaaKasveja:Button;
+		public var lisaaKasveja2:Button;
+		public var takaisinKasveja:Button
+		
+		
 		public var valikkoRuutu:Valikko;
 		
 		
 		public function KansioKasvit()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage)
-		this.addEventListener(starling.events.KeyboardEvent.KEY_DOWN, valikkoRuutu)
+		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
 		}
 		
-		private function valikkoRuutu(event:KeyboardEvent):void
+		private function valikko(event:KeyboardEvent):void
 		{
 		if(event.keyCode == Keyboard.ESCAPE)
 		{
@@ -64,60 +71,128 @@ package screens
 		kansioTausta = new Image(Assets.getTexture("KansioTyhj"));
 		this.addChild(kansioTausta);
 	
-		ahomansikka //= new Image(Assets
-		this.addChild(ahomansikka)
+		ahomansikka = new Button(Assets.getTexture("LajiNappi")); // LajiNappit pitää muuttaa kuvien omaksi napiksi
+		ahomansikka.x = 25;	
+		ahomansikka.y = 40; 
+		this.addChild(ahomansikka);       
 		
-		kanerva //= new Image(Assets
-		this.addChild(kanerva)
+		kanerva = new Button(Assets.getTexture("LajiNappi"));
+		kanerva.x = 160;
+		kanerva.y = 40;       
+		this.addChild(kanerva); 
 			
-		karpalo //= new Image(Assets
-		this.addChild(karpalo)
+		karpalo =  new Button(Assets.getTexture("LajiNappi"));
+		karpalo.x = 25;	
+		karpalo.y = 140;
+		this.addChild(karpalo);			
 		
-		kielo //= new Image(Assets
-		this.addChild(kielo)	
+		kielo =  new Button(Assets.getTexture("LajiNappi"));
+		kielo.x = 160;	
+		kielo.y = 140;
+		this.addChild(kielo);	
 			
-		kaenkaali //= new Image(Assets
-		this.addChild(kaenkaali)
+		kaenkaali =  new Button(Assets.getTexture("LajiNappi"));
+		kaenkaali.x = 25;	
+		kaenkaali.y = 240;
+		this.addChild(kaenkaali);	
 		
-		lakka //= new Image(Assets
-		this.addChild(lakka)
+		lakka =  new Button(Assets.getTexture("LajiNappi"));
+		lakka.x = 160;	
+		lakka.y = 240;
+		this.addChild(lakka); 
 			
-		leskenlehti //= new Image(Assets
-		this.addChild(leskenlehti)
+		leskenlehti = new Button(Assets.getTexture("LajiNappi"));
+		leskenlehti.x = 25;	
+		leskenlehti.y = 340;
+		this.addChild(leskenlehti); 
 		
-		mustikka //= new Image(Assets
-		this.addChild(mustikka)
+		mustikka =  new Button(Assets.getTexture("LajiNappi"));
+		mustikka.x = 160;	
+		mustikka.y = 340;
+		this.addChild(mustikka);   //8 ========================================
 		
-		oravanmarja //= new Image(Assets
-		this.addChild(oravanmarja)
+		oravanmarja =  new Button(Assets.getTexture("LajiNappi"));
+		oravanmarja.x = 25;
+		oravanmarja.y = 40;
+		oravanmarja.visible = false;
+		this.addChild(oravanmarja);
 		
-		piharatamo //= new Image(Assets
-		this.addChild(piharatamo)
+		piharatamo =  new Button(Assets.getTexture("LajiNappi"));
+		piharatamo.x = 160;	
+		piharatamo.y = 40;
+		piharatamo.visible = false;
+		this.addChild(piharatamo);
 		
-		punaapila //= new Image(Assets
-		this.addChild(punaapila)
+		punaapila =  new Button(Assets.getTexture("LajiNappi"));
+		punaapila.x = 25;	
+		punaapila.y = 140;
+		punaapila.visible = false;
+		this.addChild(punaapila);
 		
-		puolukka //= new Image(Assets
+		puolukka = new Button(Assets.getTexture("LajiNappi"));
+		puolukka.x = 160;	
+		puolukka.y = 140;
+		puolukka.visible = false;
 		this.addChild(puolukka)
 		
-		paivankakkara //= new Image(Assets
+		paivankakkara = new Button(Assets.getTexture("LajiNappi"));
+		paivankakkara.x = 160;	
+		paivankakkara.y = 240;
+		paivankakkara.visible = false;
 		this.addChild(paivankakkara)
 			
-		sinivuokko //= new Image(Assets
+		sinivuokko = new Button(Assets.getTexture("LajiNappi"));
+		sinivuokko.x = 25;	
+		sinivuokko.y = 240;                                           
+		sinivuokko.visible = false;
 		this.addChild(sinivuokko)
 			
-		vadelma //= new Image(Assets
+		vadelma = new Button(Assets.getTexture("LajiNappi"));
+		vadelma.x = 25;
+		vadelma.y = 340;
+		vadelma.visible = false;
 		this.addChild(vadelma)
 		
-		valkoapila //= new Image(Assets
+		valkoapila = new Button(Assets.getTexture("LajiNappi"));
+		valkoapila.x = 160;	
+		valkoapila.y = 340;
+		valkoapila.visible = false;  			// 8
 		this.addChild(valkoapila)
 		
-		valkovuokko //= new Image(Assets
+		valkovuokko = new Button(Assets.getTexture("LajiNappi"));
+		valkovuokko.x = 25;	
+		valkovuokko.y = 40;
+		valkovuokko.visible = false;	
 		this.addChild(valkovuokko)
-			
-		voiKukka //= new Image(Assets
+		
+		voiKukka = new Button(Assets.getTexture("LajiNappi")); 
+		voiKukka.x = 160;	
+		voiKukka.y = 40;
+		voiKukka.visible = false;
 		this.addChild(voiKukka)	
 		
+		lisaaKasveja = new Button(Assets.getTexture("KansioNappi")); 
+		lisaaKasveja.x = 235;	
+		lisaaKasveja.y = 420;
+		this.addChild(lisaaKasveja)	
+			
+		lisaaKasveja2 = new Button(Assets.getTexture("LajiNappi")); 
+		lisaaKasveja2.x = 235;	
+		lisaaKasveja2.y = 450;
+		lisaaKasveja2.visible = false;
+		this.addChild(lisaaKasveja2)	
+		
+		takaisinKasveja = new Button(Assets.getTexture("LajiNappi")); 
+		takaisinKasveja.x = 25;	
+		takaisinKasveja.y = 450;
+		takaisinKasveja.visible = false;
+		this.addChild(takaisinKasveja)
+			
+		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
+		this.addChild(takaisinPeliin);
+		takaisinPeliin.x = 230;		
+		takaisinPeliin.y = 20;
+			
 		valikkoRuutu = new Valikko;
 		valikkoRuutu.visible = false;
 		this.addChild(valikkoRuutu)	
@@ -128,11 +203,89 @@ package screens
 		private function Lisaa(event:Event):void
 		{
 		var buttonClicked:Button = event.target as Button
-		if(buttonClicked as Button) == 	//napin nimi tähän
+		if((buttonClicked as Button) == lisaaKasveja)
 		{	
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"Takaisin"}, true));
+		ahomansikka.visible = false; // Katoaa
+		kanerva.visible = false;
+		karpalo.visible = false;
+		kielo.visible = false;
+		kaenkaali.visible = false;
+		lakka.visible = false;
+		leskenlehti.visible = false;
+		mustikka.visible = false; // Katoaa
+		
+		oravanmarja.visible = true; // Tulee Esille
+		piharatamo.visible = true;
+		punaapila.visible = true;
+		puolukka.visible = true;
+		paivankakkara.visible = true;
+		sinivuokko.visible = true;
+		vadelma.visible = true;
+		valkoapila.visible = true;  // Esille
+		
+		lisaaKasveja2.visible = true; 
+		lisaaKasveja.visible = false;
+		
+		takaisinKasveja.visible = true;
+		
+		this.addEventListener(Event.TRIGGERED, Lisaa2)
+		this.addEventListener(Event.TRIGGERED, TakaisinPain)
 		}
-			
+		}
+		
+		private function TakaisinPain(event:Event):void
+		{
+			var buttonClicked:Button = event.target as Button
+			if((buttonClicked as Button) == takaisinKasveja)
+			{
+				ahomansikka.visible = true; // Esille
+				kanerva.visible = true;
+				karpalo.visible = true;
+				kielo.visible = true;
+				kaenkaali.visible = true;
+				lakka.visible = true;
+				leskenlehti.visible = true;
+				mustikka.visible = true; // Esille
+				
+				oravanmarja.visible = false; // Katoaa
+				piharatamo.visible = false;
+				punaapila.visible = false;
+				puolukka.visible = false;
+				paivankakkara.visible = false;
+				sinivuokko.visible = false;
+				vadelma.visible = false;
+				valkoapila.visible = false;  // Katoaa
+				
+				valkovuokko.visible = false;
+				voiKukka.visible = false; 
+				
+				lisaaKasveja2.visible = false; 
+				lisaaKasveja.visible = true;
+				takaisinKasveja.visible = false;
+			}
+		}
+		private function Lisaa2(event:Event):void
+		{	
+			var buttonClicked:Button = event.target as Button
+			if((buttonClicked as Button) == lisaaKasveja2)
+			{
+				
+				oravanmarja.visible = false; // katoaa
+				piharatamo.visible = false;
+				punaapila.visible = false;
+				puolukka.visible = false;
+				paivankakkara.visible = false;
+				sinivuokko.visible = false;
+				vadelma.visible = false;
+				valkoapila.visible = false;  // katoaa
+				
+				valkovuokko.visible = true; // Esille
+				voiKukka.visible = true;  // Esille
+				
+				lisaaKasveja2.visible = false;
+				
+				takaisinKasveja.visible = true;		
+			}			
 		}
 		public function disposeTemporarily():void
 		{
@@ -142,5 +295,5 @@ package screens
 		{
 			this.visible = true;
 		}
-		}
+	}
 }

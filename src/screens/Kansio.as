@@ -33,7 +33,7 @@ package screens
 		public function Kansio()
 		{
 		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
-		this.addEventListener(starling.events.KeyboardEvent.KEY_DOWN, keyboard)
+		this.addEventListener(KeyboardEvent.KEY_DOWN, keyboard)
 		}
 		
 		private function keyboard(event:KeyboardEvent):void
@@ -111,8 +111,7 @@ package screens
 		{
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == lajiNappi){
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"LajiNappi"}, true));
-			
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"LajiNappi"}, true));		
 		}
 		}
 		
