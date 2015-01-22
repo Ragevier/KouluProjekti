@@ -50,6 +50,11 @@ package
 			private static var aloitusTextureAtlas:TextureAtlas;
 			private static var pienElainTextureAtlas:TextureAtlas;
 			private static var opettajaTextureAtlas:TextureAtlas;
+			private static var laatikkoKasvi1TextureAtlas:TextureAtlas;
+			private static var laatikkoKasvi2TextureAtlas:TextureAtlas;
+			private static var laatikkoKasvi3TextureAtlas:TextureAtlas;
+			private static var laatikkoPuutTextureAtlas:TextureAtlas;
+			private static var laatikkoSienetTextureAtlas:TextureAtlas;
 			
 			[Embed(source="../media/graphic/puut.png")]
 			public static const AtlasTextureGame:Class;
@@ -104,6 +109,91 @@ package
 			
 			[Embed(source="../media/graphic/Opettaja.xml", mimeType="application/octet-stream")]
 			public static const opettajaXml:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit1.png")]
+			public static const laatikkoKasvit1:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit1.xml", mimeType="application/octet-stream")]
+			public static const laatikkoKasvit1Xml:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit2.png")]
+			public static const laatikkoKasvit2:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit2.xml", mimeType="application/octet-stream")]
+			public static const laatikkoKasvit2Xml:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit3.png")]
+			public static const laatikkoKasvit3:Class;
+			
+			[Embed(source="../media/graphic/laatikko kasvit3.xml", mimeType="application/octet-stream")]
+			public static const laatikkoKasvit3Xml:Class;
+			
+			[Embed(source="../media/graphic/laatikko puut.png")]
+			public static const laatikkoPuut:Class;
+			
+			[Embed(source="../media/graphic/laatikko puut.xml", mimeType="application/octet-stream")]
+			public static const laatikkoPuutXml:Class;
+		
+			[Embed(source="../media/graphic/laatikko sienet.png")]
+			public static const laatikkoSienet:Class;
+			
+			[Embed(source="../media/graphic/laatikko sienet.xml", mimeType="application/octet-stream")]
+			public static const laatikkoSienetXml:Class;
+			
+			public static function getLaatSienet():TextureAtlas
+			{
+				if (laatikkoPuutTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("laatikkoSienet");
+					var xml:XML = XML(new laatikkoSienetXml);
+					laatikkoPuutTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return  laatikkoPuutTextureAtlas;
+			}
+		
+			public static function getLaatPuut():TextureAtlas
+			{
+				if (laatikkoPuutTextureAtlas == null)
+				{
+					var texture:Texture = getTexture("laatikkoPuut");
+					var xml:XML = XML(new laatikkoPuutXml);
+					laatikkoPuutTextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return  laatikkoPuutTextureAtlas;
+			}
+			
+			public static function getLaatKasvi3():TextureAtlas
+			{
+				if (laatikkoKasvi3TextureAtlas == null)
+				{
+					var texture:Texture = getTexture("laatikkoKasvit3");
+					var xml:XML = XML(new laatikkoKasvit3Xml);
+					laatikkoKasvi3TextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return laatikkoKasvi3TextureAtlas;
+			}
+			
+			public static function getLaatKasvi2():TextureAtlas
+			{
+				if (laatikkoKasvi2TextureAtlas == null)
+				{
+					var texture:Texture = getTexture("laatikkoKasvit2");
+					var xml:XML = XML(new laatikkoKasvit2Xml);
+					laatikkoKasvi2TextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return laatikkoKasvi2TextureAtlas;
+			}
+			
+			public static function getLaatKasvi1():TextureAtlas
+			{
+				if (laatikkoKasvi1TextureAtlas == null)
+				{
+					var texture:Texture = getTexture("laatikkoKasvit1");
+					var xml:XML = XML(new laatikkoKasvit1Xml);
+					laatikkoKasvi1TextureAtlas = new TextureAtlas(texture, xml);
+				}
+				return laatikkoKasvi1TextureAtlas;
+			}
 			
 			public static function getOpettaja():TextureAtlas
 			{
