@@ -49,13 +49,13 @@ package
 		screenKansioKasvit.disposeTemporarily();
 		this.addChild(screenKansioKasvit)
 		
-		// screenKansioSienet = new KansioSienet();	
-		// screenKansioSienet.disposetemporarily();
-		// this.addChild(screenKansioSienet)
+		 screenKansioSienet = new KansioSienet();	
+		 screenKansioSienet.disposeTemporarily();
+		 this.addChild(screenKansioSienet)
 		
-		// screenKansioPuut = new KansioPuut();	
-		// screenKansioPuut.disposetemporarily();
-		// this.addChild(screenKansioPuut)
+		 screenKansioPuut = new KansioPuut();	
+		 screenKansioPuut.disposeTemporarily();
+		 this.addChild(screenKansioPuut)
 		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
@@ -76,10 +76,25 @@ package
 		screenKansio.disposeTemporarily();
 		screenInGame.initialize();
 		break;
-	   		
-		case "LajiNappi":
+	   	
+		case "kasvitLaji":
 		screenKansio.disposeTemporarily();
 		screenKansioKasvit.initialize();
+		break;
+		
+		case "puutLaji":
+		screenKansio.disposeTemporarily();
+		screenKansioPuut.initialize();
+		break;
+		
+	//	case "elainLaji":
+		//screenKansio.disposeTemporarily();
+		//screenKansioKasvit.initialize();
+		//break;
+		
+		case "sienetLaji":
+		screenKansio.disposeTemporarily();
+		screenKansioSienet.initialize();
 		break;
 		
 		case "Takaisin_nappi0003":

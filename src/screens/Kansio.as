@@ -21,13 +21,19 @@ package screens
 		public var kuva:Image;
 		public var BgKansio:Image;
 		public var muteBtnTwo:Button;
-		public var lajiNappi:Button;
 		public var takaisinPeliin:Button;
 		public var muteBtn:Button;
 		public var takaisinLajiValikko:Button;
 
 		public var kuvaPuut:Puut;
 		public var valikkoRuutu:Valikko;
+		
+		public var sienetLajit:Button;
+		public var puutLajit:Button;
+		public var kasvitLajit:Button;
+		public var elaimetLajit:Button;
+		
+		public var lajiNappi:Button;
 		
 		
 		public function Kansio()
@@ -59,41 +65,27 @@ package screens
 		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); // laji napit vaihdettava lajien oikeisiin meno napeihin
-		this.addChild(lajiNappi)
-		lajiNappi.x = 25;	
-		lajiNappi.y = 40;
+		sienetLajit = new Button(Assets.getTexture("sienetLaji"));  // UUDETSTAAN
+		this.addChild(sienetLajit)
+		sienetLajit.x = 25;	
+		sienetLajit.y = 40;
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(lajiNappi)
-		lajiNappi.x = 160;	
-		lajiNappi.y = 40;
+		kasvitLajit = new Button(Assets.getTexture("kasvitLaji")); 
+		this.addChild(kasvitLajit)
+		kasvitLajit.x = 160;	
+		kasvitLajit.y = 40;
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(lajiNappi)
-		lajiNappi.x = 25;	
-		lajiNappi.y = 140;
+		puutLajit = new Button(Assets.getTexture("puutLaji")); 
+		this.addChild(puutLajit)
+		puutLajit.x = 160;	
+		puutLajit.y = 175;
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(lajiNappi)
-		lajiNappi.x = 160;	
-		lajiNappi.y = 140;
+		elaimetLajit = new Button(Assets.getTexture("elainLaji")); 
+		this.addChild(elaimetLajit)
+		elaimetLajit.x = 25;	
+		elaimetLajit.y = 140;
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(lajiNappi)
-		lajiNappi.x = 25;	
-		lajiNappi.y = 240;
 		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 
-		this.addChild(lajiNappi)
-		lajiNappi.x = 160;	
-		lajiNappi.y = 240;
-		
-		lajiNappi = new Button(Assets.getTexture("LajiNappi")); 	// laji napit vaihdettava lajien oikeisiin meno napeihin
-		this.addChild(lajiNappi)
-		lajiNappi.x = 25;	
-		lajiNappi.y = 340;
-		    
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 230;		
@@ -105,13 +97,41 @@ package screens
 			
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
 		this.addEventListener(Event.TRIGGERED, kasviKuviin)
+		this.addEventListener(Event.TRIGGERED, sienetKuvat)
+		this.addEventListener(Event.TRIGGERED, elainKuvat)
+		this.addEventListener(Event.TRIGGERED, puutKuviin)
 		}	
 		
+		private function puutKuviin(event:Event):void
+		{
+		
+		var buttonClicked:Button = event.target as Button;
+		if((buttonClicked as Button) == puutLajit){
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));
+				
+		}
+		}
+		private function elainKuvat(event:Event):void
+		{	
+			var buttonClicked:Button = event.target as Button;
+			if((buttonClicked as Button) == elaimetLajit){
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"elainLaji"}, true));
+		}
+		}
+		
+		private function sienetKuvat(event:Event):void
+		{
+			var buttonClicked:Button = event.target as Button;
+			if((buttonClicked as Button) == sienetLajit)
+		{
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"sienetLaji"}, true));
+		}
+		}
 		private function kasviKuviin(event:Event):void
 		{
 		var buttonClicked:Button = event.target as Button;
-		if((buttonClicked as Button) == lajiNappi){
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"LajiNappi"}, true));		
+		if((buttonClicked as Button) == kasvitLajit){
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"kasvitLaji"}, true));		
 		}
 		}
 		

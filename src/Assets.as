@@ -37,8 +37,20 @@ package
 			[Embed(source="../media/graphic/pallo.png")]
 			public static const muteNappi:Class
 		
+			[Embed(source="./media/graphic/ElaintenLajiKansio.png")]
+			public static const elainLaji:Class;
+			
+			[Embed(source="./media/graphic/KasviLajiNappi.png")]
+			public static const kasvitLaji:Class
+			
+			[Embed(source="./media/graphic/PuutLajiNappi.png")]
+			public static const puutLaji:Class
+			
+			[Embed(source="./media/graphic/SienetLajiNappi.png")]
+			public static const sienetLaji:Class
+			
 			[Embed(source="./media/graphic/muteBtnTwo.png")]
-			public static const MuteBtnTwo:Class;
+			public static const MuteBtnTwo:Class
 			
 			private static var gameTextures:Dictionary = new Dictionary;
 			private static var gameTextureAtlas:TextureAtlas;
