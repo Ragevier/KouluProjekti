@@ -55,8 +55,7 @@ package screens
 		{
 		kansionTausta = new Image(Assets.getTexture("KansioTyhj"));
 		this.addChild(kansionTausta);
-		
-		
+			
 		herkkutattiT = new Button(Assets.getLaatSienet().getTexture("Tuntematon Herkkutatti")); // Piilossa
 		herkkutattiT.x = 25;	
 		herkkutattiT.y = 40; 	

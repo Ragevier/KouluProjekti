@@ -10,6 +10,7 @@ package
 	import screens.Kansio;
 	import screens.KansioKasvit;
 	import screens.KansioPuut;
+	import screens.KansioSienet;
 	import screens.StartScreen;
 	
 	import starling.core.Starling;
@@ -28,7 +29,7 @@ package
 			//stats = new Stats ();
 			//this.addChild(stats);
 			
-			myStarling= new Starling(screens.KansioKasvit,stage)
+			myStarling= new Starling(Game,stage)
 			myStarling.antiAliasing = 1;
 			myStarling.start();
 		

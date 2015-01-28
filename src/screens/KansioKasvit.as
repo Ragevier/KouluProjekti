@@ -182,6 +182,7 @@ package screens
 		oravanmarjaT =  new Button(Assets.getLaatKasvi2().getTexture("Tunt Oravanmarja")); //kasvi2   Tuntematon
 		oravanmarjaT.x = 25;
 		oravanmarjaT.y = 40;
+		oravanmarjaT.visible = false;
 		this.addChild(oravanmarjaT)
 		
 		oravanmarja =  new Button(Assets.getLaatKasvi2().getTexture("Oravanmarja")); //kasvi2
@@ -193,6 +194,7 @@ package screens
 		piharatamoT =  new Button(Assets.getLaatKasvi2().getTexture("Tunt Piharatamo")); //kasvi2  Tuntematon
 		piharatamoT.x = 160;	
 		piharatamoT.y = 40;
+		piharatamoT.visible = false;
 		this.addChild(piharatamoT)
 		
 		piharatamo =  new Button(Assets.getLaatKasvi2().getTexture("Piharatamo")); //kasvi2
@@ -204,6 +206,7 @@ package screens
 		punaapilaT =  new Button(Assets.getLaatKasvi2().getTexture("Tunt Puna-apila")); //kasvi2 Tuntematon
 		punaapilaT.x = 25;	
 		punaapilaT.y = 140;
+		punaapilaT.visible = false;
 		this.addChild(punaapilaT)
 		
 		punaapila =  new Button(Assets.getLaatKasvi2().getTexture("Puna-apila")); //kasvi2
@@ -215,6 +218,7 @@ package screens
 		puolukkaT = new Button(Assets.getLaatKasvi1().getTexture("Tuntematon puolukka")); //kasvi1 Tuntematon
 		puolukkaT.x = 160;	
 		puolukkaT.y = 140;
+		puolukkaT.visible = false;
 		this.addChild(puolukkaT)
 		
 		puolukka = new Button(Assets.getLaatKasvi1().getTexture("Puolukka ")); //kasvi1
@@ -226,6 +230,7 @@ package screens
 		paivankakkaraT = new Button(Assets.getLaatKasvi3().getTexture("tuntPäivänakkara")); //kasvi3 Tuntematon
 		paivankakkaraT.x = 160;	
 		paivankakkaraT.y = 240;
+		paivankakkaraT.visible = false;
 		this.addChild(puolukkaT)
 			
 		paivankakkara = new Button(Assets.getLaatKasvi3().getTexture("Päivänkakkara")); //kasvi3
@@ -248,6 +253,7 @@ package screens
 		vadelmaT = new Button(Assets.getLaatKasvi1().getTexture("Tuntematon Vadelma")); //kasvi1 Tuntematon
 		vadelmaT.x = 25;
 		vadelmaT.y = 340;
+		vadelmaT.visible = false;
 		this.addChild(vadelmaT)
 		
 		vadelma = new Button(Assets.getLaatKasvi1().getTexture("Vadelma")); //kasvi1
@@ -256,9 +262,10 @@ package screens
 		vadelma.visible = false;
 		this.addChild(vadelma)
 		
-		valkoapilaT = new Button(Assets.getLaatKasvi2().getTexture("Tuntematon Valkoapila")); //kasvi2 Tuntematon
+		valkoapilaT = new Button(Assets.getLaatKasvi2().getTexture("Tunt Valkoapila")); //kasvi2 Tuntematon
 		valkoapilaT.x = 160;	
 		valkoapilaT.y = 340;
+		valkoapila.visible = false;
 		this.addChild(valkoapilaT)	
 		
 		valkoapila = new Button(Assets.getLaatKasvi2().getTexture("Valkoapila")); //kasvi2
@@ -267,9 +274,10 @@ package screens
 		valkoapila.visible = false;  			// 8
 		this.addChild(valkoapila)
 		
-		valkovuokkoT = new Button(Assets.getLaatKasvi2().getTexture("Tuntematon Valkovuokko")); //kasvi2 Tuntematon
+		valkovuokkoT = new Button(Assets.getLaatKasvi2().getTexture("Tunt Valkovuokko")); //kasvi2 Tuntematon
 		valkovuokkoT.x = 25;	 
 		valkovuokkoT.y = 40;
+		valkovuokkoT.visible = false;
 		this.addChild(valkovuokkoT)
 			
 		valkovuokko = new Button(Assets.getLaatKasvi2().getTexture("Valkovuokko")); //kasvi2
@@ -278,9 +286,10 @@ package screens
 		valkovuokko.visible = false;	
 		this.addChild(valkovuokko)
 		
-		voiKukkaT = new Button(Assets.getLaatKasvi2().getTexture("Tuntematon Voikukka"));  //kasvi2 Tuntematon
+		voiKukkaT = new Button(Assets.getLaatKasvi2().getTexture("Tunt Voikukka"));  //kasvi2 Tuntematon
 		voiKukkaT.x = 160;	
 		voiKukkaT.y = 40;	
+		voiKukkaT.visible = false;
 		this.addChild(voiKukkaT)
 		
 		voiKukka = new Button(Assets.getLaatKasvi2().getTexture("Voikukka"));  //kasvi2

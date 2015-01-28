@@ -65,7 +65,7 @@ package screens
 		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
-		sienetLajit = new Button(Assets.getTexture("sienetLaji"));  // UUDETSTAAN
+		sienetLajit = new Button(Assets.getTexture("sienetLaji"));  
 		this.addChild(sienetLajit)
 		sienetLajit.x = 25;	
 		sienetLajit.y = 40;
@@ -80,10 +80,10 @@ package screens
 		puutLajit.x = 160;	
 		puutLajit.y = 175;
 		
-		elaimetLajit = new Button(Assets.getTexture("elainLaji")); 
-		this.addChild(elaimetLajit)
-		elaimetLajit.x = 25;	
-		elaimetLajit.y = 140;
+		//elaimetLajit = new Button(Assets.getTexture("elainLaji")); 
+	//	this.addChild(elaimetLajit)
+	//	elaimetLajit.x = 25;	
+	//	elaimetLajit.y = 140;
 		
 		
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
@@ -98,39 +98,37 @@ package screens
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
 		this.addEventListener(Event.TRIGGERED, kasviKuviin)
 		this.addEventListener(Event.TRIGGERED, sienetKuvat)
-		this.addEventListener(Event.TRIGGERED, elainKuvat)
+		//this.addEventListener(Event.TRIGGERED, elainKuvat)
 		this.addEventListener(Event.TRIGGERED, puutKuviin)
 		}	
 		
 		private function puutKuviin(event:Event):void
 		{
-		
 		var buttonClicked:Button = event.target as Button;
 		if((buttonClicked as Button) == puutLajit){
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));
-				
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutlaji"}, true));			
 		}
 		}
-		private function elainKuvat(event:Event):void
-		{	
-			var buttonClicked:Button = event.target as Button;
-			if((buttonClicked as Button) == elaimetLajit){
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"elainLaji"}, true));
-		}
-		}
+		//private function elainKuvat(event:Event):void
+		//{	
+	//		var buttonClicked:Button = event.target as Button;
+	//		if((buttonClicked as Button) == elaimetLajit){
+	//		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"elainLaji"}, true));
+	//	}
+	//	}
 		
 		private function sienetKuvat(event:Event):void
 		{
 			var buttonClicked:Button = event.target as Button;
-			if((buttonClicked as Button) == sienetLajit)
-		{
+			if((buttonClicked as Button) == sienetLajit){
+			
 			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"sienetLaji"}, true));
 		}
 		}
 		private function kasviKuviin(event:Event):void
 		{
-		var buttonClicked:Button = event.target as Button;
-		if((buttonClicked as Button) == kasvitLajit){
+		var buttonClicked:Button = event.target as Button;   //kasvitlajit
+		if((buttonClicked as Button) == kasvitLajit){									
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"kasvitLaji"}, true));		
 		}
 		}

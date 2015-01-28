@@ -22,8 +22,8 @@ package
 		private var screenKansio:Kansio;
 		private var soundMute:Sounds;
 		private var screenKansioKasvit:KansioKasvit;
-		private var screenKansioSienet:KansioSienet
-		private var screenKansioPuut:KansioPuut
+		private var screenKansioSienet:KansioSienet;
+		private var screenKansioPuut:KansioPuut;
 		
 		public function Game()
 		{		
@@ -49,13 +49,13 @@ package
 		screenKansioKasvit.disposeTemporarily();
 		this.addChild(screenKansioKasvit)
 		
-		 screenKansioSienet = new KansioSienet();	
-		 screenKansioSienet.disposeTemporarily();
-		 this.addChild(screenKansioSienet)
+		screenKansioSienet = new KansioSienet();	
+		screenKansioSienet.disposeTemporarily();
+		this.addChild(screenKansioSienet)
 		
-		 screenKansioPuut = new KansioPuut();	
-		 screenKansioPuut.disposeTemporarily();
-		 this.addChild(screenKansioPuut)
+		screenKansioPuut = new KansioPuut();	
+		screenKansioPuut.disposeTemporarily();
+		this.addChild(screenKansioPuut)
 		
 		}
 		private function onChangeScreen(event:NavigationEvent):void
@@ -82,15 +82,10 @@ package
 		screenKansioKasvit.initialize();
 		break;
 		
-		case "puutLaji":
+		case "puutLaji":     
 		screenKansio.disposeTemporarily();
 		screenKansioPuut.initialize();
 		break;
-		
-	//	case "elainLaji":
-		//screenKansio.disposeTemporarily();
-		//screenKansioKasvit.initialize();
-		//break;
 		
 		case "sienetLaji":
 		screenKansio.disposeTemporarily();
