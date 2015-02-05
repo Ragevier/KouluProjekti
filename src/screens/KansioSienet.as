@@ -44,10 +44,9 @@ package screens
 		}
 		}
 
-		private function onAddedToStage(event:Event):void
+		public function onAddedToStage(event:Event):void
 		{
 		this.addEventListener(Event.REMOVED_FROM_STAGE, onAddedToStage)
-		
 		kansionKuvat();	
 		}
 		
@@ -125,11 +124,11 @@ package screens
 		}
 		public function disposeTemporarily():void
 		{
-			this.visible = false;
+		this.visible = false;
 		}
 		public function initialize():void
 		{
-			this.visible = true;
+		this.visible = true;
 		}
 	}
 }

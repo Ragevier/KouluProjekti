@@ -82,7 +82,7 @@ package
 		screenKansioKasvit.initialize();
 		break;
 		
-		case "puutLaji":     
+		case "puutLaji":
 		screenKansio.disposeTemporarily();
 		screenKansioPuut.initialize();
 		break;
@@ -96,9 +96,10 @@ package
 		screenInGame.disposeTemporarily();	
 		screenKansio.disposeTemporarily();
 		screenKansioKasvit.disposeTemporarily();
+		screenKansioPuut.disposeTemporarily();
+		screenKansioSienet.disposeTemporarily()
 		screenStartScreen.initialize();
 		break;
-		
 					
 		 }
 		}

@@ -29,7 +29,7 @@ package
 			//stats = new Stats ();
 			//this.addChild(stats);
 			
-			myStarling= new Starling(Game,stage)
+			myStarling = new Starling(screens.KansioSienet, stage)
 			myStarling.antiAliasing = 1;
 			myStarling.start();
 		
