@@ -64,19 +64,19 @@ package screens
 		public function KansioKasvit()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage)
-		this.addEventListener(KeyboardEvent.KEY_DOWN, valikko)
+		this.addEventListener(KeyboardEvent.KEY_DOWN, keyboard)
 		}
 		
-		private function valikko(event:KeyboardEvent):void
+		private function keyboard(event:KeyboardEvent):void
 		{
-		if(event.keyCode == Keyboard.ESCAPE)
-		{
-			
 			if(event.keyCode == Keyboard.ESCAPE){
+				
+				if(event.keyCode == Keyboard.ESCAPE){
 				if(valikkoRuutu.visible == false){
-					valikkoRuutu.visible = true
-				}else{valikkoRuutu.visible = false}
-		}
+				valikkoRuutu.visible = true
+				}else{
+				valikkoRuutu.visible = false}
+			}		
 		}
 		}		
 		public function onAddedToStage(event:Event):void
@@ -197,7 +197,7 @@ package screens
 		piharatamoT.visible = false;
 		this.addChild(piharatamoT)
 		
-		piharatamo =  new Button(Assets.getLaatKasvi2().getTexture("Piharatamo")); //kasvi2
+		piharatamo =  new Button(Assets.getLaatKasvi2().getTexture("piharatamo")); //kasvi2
 		piharatamo.x = 160;	
 		piharatamo.y = 40;
 		piharatamo.visible = false;
@@ -233,13 +233,13 @@ package screens
 		paivankakkaraT.visible = false;
 		this.addChild(puolukkaT)
 			
-		paivankakkara = new Button(Assets.getLaatKasvi3().getTexture("Päivänkakkara")); //kasvi3
+		paivankakkara = new Button(Assets.getLaatKasvi3().getTexture("Päivänkakkara ")); //kasvi3
 		paivankakkara.x = 160;	
 		paivankakkara.y = 240;
 		paivankakkara.visible = false;
 		this.addChild(paivankakkara)
 		
-		sinivuokkoT = new Button(Assets.getLaatKasvi1().getTexture("Tunt Sinivuokko")); //kasvi2 Tuntematn
+		sinivuokkoT = new Button(Assets.getLaatKasvi1().getTexture("Tunt Sinivuokko")); //kasvi2 Tuntematon
 		sinivuokkoT.x = 25;	
 		sinivuokkoT.y = 240; 	
 		this.addChild(sinivuokkoT)	
@@ -297,20 +297,21 @@ package screens
 		voiKukka.y = 40;
 		voiKukka.visible = false;
 		this.addChild(voiKukka)	
-			
-			
-		lisaaKasveja = new Button(Assets.getLaatKasvi1().getTexture("KansioNappi")); 
+
+		// =====================     			
+		
+		lisaaKasveja = new Button(Assets.getTexture("KansioNappi")); 
 		lisaaKasveja.x = 235;	
 		lisaaKasveja.y = 420;
 		this.addChild(lisaaKasveja)	
 			
-		lisaaKasveja2 = new Button(Assets.getLaatKasvi1().getTexture("LajiNappi")); 
+		lisaaKasveja2 = new Button(Assets.getTexture("LajiNappi")); 
 		lisaaKasveja2.x = 235;	
 		lisaaKasveja2.y = 450;
 		lisaaKasveja2.visible = false;
 		this.addChild(lisaaKasveja2)	
 		
-		takaisinKasveja = new Button(Assets.getLaatKasvi1().getTexture("LajiNappi")); 
+		takaisinKasveja = new Button(Assets.getTexture("MuteBtnTwo")); 
 		takaisinKasveja.x = 25;	
 		takaisinKasveja.y = 450;
 		takaisinKasveja.visible = false;
@@ -323,7 +324,7 @@ package screens
 			
 		valikkoRuutu = new Valikko;
 		valikkoRuutu.visible = false;
-		this.addChild(valikkoRuutu)	
+		this.addChild(valikkoRuutu)
 			
 		this.addEventListener(Event.TRIGGERED, Lisaa)
 		}
@@ -360,7 +361,6 @@ package screens
 		this.addEventListener(Event.TRIGGERED, TakaisinPain)
 		}
 		}
-		
 		private function TakaisinPain(event:Event):void
 		{
 			var buttonClicked:Button = event.target as Button
@@ -410,18 +410,17 @@ package screens
 				valkovuokko.visible = true; // Esille
 				voiKukka.visible = true;  // Esille
 				
-				lisaaKasveja2.visible = false;
-				
+				lisaaKasveja2.visible = false;	
 				takaisinKasveja.visible = true;		
 			}			
 		}
 		public function disposeTemporarily():void
 		{
-			this.visible = false;
+		this.visible = false;
 		}
 		public function initialize():void
 		{
-			this.visible = true;
+		this.visible = true;
 		}
 	}
 }
