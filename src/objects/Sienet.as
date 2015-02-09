@@ -60,7 +60,7 @@ package objects
 		karvarousku.x = 520; 	
 		karvarousku.y = 410;	
 		
-		punaKarpasSieni = new Image(Assets.getSienet().getTexture("punakärpässieni"));
+		punaKarpasSieni = new Image(Assets.getSienet().getTexture("punakarpas_sieni"));
 		this.addChild(punaKarpasSieni)	
 		punaKarpasSieni.x = 437; 	
 		punaKarpasSieni.y = 20;

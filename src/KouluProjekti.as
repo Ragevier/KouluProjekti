@@ -4,8 +4,6 @@ package
 	
 	import flash.display.Sprite;
 	
-	import net.hires.debug.Stats;
-	
 	import screens.InGame;
 	import screens.Kansio;
 	import screens.KansioKasvit;
@@ -29,7 +27,7 @@ package
 			//stats = new Stats ();
 			//this.addChild(stats);
 			
-			myStarling = new Starling(screens.KansioSienet, stage)
+			myStarling = new Starling(Game, stage)
 			myStarling.antiAliasing = 1;
 			myStarling.start();
 		

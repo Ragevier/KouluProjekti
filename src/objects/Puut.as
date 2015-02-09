@@ -57,37 +57,37 @@ package objects
 		
 		public function puuArt():void
 		{
-		koivu = new Image(Assets.getPuut().getTexture("Koivu"));	
+		koivu = new Image(Assets.getPuut().getTexture("koivu"));	
 		this.addChild(koivu)
 		koivu.x = 207;
 		koivu.y = 46;
 			
-		pihlajaKaks = new Image(Assets.getPuut().getTexture("Pihlaja"));
+		pihlajaKaks = new Image(Assets.getPuut().getTexture("pihlaja"));
 		this.addChild(pihlajaKaks)
 		pihlajaKaks.x = 30;
 		pihlajaKaks.y = 40;
 			
-		manty = new Image(Assets.getPuut().getTexture("Mänty"));
+		manty = new Image(Assets.getPuut().getTexture("manty"));
 		this.addChild(manty);
 		manty.x = 35;
 		manty.y = 120;
 		
-		mantyKaks = new Image(Assets.getPuut().getTexture("Mänty"));
+		mantyKaks = new Image(Assets.getPuut().getTexture("manty"));
 		this.addChild(mantyKaks);
 		manty.x = 278;
 		manty.y = 530;	
 		
-		haapa = new Image(Assets.getPuut().getTexture("Haapa"));
+		haapa = new Image(Assets.getPuut().getTexture("haapa"));
 		this.addChild(haapa);
 		haapa.x = 436;
 		haapa.y = 124;
 		
-		pihlaja = new Image(Assets.getPuut().getTexture("Pihlaja"));
+		pihlaja = new Image(Assets.getPuut().getTexture("pihlaja"));
 		this.addChild(pihlaja);
 		pihlaja.x = 526;
 		pihlaja.y = 142;
 					
-		vaahtera = new Image(Assets.getPuut().getTexture("Vaahtera"));
+		vaahtera = new Image(Assets.getPuut().getTexture("vaahtera"));
 		this.addChild(vaahtera);
 		vaahtera.x = 237;
 		vaahtera.y = 45;	

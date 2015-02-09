@@ -55,49 +55,49 @@ package objects
 		
 		private function kasvitArt():void
 		{
-		ahomansikka = new Image(Assets.getKasvit().getTexture("Ahomansikka"));
+		ahomansikka = new Image(Assets.getKasvit().getTexture("ahomansikka"));
 		this.addChild(ahomansikka)
 		ahomansikka.x = 200;
 		ahomansikka.y = 20;	
 		
-		kanerva = new Image(Assets.getKasvit().getTexture("Kanerva"));
+		kanerva = new Image(Assets.getKasvit().getTexture("kanerva1"));
 		this.addChild(kanerva)
 		kanerva.x = 513;
 		kanerva.y = 20;
 		
-		karpalo = new Image(Assets.getKasvit().getTexture("Karpalo"));
+		karpalo = new Image(Assets.getKasvit().getTexture("karpalo"));
 		this.addChild(karpalo)
 		karpalo.x = 20;
 		karpalo.y = 45;	
 		
-		kielo = new Image(Assets.getKasvit().getTexture("Kielo"));
+		kielo = new Image(Assets.getKasvit().getTexture("kielo"));
 		this.addChild(kielo)
 		kielo.x = 246;
 		kielo.y = 420;	
 		
 		
-		kieloYks = new Image(Assets.getKasvit().getTexture("Kielo"));
+		kieloYks = new Image(Assets.getKasvit().getTexture("kielo"));
 		this.addChild(kieloYks)
 		kieloYks.x = 100;
 		kieloYks.y = 300;	
 		
 		
-		kaenkaali = new Image(Assets.getKasvit().getTexture("Käenkaali"));
+		kaenkaali = new Image(Assets.getKasvit().getTexture("kaenkaali"));
 		this.addChild(kaenkaali)
 		kaenkaali.x = 78;
 		kaenkaali.y = 428;	
 		
-		lakka = new Image(Assets.getKasvit().getTexture("Lakka"));
+		lakka = new Image(Assets.getKasvit().getTexture("lakka"));
 		this.addChild(lakka)
 		lakka.x = 100;
 		lakka.y = 316;
 			
-		mustikka = new Image(Assets.getKasvit().getTexture("Mustikka"));
+		mustikka = new Image(Assets.getKasvit().getTexture("mustikka"));
 		this.addChild(mustikka)
 		mustikka.x = 20;
 		mustikka.y = 43;
 		
-		leskenlehti = new Image(Assets.getKasvit().getTexture("Leskenlehti"));
+		leskenlehti = new Image(Assets.getKasvit().getTexture("leskenlehti"));
 		this.addChild(leskenlehti)
 		leskenlehti.x = 45;
 		leskenlehti.y = 70;

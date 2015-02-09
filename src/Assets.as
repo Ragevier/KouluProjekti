@@ -68,22 +68,22 @@ package
 			private static var laatikkoPuutTextureAtlas:TextureAtlas;
 			private static var laatikkoSienetTextureAtlas:TextureAtlas;
 			
-			[Embed(source="../media/graphic/puut.png")]
+			[Embed(source="../media/graphic/uudet puu spritet.png")]
 			public static const AtlasTextureGame:Class;
 				
-			[Embed(source="../media/graphic/puut.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet puu spritet.xml", mimeType="application/octet-stream")]
 			public static const AtlasXmlGame:Class;								
 			
-			[Embed(source="../media/graphic/sienet.png")]
+			[Embed(source="../media/graphic/uudet sieni spritet.png")]
 			public static const Sienet:Class;
 		
-			[Embed(source="../media/graphic/sienet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet sieni spritet.xml", mimeType="application/octet-stream")]
 			public static const SienetXml:Class;		
 			
-			[Embed(source="../media/graphic/kasvit.png")]
+			[Embed(source="../media/graphic/uudet kasvi spritet.png")]
 			public static const Kasvit:Class;
 			
-			[Embed(source="../media/graphic/kasvit.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet kasvi spritet.xml", mimeType="application/octet-stream")]
 			public static const KasvitXml:Class;
 			
 			[Embed(source="../media/graphic/paahenkilo.png")]
@@ -98,10 +98,10 @@ package
 			[Embed(source="../media/graphic/Takaisin_nappi.xml", mimeType="application/octet-stream")]
 			public static const TakaisinNappiXml:Class;
 			
-			[Embed(source="../media/graphic/puut.png")]
+			[Embed(source="../media/graphic/uudet puu spritet.png")]
 			public static const Puut:Class;
 			
-			[Embed(source="../media/graphic/puut.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet puu spritet.xml", mimeType="application/octet-stream")]
 			public static const puutXml:Class;
 			
 			[Embed(source="../media/graphic/Aloita_Peli.png")]
@@ -110,16 +110,16 @@ package
 			[Embed(source="../media/graphic/Aloita_Peli.xml", mimeType="application/octet-stream")]
 			public static const aloita_PeliXml:Class;
 			
-			[Embed(source="../media/graphic/pienet eläin kuvat.png")]
+			[Embed(source="../media/graphic/uudet eläin spritet.png")]
 			public static const pienElain:Class;
 			
-			[Embed(source="../media/graphic/pienet eläin kuvat.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet eläin spritet.xml", mimeType="application/octet-stream")]
 			public static const pienElainXml:Class;
 			
-			[Embed(source="../media/graphic/Opettaja.png")]
+			[Embed(source="../media/graphic/uudet ope spritet.png")]
 			public static const opettaja:Class;
 			
-			[Embed(source="../media/graphic/Opettaja.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/graphic/uudet ope spritet.xml", mimeType="application/octet-stream")]
 			public static const opettajaXml:Class;
 			
 			[Embed(source="../media/graphic/laatikko kasvit1.png")]
