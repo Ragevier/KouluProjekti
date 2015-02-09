@@ -17,7 +17,7 @@ package objects
 		private function onTouch(te:TouchEvent):void
 		{
 		if(te.getTouch(this, TouchPhase.BEGAN){
-			//eläinten kuvat tähääääääää tai mitälie kuvia
+			//eläinten kuva painellukset
 		}
 		}
 		

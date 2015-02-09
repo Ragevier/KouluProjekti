@@ -47,9 +47,9 @@ package screens
 		if(event.keyCode == Keyboard.ESCAPE){
 			
 			if(event.keyCode == Keyboard.ESCAPE){
-				if(valikkoRuutu.visible == false){
-					valikkoRuutu.visible = true
-				}else{valikkoRuutu.visible = false}
+			if(valikkoRuutu.visible == false){
+			valikkoRuutu.visible = true
+			}else{valikkoRuutu.visible = false}
 		}		
 		}
 		}
@@ -65,7 +65,7 @@ package screens
 		BgKansio = new Image(Assets.getTexture("KansioTyhj")); 
 		this.addChild(BgKansio)
 		
-		sienetLajit = new Button(Assets.getTexture("sienetLaji"));  // UUDETSTAAN
+		sienetLajit = new Button(Assets.getTexture("sienetLaji"));  
 		this.addChild(sienetLajit)
 		sienetLajit.x = 25;	
 		sienetLajit.y = 40;
@@ -80,12 +80,11 @@ package screens
 		puutLajit.x = 160;	
 		puutLajit.y = 175;
 		
-		elaimetLajit = new Button(Assets.getTexture("elainLaji")); 
-		this.addChild(elaimetLajit)
-		elaimetLajit.x = 25;	
-		elaimetLajit.y = 140;
-		
-		
+	//	elaimetLajit = new Button(Assets.getTexture("elainLaji")); 
+	//	this.addChild(elaimetLajit)
+	//	elaimetLajit.x = 25;	
+	//	elaimetLajit.y = 140;
+				
 		takaisinPeliin = new Button(Assets.getTakaisinNappi().getTexture("Takaisin_nappi0000"));
 		this.addChild(takaisinPeliin);
 		takaisinPeliin.x = 230;		
@@ -98,39 +97,28 @@ package screens
 		this.addEventListener(Event.TRIGGERED, kansioMenuClick)	
 		this.addEventListener(Event.TRIGGERED, kasviKuviin)
 		this.addEventListener(Event.TRIGGERED, sienetKuvat)
-		this.addEventListener(Event.TRIGGERED, elainKuvat)
 		this.addEventListener(Event.TRIGGERED, puutKuviin)
 		}	
 		
 		private function puutKuviin(event:Event):void
 		{
-		
-		var buttonClicked:Button = event.target as Button;
-		if((buttonClicked as Button) == puutLajit){
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));
-				
-		}
-		}
-		private function elainKuvat(event:Event):void
-		{	
-			var buttonClicked:Button = event.target as Button;
-			if((buttonClicked as Button) == elaimetLajit){
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"elainLaji"}, true));
+		var buttonClicked1:Button = event.target as Button;   //puut
+		if((buttonClicked1 as Button) == puutLajit){									
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));		
 		}
 		}
 		
 		private function sienetKuvat(event:Event):void
 		{
-			var buttonClicked:Button = event.target as Button;
-			if((buttonClicked as Button) == sienetLajit)
-		{
-			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"sienetLaji"}, true));
+		var buttonClicked2:Button = event.target as Button;    // Sienet
+		if((buttonClicked2 as Button) == sienetLajit){	
+		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"sienetLaji"}, true));
 		}
 		}
 		private function kasviKuviin(event:Event):void
 		{
-		var buttonClicked:Button = event.target as Button;
-		if((buttonClicked as Button) == kasvitLajit){
+		var buttonClicked:Button = event.target as Button;   //kasvitlajit
+		if((buttonClicked as Button) == kasvitLajit){									
 		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"kasvitLaji"}, true));		
 		}
 		}
@@ -144,14 +132,13 @@ package screens
 		SoundMixer.stopAll()			
 		}	
 		}	
-	public function disposeTemporarily():void
-	{
-	this.visible = false;
-	}	
-	public function initialize():void
-	{
+		public function disposeTemporarily():void
+		{
+		this.visible = false;
+		}	
+		public function initialize():void
+		{
 		this.visible = true;
-	}
-	
+		}	
 	}	
 }	

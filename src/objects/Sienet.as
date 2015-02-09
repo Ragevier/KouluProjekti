@@ -22,7 +22,7 @@ package objects
 		
 		public function onTouch(te:TouchEvent):void
 		{
-		if(te.getTouch(herkkutatti, TouchPhase.BEGAN)){    //Toimiva hiiri Klikkaus
+		if(te.getTouch(herkkutatti, TouchPhase.BEGAN)){    //Toimiva hiiri Klikkaus 
 		herkkutatti.visible = false;
 		
 		}else if(te.getTouch(karvarousku, TouchPhase.BEGAN)){        // Muista Jokaiselle oma muuten kaikki menee samasta 
