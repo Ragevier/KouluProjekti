@@ -8,6 +8,9 @@ package objects
 	
 	public class Elaimet extends Sprite
 	{
+		
+		
+		
 		public function Elaimet()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage)
@@ -29,6 +32,10 @@ package objects
 		
 		private function elainArt():void
 		{
+			
+			
+			
+			
 		//kuvat tähän
 			
 		}

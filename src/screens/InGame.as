@@ -66,8 +66,8 @@ package screens
 				
 			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
 			this.addChild(kansioBtn);
-			kansioBtn.x = 598;
-			kansioBtn.y = 420;
+			kansioBtn.x = 530;
+			kansioBtn.y = 360;
 			
 			player = new Player();	
 			player.x = stage.stageWidth/2;

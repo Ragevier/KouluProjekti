@@ -30,7 +30,7 @@ package
 			myStarling = new Starling(Game, stage)
 			myStarling.antiAliasing = 1;
 			myStarling.start();
-		
+			
 		}	
 	}
 }

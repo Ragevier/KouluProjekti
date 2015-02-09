@@ -60,7 +60,7 @@ package screens
 		herkkutattiT.y = 40; 	
 		this.addChild(herkkutattiT)
 		
-		herkkutatti = new Button(Assets.getLaatSienet().getTexture("Herkktuatti")); 
+		herkkutatti = new Button(Assets.getLaatSienet().getTexture("Herkkutatti")); 
 		herkkutatti.x = 25;	
 		herkkutatti.y = 40; 
 		herkkutatti.visible = false;
@@ -88,7 +88,7 @@ package screens
 		karvarousku.visible = false;
 		this.addChild(karvarousku);			
 		
-		punakarpassieniT =  new Button(Assets.getLaatSienet().getTexture("tuntematon Punakärpässieni")); //Piilossa
+		punakarpassieniT =  new Button(Assets.getLaatSienet().getTexture("Tuntematon Punakärpässieni")); //Piilossa
 		punakarpassieniT.x = 160;	
 		punakarpassieniT.y = 140;
 		this.addChild(punakarpassieniT);
