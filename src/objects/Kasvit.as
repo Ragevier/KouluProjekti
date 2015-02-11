@@ -1,5 +1,8 @@
 package objects
 {
+	import screens.KansioKasvit;
+	
+	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -18,6 +21,13 @@ package objects
 		private var leskenlehti:Image;
 		private var mustikka:Image;
 		
+		private var kysymys1:Image;
+		private var kysymysKanerva:Image;
+		private var kysymysA1:Button
+		private var kysymysB1:Button
+		private var kysymysC1:Button
+		private var kansioKasviT:KansioKasvit;
+		
 		public function Kasvit()
 		{
 		
@@ -27,23 +37,62 @@ package objects
 		
 		private function onTouch(te:TouchEvent):void
 		{
+			var vastaus:String
+			
 			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva ahomansikka klikkaus
-			ahomansikka.visible = false;	
-		}else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
-			kanerva.visible = false;
+			
+			kysymys1 = new Image(KysymysAsset.getKysymys().getTexture("harakka1"));   // Kysymyksen grafiikat 
+			kysymys1.x = 320
+			kysymys1.y = 240
+			this.addChild(kysymys1)
+			
+			kysymysA1 = new Button(KysymysAsset.getKysymys().getTexture("hiiri1")); // Kysymyksen yksi valinta 
+			kysymysA1.x = 360;
+			kysymysA1.y = 200;
+			this.addChild(kysymysA1)
+			
+			kysymysB1 = new Button(KysymysAsset.getKysymys().getTexture("ikalaov")); // Kysymyksen toinen valinta 
+			kysymysB1.x = 360;
+			kysymysB1.y = 240;
+			this.addChild(kysymysB1)
+				
+			kysymysC1 = new Button(KysymysAsset.getKysymys().getTexture("janisetu1")); // Kysymyksen kolmas valinta 
+			kysymysC1.x = 360;
+			kysymysC1.y = 280;
+			this.addChild(kysymysC1)	
+	
+			if(vastaus == kysymysB1){
+			 kansioKasviT.ahomansikkaT.visible = false;
+			 kansioKasviT.ahomansikka.visible = true;	 
+			}else if(vastaus == kysymysA1){
+			 	
+			}
+				
+				
+			}else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
+		
+				kanerva.visible = false;
 		}else if(te.getTouch(karpalo, TouchPhase.BEGAN)){
+		
 			karpalo.visible = false;						// piilottaa kuvakkeet testin vuoksi
 		}else if(te.getTouch(kielo, TouchPhase.BEGAN)){
-		kielo.visible = false;
+		
+			kielo.visible = false;
 		}else if(te.getTouch(kieloYks, TouchPhase.BEGAN)){
+		
 			kieloYks.visible = false;
 		}else if(te.getTouch(kaenkaali, TouchPhase.BEGAN)){
+		
 			kaenkaali.visible = false;
+		
 		}else if(te.getTouch(lakka, TouchPhase.BEGAN)){
+		
 			lakka.visible = false;
 		}else if(te.getTouch(mustikka, TouchPhase.BEGAN)){
+		
 			mustikka.visible = false;
 		}else if(te.getTouch(leskenlehti, TouchPhase.BEGAN)){
+		
 			leskenlehti.visible = false;
 		}
 		}
