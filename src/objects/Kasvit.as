@@ -37,7 +37,7 @@ package objects
 		
 		private function onTouch(te:TouchEvent):void
 		{
-			var vastaus:String
+			var vastaus:Button
 			
 			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva ahomansikka klikkaus
 			

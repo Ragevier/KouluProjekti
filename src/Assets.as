@@ -154,11 +154,11 @@ package
 			
 			public static function getLaatSienet():TextureAtlas
 			{
-				if (laatikkoPuutTextureAtlas == null)
+				if (laatikkoSienetTextureAtlas == null)
 				{
 					var texture:Texture = getTexture("laatikkoSienet");
 					var xml:XML = XML(new laatikkoSienetXml);
-					laatikkoPuutTextureAtlas = new TextureAtlas(texture, xml);
+					laatikkoSienetTextureAtlas = new TextureAtlas(texture, xml);
 				}
 				return  laatikkoPuutTextureAtlas;
 			}

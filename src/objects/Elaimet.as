@@ -14,7 +14,7 @@ package objects
 		private var hiiri1:Image;
 		private var ikalavo:Image;
 		private var pkalavo:Image;
-		private var janisetu1:Image;
+		private var janisov1:Image;
 		private var msorsa:Image;
 		private var nsorsa:Image;
 		private var muurahaiset1:Image;
@@ -22,7 +22,7 @@ package objects
 		private var orava1:Image;
 		private var perhonen:Image;
 		private var varis1:Image;
-		private var siilietu1:Image;
+		private var siiliov1:Image;
 		private var sudenkorento_ylos1:Image;
 		private var rastas1:Image;
 		
@@ -48,8 +48,8 @@ package objects
 		}else if(te.getTouch(pkalavo, TouchPhase.BEGAN)){
 			pkalavo.visible = false;
 			
-		}else if(te.getTouch(janisetu1, TouchPhase.BEGAN)){
-			janisetu1.visible = false;
+		}else if(te.getTouch(janisov1, TouchPhase.BEGAN)){
+			janisov1.visible = false;
 		
 		}else if(te.getTouch(msorsa, TouchPhase.BEGAN)){
 			msorsa.visible = false;
@@ -72,8 +72,8 @@ package objects
 		}else if(te.getTouch(varis1, TouchPhase.BEGAN)){
 			varis1.visible = false;
 			
-		}else if(te.getTouch(siilietu1, TouchPhase.BEGAN)){
-			siilietu1.visible = false;
+		}else if(te.getTouch(siiliov1, TouchPhase.BEGAN)){
+			siiliov1.visible = false;
 			
 		}else if(te.getTouch(sudenkorento_ylos1, TouchPhase.BEGAN)){
 			sudenkorento_ylos1.visible = false;
@@ -113,10 +113,10 @@ package objects
 		pkalavo.x = ;
 		pkalavo.y = ;
 		
-		janisetu1 = new Image(Assets.getPienElain().getTexture("Jänis"));
-		this.addChild(janisetu1)
-		janisetu1.x = ;
-		janisetu1.y = ;
+		janisov1 = new Image(Assets.getPienElain().getTexture("Jänis"));
+		this.addChild(janisov1)
+		janisov1.x = ;
+		janisov1.y = ;
 		
 		msorsa = new Image(Assets.getPienElain().getTexture("Sorsa"));
 		this.addChild(msorsa)
@@ -153,10 +153,10 @@ package objects
 		varis1.x = ;
 		varis1.y = ;
 		
-		siilietu1 = new Image(Assets.getPienElain().getTexture("Siili"));
-		this.addChild(siilietu1)
-		siilietu1.x = ;
-		siilietu1.y = ;
+		siiliov1 = new Image(Assets.getPienElain().getTexture("Siili"));
+		this.addChild(siiliov1)
+		siiliov1.x = ;
+		siiliov1.y = ;
 		
 		sudenkorento_ylos1 = new Image(Assets.getPienElain().getTexture("Sudenkorento"));
 		this.addChild(sudenkorento_ylos1)
