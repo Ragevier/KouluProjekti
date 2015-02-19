@@ -1,12 +1,12 @@
 package screens
 {
-	import events.NavigationEvent;
-	
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
+	
+	import events.NavigationEvent;
 	
 	import objects.Kasvit;
 	import objects.Player;
@@ -16,7 +16,6 @@ package screens
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
-	import starling.events.EnterFrameEvent;
 	import starling.events.Event;
 	import starling.events.KeyboardEvent;
 	import starling.events.TouchEvent;
@@ -42,7 +41,8 @@ package screens
 		private var noSpeed:Number = 0;
 		
 		private var valikkoRuutu:Valikko;
-		
+		public var kansioKasvi:KansioKasvit
+		public var mustikkaa:String
 	
 		private var hitObstacle:Number = 0;
 		
@@ -52,8 +52,18 @@ package screens
 			this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 			this.addEventListener(KeyboardEvent.KEY_DOWN, handleDown)
 			this.addEventListener(KeyboardEvent.KEY_UP, handleUp)	
-				
+			this.addEventListener(TouchEvent.TOUCH, onTouch)	
 		}
+		public function onTouch(te:TouchEvent):void
+		{
+	//	if(te.getTouch(kasvit.kanerva,TouchPhase.BEGAN)){
+	//	 kasvit.kanerva.visible = false	 
+	//	kansioKasvi.mustikkaKuva = "Mustikka ";
+	//	}
+			
+			
+		}
+		
 		private function onAddedToStage(event:Event):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);	
@@ -63,11 +73,6 @@ package screens
 		{			
 			bgScreen = new Image(Assets.getTexture("PeliTaka"));  					
 			this.addChild(bgScreen);
-				
-			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
-			this.addChild(kansioBtn);
-			kansioBtn.x = 530;
-			kansioBtn.y = 360;
 			
 			player = new Player();	
 			player.x = stage.stageWidth/2;
@@ -87,6 +92,12 @@ package screens
 			valikkoRuutu.visible = false;
 			this.addChild(valikkoRuutu)	 
 				
+			kansioBtn = new Button(Assets.getTexture("KansioNappi")); 
+			this.addChild(kansioBtn);
+			kansioBtn.x = 530;
+			kansioBtn.y = 360;
+			
+			
 			this.addEventListener(Event.TRIGGERED, onInGameClick)								
 				
 			hitObstacle--;	

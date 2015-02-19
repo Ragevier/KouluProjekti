@@ -83,8 +83,8 @@ package
 		break;
 		
 		case "puutLaji":
-		screenKansio.disposeTemporarily();
-		screenKansioPuut.initialize();
+		//screenKansio.disposeTemporarily();
+	//	screenKansioPuut.initialize();
 		break;
 		
 		case "sienetLaji":

@@ -14,10 +14,10 @@ package
 	private static var gameTextureAtlas:TextureAtlas;
 	private static var kysymysTextureAtlas:TextureAtlas;
 	
-	[Embed(source="../media/graphic/uudet eläin spritet.png")]        // Kysymyksen Grafiikat
+	[Embed(source="../media/elainten/uudet eläin spritet.png")]        // Kysymyksen Grafiikat
 	public static const kysymykset:Class;
 	
-	[Embed(source="../media/graphic/uudet eläin spritet.xml", mimeType="application/octet-stream")] // Kysymyksen Grafiikat
+	[Embed(source="../media/elainten/uudet eläin spritet.xml", mimeType="application/octet-stream")] // Kysymyksen Grafiikat
 	public static const kysymysXml:Class;	
 	
 	
@@ -36,7 +36,7 @@ package
 	{
 		if(gameTextures[name] == undefined)
 		{
-			var bitmap:Bitmap = new Assets[name]();
+			var bitmap:Bitmap = new KysymysAsset[name]();
 			gameTextures[name] = Texture.fromBitmap(bitmap);
 		}
 		return gameTextures[name];	

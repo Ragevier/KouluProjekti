@@ -68,28 +68,28 @@ package
 			private static var laatikkoPuutTextureAtlas:TextureAtlas;
 			private static var laatikkoSienetTextureAtlas:TextureAtlas;
 			
-			[Embed(source="../media/graphic/uudet puu spritet.png")]
+			[Embed(source="../media/puiden/uudet puu spritet.png")]
 			public static const AtlasTextureGame:Class;
 				
-			[Embed(source="../media/graphic/uudet puu spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/puiden/uudet puu spritet.xml", mimeType="application/octet-stream")]
 			public static const AtlasXmlGame:Class;								
 			
-			[Embed(source="../media/graphic/uudet sieni spritet.png")]
+			[Embed(source="../media/sienien/uudet sieni spritet.png")]
 			public static const Sienet:Class;
 		
-			[Embed(source="../media/graphic/uudet sieni spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/sienien/uudet sieni spritet.xml", mimeType="application/octet-stream")]
 			public static const SienetXml:Class;		
 			
-			[Embed(source="../media/graphic/uudet kasvi spritet.png")]
+			[Embed(source="../media/kasvien/uudet kasvi spritet.png")]
 			public static const Kasvit:Class;
 			
-			[Embed(source="../media/graphic/uudet kasvi spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kasvien/uudet kasvi spritet.xml", mimeType="application/octet-stream")]
 			public static const KasvitXml:Class;
 			
-			[Embed(source="../media/graphic/paahenkilo.png")]
+			[Embed(source="../media/paahenkilo/paahenkilo.png")]
 			public static const Paahenkilo:Class;
 			
-			[Embed(source="../media/graphic/paahenkilo.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/paahenkilo/paahenkilo.xml", mimeType="application/octet-stream")]
 			public static const paahenkiloXml:Class;
 			 
 			[Embed(source="../media/graphic/Takaisin_nappi.png")]
@@ -98,10 +98,10 @@ package
 			[Embed(source="../media/graphic/Takaisin_nappi.xml", mimeType="application/octet-stream")]
 			public static const TakaisinNappiXml:Class;
 			
-			[Embed(source="../media/graphic/uudet puu spritet.png")]
+			[Embed(source="../media/puiden/uudet puu spritet.png")]
 			public static const Puut:Class;
 			
-			[Embed(source="../media/graphic/uudet puu spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/puiden/uudet puu spritet.xml", mimeType="application/octet-stream")]
 			public static const puutXml:Class;
 			
 			[Embed(source="../media/graphic/Aloita_Peli.png")]
@@ -110,46 +110,46 @@ package
 			[Embed(source="../media/graphic/Aloita_Peli.xml", mimeType="application/octet-stream")]
 			public static const aloita_PeliXml:Class;
 			
-			[Embed(source="../media/graphic/uudet eläin spritet.png")]
+			[Embed(source="../media/elainten/uudet eläin spritet.png")]
 			public static const pienElain:Class;
 			
-			[Embed(source="../media/graphic/uudet eläin spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/elainten/uudet eläin spritet.xml", mimeType="application/octet-stream")]
 			public static const pienElainXml:Class;
 			
-			[Embed(source="../media/graphic/uudet ope spritet.png")]
+			[Embed(source="../media/opettaja/uudet ope spritet.png")]
 			public static const opettaja:Class;
 			
-			[Embed(source="../media/graphic/uudet ope spritet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/opettaja/uudet ope spritet.xml", mimeType="application/octet-stream")]
 			public static const opettajaXml:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit1.png")]
+			[Embed(source="../media/kansion/laatikko kasvit1.png")]
 			public static const laatikkoKasvit1:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit1.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kansion/laatikko kasvit1.xml", mimeType="application/octet-stream")]
 			public static const laatikkoKasvit1Xml:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit2.png")]
+			[Embed(source="../media/kansion/laatikko kasvit2.png")]
 			public static const laatikkoKasvit2:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit2.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kansion/laatikko kasvit2.xml", mimeType="application/octet-stream")]
 			public static const laatikkoKasvit2Xml:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit3.png")]
+			[Embed(source="../media/kansion/laatikko kasvit3.png")]
 			public static const laatikkoKasvit3:Class;
 			
-			[Embed(source="../media/graphic/laatikko kasvit3.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kansion/laatikko kasvit3.xml", mimeType="application/octet-stream")]
 			public static const laatikkoKasvit3Xml:Class;
 			
-			[Embed(source="../media/graphic/laatikko puut.png")]
+			[Embed(source="../media/kansion/laatikko puut.png")]
 			public static const laatikkoPuut:Class;
 			
-			[Embed(source="../media/graphic/laatikko puut.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kansion/laatikko puut.xml", mimeType="application/octet-stream")]
 			public static const laatikkoPuutXml:Class;
 		
-			[Embed(source="../media/graphic/laatikko sienet.png")]
+			[Embed(source="../media/kansion/laatikko sienet.png")]
 			public static const laatikkoSienet:Class;
 			
-			[Embed(source="../media/graphic/laatikko sienet.xml", mimeType="application/octet-stream")]
+			[Embed(source="../media/kansion/laatikko sienet.xml", mimeType="application/octet-stream")]
 			public static const laatikkoSienetXml:Class;
 			
 			public static function getLaatSienet():TextureAtlas

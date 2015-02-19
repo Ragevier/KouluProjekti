@@ -11,22 +11,26 @@ package objects
 	
 	public class Kasvit extends Sprite
 	{
-		private var ahomansikka:Image;
-		private var kanerva:Image;
-		private var karpalo:Image;
-		private var kielo:Image;
-		private var kieloYks:Image;
-		private var kaenkaali:Image;
-		private var lakka:Image;
-		private var leskenlehti:Image;
-		private var mustikka:Image;
+		public var ahomansikka:Image;
+		public var kanerva:Image;
+		public var karpalo:Image;
+		public var kielo:Image;
+		public var kieloYks:Image;
+		public var kaenkaali:Image;
+		public var lakka:Image;
+		public var leskenlehti:Image;
+		public var mustikka:Image;
 		
-		private var kysymys1:Image;
-		private var kysymysKanerva:Image;
-		private var kysymysA1:Button
-		private var kysymysB1:Button
-		private var kysymysC1:Button
-		private var kansioKasviT:KansioKasvit;
+		public var kysymys1:Image;
+		public var kysymysKanerva:Image;
+		public var kysymysA1:Button
+		public var kysymysB1:Button
+		public var kysymysC1:Button
+		public var kansioKasviT:KansioKasvit;
+		public var toimiko:Image;
+		
+		public var vastaus:Button
+
 		
 		public function Kasvit()
 		{
@@ -35,44 +39,13 @@ package objects
 		this.addEventListener(TouchEvent.TOUCH, onTouch);
 		}
 		
-		private function onTouch(te:TouchEvent):void
-		{
-			var vastaus:Button
-			
+		public function onTouch(te:TouchEvent):void
+		{	
 			if(te.getTouch(ahomansikka, TouchPhase.BEGAN)){            // Toimiva ahomansikka klikkaus
-			
-			kysymys1 = new Image(KysymysAsset.getKysymys().getTexture("harakka1"));   // Kysymyksen grafiikat 
-			kysymys1.x = 320
-			kysymys1.y = 240
-			this.addChild(kysymys1)
-			
-			kysymysA1 = new Button(KysymysAsset.getKysymys().getTexture("hiiri1")); // Kysymyksen yksi valinta 
-			kysymysA1.x = 360;
-			kysymysA1.y = 200;
-			this.addChild(kysymysA1)
-			
-			kysymysB1 = new Button(KysymysAsset.getKysymys().getTexture("ikalaov")); // Kysymyksen toinen valinta 
-			kysymysB1.x = 360;
-			kysymysB1.y = 240;
-			this.addChild(kysymysB1)
-				
-			kysymysC1 = new Button(KysymysAsset.getKysymys().getTexture("janisetu1")); // Kysymyksen kolmas valinta 
-			kysymysC1.x = 360;
-			kysymysC1.y = 280;
-			this.addChild(kysymysC1)	
-	
-			if(vastaus == kysymysB1){
-			 kansioKasviT.ahomansikkaT.visible = false;
-			 kansioKasviT.ahomansikka.visible = true;	 
-			}else if(vastaus == kysymysA1){
-			 	
-			}
-				
-				
-			}else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
-		
-				kanerva.visible = false;
-		}else if(te.getTouch(karpalo, TouchPhase.BEGAN)){
+						
+			}//else if(te.getTouch(kanerva, TouchPhase.BEGAN)){
+			//kanerva.visible = false;}
+			else if(te.getTouch(karpalo, TouchPhase.BEGAN)){
 		
 			karpalo.visible = false;						// piilottaa kuvakkeet testin vuoksi
 		}else if(te.getTouch(kielo, TouchPhase.BEGAN)){
@@ -104,6 +77,7 @@ package objects
 		
 		private function kasvitArt():void
 		{
+		
 		ahomansikka = new Image(Assets.getKasvit().getTexture("ahomansikka"));
 		this.addChild(ahomansikka)
 		ahomansikka.x = 200;

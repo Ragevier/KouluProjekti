@@ -8,19 +8,19 @@ package objects
 	public class Puut extends Sprite
 	{
 	
-		private var manty:Image;
-		private var mantyKaks:Image;
-		private var haapa:Image;
-		private var pihlaja:Image;
-		private var vaahtera:Image;
-		private var pihlajaKaks:Image;
-		private var koivu:Image;
+		public var manty:Image;
+		public var mantyKaks:Image;
+		public var haapa:Image;
+		public var pihlaja:Image;
+		public var vaahtera:Image;
+		public var pihlajaKaks:Image;
+		public var koivu:Image;
 		
-		private var _alreadyHit:Boolean
-		private var _type:int;
-		private var _speed:int;
-		private var _distance:int;
-		private var _position:String;
+		public var _alreadyHit:Boolean
+		public var _type:int;
+		public var _speed:int;
+		public var _distance:int;
+		public var _position:String;
 	
 		public function Puut()
 		{

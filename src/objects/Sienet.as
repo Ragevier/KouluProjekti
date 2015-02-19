@@ -10,10 +10,10 @@ package objects
 	
 	public class Sienet extends Sprite
 	{
-		private var herkkutatti:Image;
-		private var kantarelli:Image;
-		private var karvarousku:Image;
-		private var punaKarpasSieni:Image
+		public var herkkutatti:Image;
+		public var kantarelli:Image;
+		public var karvarousku:Image;
+		public var punaKarpasSieni:Image
 		public function Sienet()
 		{
 		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);	

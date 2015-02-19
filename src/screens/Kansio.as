@@ -1,12 +1,14 @@
 package screens
 {
-	import events.NavigationEvent;
-	
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
 	import flash.ui.Keyboard;
 	
+	import events.NavigationEvent;
+	
 	import objects.Puut;
+	
+	import screens.KansioPuut;
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -34,11 +36,11 @@ package screens
 		public var elaimetLajit:Button;
 		
 		public var lajiNappi:Button;
-		
+		public var screenPuu:KansioPuut;
 		
 		public function Kansio()
 		{
-		 this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
+		this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		this.addEventListener(KeyboardEvent.KEY_DOWN, keyboard)
 		}
 		
@@ -104,7 +106,11 @@ package screens
 		{
 		var buttonClicked1:Button = event.target as Button;   //puut
 		if((buttonClicked1 as Button) == puutLajit){									
-		this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));		
+		
+		this.disposeTemporarily();
+		screenPuu.initialize();	
+			
+		//this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id:"puutLaji"}, true));		
 		}
 		}
 		
