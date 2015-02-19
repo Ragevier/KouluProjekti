@@ -3,7 +3,6 @@ package screens
 	import com.greensock.TweenLite;
 	
 	import events.NavigationEvent;
-	
 	import flash.events.MouseEvent;
 	import flash.media.Sound;
 	import flash.media.SoundMixer;
